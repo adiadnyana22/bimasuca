@@ -1,0 +1,68 @@
+.eventSec {
+    background-color: var(--primary-color);
+    padding: 5% 0;
+}
+
+.event .bmcc-judul h5, .event-hp .bmcc-judul h5 {
+    font-size: 1em;
+}
+
+.single-event {
+    padding: 50px 0;
+}
+
+.text-event {
+    width: 75%;
+    position: relative;
+}
+
+.event-hp .text-event {
+    margin-top: 25px;
+}
+
+.isi-event {
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.isi-event h2 {
+    font-family: Chronicle;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
+
+.isi-event p {
+    line-height: 2;
+}
+
+.isi-event a {
+    color: var(--secondary-color);
+}
+
+.img-event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.img-event img{
+    width: 100%;
+}
+
+.num-year {
+    position: absolute;
+    top: -100px;
+    left: -50px;
+}
+
+.num-year span {
+    color: rgb(255, 255, 255, 0.2);
+    font-size: 10rem;
+    font-family: Gilroy-Bold;
+    letter-spacing: 2px;
+}
+
+.right-flex {
+    justify-content: flex-end !important;
+}

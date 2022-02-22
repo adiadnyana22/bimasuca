@@ -1,0 +1,47 @@
+.about-us {
+    padding: 5%;
+    background-color: var(--primary-color);
+}
+
+.tulisan p {
+    color: #aaa;
+    text-align: center;
+    width: 80%;
+    font-family: Mulish;
+    font-size: 1em;
+    line-height: 2;
+    margin: auto;
+}
+
+.visimisi {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.vismiscard h2 {
+    color: #1e1e1e;
+    text-align: center;
+    font-family: Mulish;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.vismiscard {
+    background-color: #fff;
+    margin: 5%;
+    padding: 2rem 0;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 10px 30px 20px rgb(255, 255, 255, 0.4);
+}
+
+.vismiscard p {
+    color: #666;
+    text-align: center;
+    width: 60%;
+    font-family: Mulish;
+    font-size: 0.8em;
+}

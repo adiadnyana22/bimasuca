@@ -1,0 +1,155 @@
+.historySec {
+    padding: 5% 0;
+    background-color: var(--primary-color);
+}
+
+.history {
+    margin-top: 5%;
+}
+
+.history-year {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    overflow-x: auto;
+}
+
+/* total width */
+.history-year::-webkit-scrollbar {
+    background-color: transparent;
+    height: 5px;
+}
+
+/* background of the scrollbar except button or resizer */
+.history-year::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* scrollbar itself */
+.history-year::-webkit-scrollbar-thumb {
+    background-color: rgb(186, 186, 192, 0.1);
+    border-radius: 16px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.history-year::-webkit-scrollbar-button {
+    display:none;
+}
+
+.history-year li {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 1px;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.scroll-sq {
+    height: 500px;
+    overflow: auto;
+    position: relative;
+}
+
+/* total width */
+.scroll-sq::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+/* background of the scrollbar except button or resizer */
+.scroll-sq::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* scrollbar itself */
+.scroll-sq::-webkit-scrollbar-thumb {
+    background-color: rgb(186, 186, 192, 0.1);
+    border-radius: 16px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.scroll-sq::-webkit-scrollbar-button {
+    display:none;
+}
+
+.filter-bottom {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, var(--primary-color), transparent);
+    bottom: 0;
+    z-index: 1;
+}
+
+.filter-top {
+    position: absolute;
+    width: 100%;
+    height: 3%;
+    background: linear-gradient(to bottom, var(--primary-color), transparent);
+    top: 0;
+    z-index: 1;
+}
+
+.history-card {
+    background: linear-gradient(to right, #183341, rgb(24, 51, 65, 0.1));
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.indicator-in span {
+    background-color: rgb(80, 79, 79, 0.6);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #35E97E;
+    font-size: 1.25em;
+}
+
+.indicator-out span {
+    background-color: rgb(80, 79, 79, 0.6);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #FF4D5E;
+    font-size: 1em;
+}
+
+.image-in, .image-out {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.image-in img, .image-out img {
+    width: 80%;
+    border-radius: 50%;
+    border: 3px solid #000;
+}
+
+.history-out, .history-in {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+}
+
+.history-out {
+    padding-top: 20px;
+}
+
+.simple-year {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.simple-year h3 {
+    color: rgb(255, 255, 255, 0.15);
+    font-size: 6em;
+    font-family: Gilroy-Bold;
+    letter-spacing: 2px;
+}
+
+.history-active {
+    font-family: Gilroy-Bold;
+    font-size: 4em !important;
+}

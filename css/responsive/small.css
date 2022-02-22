@@ -1,0 +1,74 @@
+@media (max-width: 768px) {
+    .nav-list, .contact {
+        display: none;
+    }
+
+    .bars {
+        display: block;
+    }
+
+    .banner h1 {
+        font-size: 7em;
+        margin-bottom: 60%;
+    }
+
+    .nama-merch-kanan h5 {
+        font-size: 2.5em;
+    }
+
+    .nama-merch-kiri h5 {
+        font-size: 2.5em;
+    }
+
+    .kotak-bewarna {
+        width: 90%;
+    }
+
+    .vismiscard {
+        width: 300px;
+    }
+
+    .judul h2 {
+        font-size: 2.5em;
+    }
+
+    #text-banner h2 {
+        display: none;
+    }
+
+    .isi-event h2 {
+        font-size: 2em;
+    }
+
+    .isi-event p {
+        display: block;
+    }
+
+    .num-year span {
+        font-size: 8em;
+    }
+
+    .event {
+        display: none;
+    }
+
+    .event-hp {
+        display: block;
+    }
+
+    .sosmed-banner {
+        display: none;
+    }
+
+    .history-year li {
+        font-size: 1.5em;
+    }
+
+    .history-active {
+        font-size: 2.5em !important;
+    }
+
+    .simple-year h3 {
+        font-size: 3em !important;
+    }
+}

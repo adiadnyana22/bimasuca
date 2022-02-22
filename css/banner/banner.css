@@ -1,0 +1,113 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    z-index: 5;
+    background: linear-gradient(to top, var(--primary-color), transparent);
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.filter-banner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(330.24deg, rgba(11, 29, 38, 0) 31.06%, var(--primary-color) 108.93%);
+}
+
+.banner h1 {
+    position: absolute;
+    object-fit: cover;
+    font-size: 20em;
+    font-family: Quartzo;
+    margin-bottom: 10%;
+    color: #fff;
+}
+
+#text-banner {
+    position: absolute;
+    bottom: 10%;
+    z-index: 6;
+    width: 90%;
+}
+
+.sosmed-banner {
+    position: absolute;
+    left: 5%;
+    z-index: 5;
+}
+
+.sosmed-banner p {
+    color: #fff;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: 600;
+}
+
+.sosmed-banner ul li {
+    list-style: none;
+}
+
+.sosmed-banner ul li a {
+    font-size: 1.25em;
+    color: #fff;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.bmcc-judul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* grid-template-columns: 1fr 5fr 2fr; */
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.bmcc-judul hr {
+    border: 1px solid var(--secondary-color);
+    width: 10%;
+}
+
+.bmcc-judul h5 {
+    font-family: Gilroy-Bold;
+    letter-spacing: 3px;
+    margin-left: 1rem;
+}
+
+#text-banner h2 {
+    font-size: 4em;
+    font-family: Chronicle;
+    color: #fff;
+    text-align: center;
+}
+
+.scroll-down {
+    color: #fff;
+}
+
+.scroll-down span {
+    color: #fff;
+    padding: .5rem;
+    /* left: 20%; */
+}
