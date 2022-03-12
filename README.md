@@ -1,8 +1,12 @@
-# BMCC Web Profile
+# BIMASUCA - Binus Malang Sustainable Campus
 
-Welcome to BMCC Web Profile Repository!
+Welcome to BIMASUCA Website Project Repository!
 
 Here we store our website code for development and developed by our team.
+
+- Hanustavira Guru Acarya
+- Made Adi Adnyana
+- Nicolaus Avenito
 
 # 🎯 Navigation
 
@@ -12,9 +16,9 @@ Here we store our website code for development and developed by our team.
 
 # 🖼 Design
 
-Web Design is created on Figma and not available for colaboration for a moment. Below is the access link to the design in Figma
+Web Design is created on Figma. Below is the access link to the design in Figma
 
-**[https://www.figma.com/file/SGoVAz5TQC4Kxs2uWieiLt/BMCC?node-id=0%3A1](https://www.figma.com/file/SGoVAz5TQC4Kxs2uWieiLt/BMCC?node-id=0%3A1)**
+**[https://www.figma.com/file/IV2yvfnl1XDrj5U6CkIztO/Bimasuca?node-id=0%3A1](https://www.figma.com/file/IV2yvfnl1XDrj5U6CkIztO/Bimasuca?node-id=0%3A1)**
 
 # ⚙ Tools and Language Used
 
@@ -47,19 +51,4 @@ Web Design is created on Figma and not available for colaboration for a moment. 
 
 # 🚪 Closing
 
-Thank you for visiting! Don't forget to visit our Instagram and Linkedin below!
-
-<div style="
-    margin: 5em 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-">
-    <a href="https://www.instagram.com/bmcc_binusmlg/" target="_blank" style="margin: 0 1.5em;">
-        <img height="50" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white">
-    </a>
-    <a href="https://www.linkedin.com/in/bmcc-academy-8117411bb/?originalSubdomain=id" target="_blank" style="margin: 0 1.5em;">
-        <img height="50" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)">
-    </a>
-</div>
+Thank you for visiting!
