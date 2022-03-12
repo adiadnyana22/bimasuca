@@ -8,8 +8,8 @@ switch($data['aksi']){
 
     case 'login':
         global $koneksi;
-        $r_email = mysqli_real_escape_string($koneksi, $_POST['email']);
-        $r_password = mysqli_real_escape_string($koneksi, $_POST['password']);
+        $r_email = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['email'], ENT_QUOTES));
+        $r_password = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['password'], ENT_QUOTES));
         $query = $koneksi->prepare("SELECT * FROM admin WHERE email = ?");
         $query->bind_param('s', $r_email);
         $query->execute();
