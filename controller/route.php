@@ -13,12 +13,6 @@ switch($data['aksi']){
         $query = login($email, $password);
 //      Jika inputan benar
         if($query == 'verified'){
-            session_start();
-            session_regenerate_id(true);
-            $_SESSION['id'] = $identitas['id'];
-            $_SESSION['nama'] = $identitas['nama'];
-            $_SESSION['email'] = $identitas['email'];
-            $_SESSION['super'] = $identitas['super'];
             header("Location: ../admin/views/index?pesan=sukses");
             // Jika inputan salah
         }else if($query == 'false'){

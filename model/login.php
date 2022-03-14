@@ -17,6 +17,12 @@ function login($email, $password){
         $verifikasi_id = password_verify($r_password, $c_password);
         // Jika inputan benar
         if($verifikasi_id){
+            session_start();
+            session_regenerate_id(true);
+            $_SESSION['id'] = $identitas['id'];
+            $_SESSION['nama'] = $identitas['nama'];
+            $_SESSION['email'] = $identitas['email'];
+            $_SESSION['super'] = $identitas['super'];
             $response = 'verified';
             return $response;
         // Jika inputan salah
