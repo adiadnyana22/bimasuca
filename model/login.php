@@ -17,23 +17,32 @@ function login($email, $password){
         $verifikasi_id = password_verify($r_password, $c_password);
         // Jika inputan benar
         if($verifikasi_id){
-            session_start();
-            session_regenerate_id(true);
-            $_SESSION['id'] = $identitas['id'];
-            $_SESSION['nama'] = $identitas['nama'];
-            $_SESSION['email'] = $identitas['email'];
-            $_SESSION['super'] = $identitas['super'];
-            $response = 'verified';
-            return $response;
+            $response_json = json_encode(array(
+                'id' => $identitas['id'],
+                'nama' => $identitas['nama'],
+                'email' => $identitas['email'],
+                'super' => $identitas['super']
+            ));
+            return $response_json;
         // Jika inputan salah
         }else{
-            $response = 'false';
-            return $response;
+            $response_json = json_encode(array(
+                'id' => 'FALSE',
+                'nama' => 'FALSE',
+                'email' => 'FALSE',
+                'super' => 'FALSE'
+            ));
+            return $response_json;
         }
     // Jika data tidak ditemukan
     }else{
-        $response = 'nodata';
-        return $response;
+        $response_json = json_encode(array(
+            'id' => NULL,
+            'nama' => NULL,
+            'email' => NULL,
+            'super' => NULL
+        ));
+        return $response_json;
     }
 }
 
