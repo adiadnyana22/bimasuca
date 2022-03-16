@@ -12,13 +12,13 @@
         </ul>
         <div class="navbar">
             <div class="user-data">
-                <span>Hi, <strong>Adi Adnyana</strong></span>
+                <span>Hi, <strong><?php echo $_SESSION['nama'];?></strong></span>
             </div>
         </div>
     </nav>
     <div class="logout p-3">
-        <form action="logout.php" method="post">
-            <button type="submit" id="logout" class="text-danger btn btn-transparent"><i class="fas fa-angle-left"></i><span>&nbsp;&nbsp;Logout</span></button>
+        <form action="../../controller/route.php?aksi=logout" method="post">
+            <button type="submit" id="logout" name="logout" class="text-danger btn btn-transparent" value="logout"><i class="fas fa-angle-left"></i><span>&nbsp;&nbsp;Logout</span></button>
         </form>
     </div>
 </div>

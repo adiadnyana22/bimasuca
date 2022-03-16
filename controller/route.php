@@ -22,13 +22,25 @@ switch($data['aksi']){
             $_SESSION['nama'] = $decode->nama;
             $_SESSION['email'] = $decode->email;
             $_SESSION['super'] = $decode->super;
-            header("Location: ../admin/views/index?pesan=sukses");
+            header("Location: ../view/admin/index?pesan=sukses");
             // Jika inputan salah
         }else if($decode->id == 'FALSE'){
-            header("Location: ../admin/views/index?pesan=salah");
+            header("Location: ../view/login?pesan=salah");
             // Jika data tidak ditemukan
         }else if($decode->id == NULL){
-            header("Location: ../admin/views/index?pesan=not_found");
+            header("Location: ../view/login?pesan=not_found");
+        }
+    break;
+
+    case 'logout':
+        if($_POST['logout']){
+            unset($_SESSION['id']);
+            unset($_SESSION['nama']);
+            unset($_SESSION['email']);
+            unset($_SESSION['super']);
+            session_unset();
+            session_destroy();
+            header("Location: ../view/login?pesan=logout");
         }
     break;
 
@@ -47,14 +59,8 @@ switch($data['aksi']){
         }
     break;
 
-    case 'logout':
-        unset($_SESSION['id']);
-        unset($_SESSION['nama']);
-        unset($_SESSION['email']);
-        unset($_SESSION['super']);
-        session_unset();
-        session_destroy();
-        header("Location: ../admin/views/index?pesan=logout");
+    case 'add_event':
+    
     break;
 }
 
