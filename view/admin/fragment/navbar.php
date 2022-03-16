@@ -8,8 +8,10 @@ echo $lokasi;
 
 $link = "http://api.weatherapi.com/v1/current.json?key=e21884c678314b28a9c34220221603&q={$lokasi}&aqi=no";
 $suhu = file_get_contents($link);
-$cek_suhu = json_decode($json);
-$nilai_suhu = $cek_suhu->feelslike_c;
+$cek_suhu = json_decode($suhu);
+$nilai_suhu = $cek_suhu->current->feelslike_c;
+$teks = $cek_suhu->current->condition->text;
+$icon = $cek_suhu->current->condition->icon;
 
 ?>
 
@@ -22,9 +24,9 @@ $nilai_suhu = $cek_suhu->feelslike_c;
         <div>
             <span><strong ><?php echo $lokasi;?></strong> (<span><?php echo $nilai_suhu;?>&#8451;</span>)</span>
             <span>
-                <span>Panas Bos</span>
+                <span><?php echo $teks; ?></span>
             </span>
         </div>
-        <img></img>
+        <img src="<?php echo $icon; ?>"></img>
     </div>
 </div>
