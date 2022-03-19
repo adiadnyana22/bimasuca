@@ -51,7 +51,7 @@ nav > ul > li > a {
     text-decoration: none;
     font-size: 1.25em;
     display: block;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     margin: 0 .5rem;
 }
 
@@ -147,7 +147,7 @@ nav > .highlight > a {
     padding-top: .5rem;
     color: #999;
     letter-spacing: 1.7;
-    font-size: 1.25em;
+    font-size: 1.1em;
 }
 
 .bg-intro img {
@@ -163,7 +163,8 @@ nav > .highlight > a {
 .event-title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    height: 100px;
 }
 
 .event-title > h2 {
@@ -185,12 +186,13 @@ nav > .highlight > a {
 .event-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    height: calc(100% - 100px - 12px);
 }
 
 .event-card {
     display: flex;
-    margin: .75rem 0;
+    /* margin: .75rem 0; */
     background-color: #fafafa;
     box-shadow: 4px 4px 4px rgb(0, 0, 0, .1);
     border-radius: .5rem;
@@ -288,7 +290,7 @@ nav > .highlight > a {
     margin: .75rem 0;
     padding: 1rem 1.5rem;
     border-radius: 1rem;
-    font-size: 1.25em;
+    font-size: 1em;
     font-family: Poppins;
     border: 0;
     box-shadow: 4px 4px 4px rgb(0, 0, 0, .25);
@@ -306,9 +308,10 @@ nav > .highlight > a {
     outline: none;
     width: 100%;
     padding: 1rem 0;
-    font-size: 1.25em;
+    font-size: 1em;
     border-radius: 1rem;
     margin: .75rem 0;
+    font-weight: bold;
 }
 
 /* Footer */
@@ -326,10 +329,12 @@ footer p {
 
 footer h3 {
     color: #fff;
+    font-size: 1.5em;
 }
 
 footer ul {
     margin-top: 1rem;
+    padding-left: 1rem;
 }
 
 footer ul li{
@@ -340,7 +345,7 @@ footer ul li{
 footer ul li a {
     color: #999;
     text-decoration: none;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .social-media ul {
@@ -353,7 +358,7 @@ footer ul li a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .social-media ul li a i {

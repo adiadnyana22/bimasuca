@@ -2,7 +2,8 @@
     include "fragment/topTemplate.php";
 ?>
 
-    <h1>Ini Testing</h1>
+    <h1>Ini Dashboard</h1>
+    <!-- Datatables -->
     
 <?php
     include "fragment/bottomTemplate.php";
