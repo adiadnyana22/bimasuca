@@ -189,15 +189,98 @@ switch($data['aksi']){
         }
     break;
 
-    /* add_campaign disini, mirip versi event, nanti ubah variabel e sesuai kebutuhan field e dan nama kolom di 
-    mysql *kecuali id, karena dia auto increment */
-    // Campaign
-    case 'add_campaign':
-    break;
-    case 'update_campaign':
-    break;
-    case 'delete_campaign':
-    break;
+   // Campaign
+   case 'add_campaign':
+    $nama_event = $_POST['nama_campaign'];
+    $tanggal_post = date("Y-m-d");
+    $deskripsi = $_POST['deskripsi'];
+    // Upload gambar
+    if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
+        foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+            $file_name = $key.$_FILES['files']['name'][$key];
+            $file_size =$_FILES['files']['size'][$key];
+            $file_tmp =$_FILES['files']['tmp_name'][$key];
+            $file_type=$_FILES['files']['type'][$key];
+            $original_filename = $_FILES['files']['name'][$key];
+            $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
+            if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
+                $gambar = uniqid() . '.' . $ext;
+                move_uploaded_file($file_tmp,'../assets/upload_images/campaign/'.$gambar);
+            }
+        }
+    }
+    $query = add_campaign($nama_campaign, $tanggal_post, $deskripsi, $gambar);
+    if($query == 'true'){
+        header("Location: ../admin/views/index?pesan=sukses");
+    }else if($query == 'false'){
+        header("Location: ../admin/views/index?pesan=gagal");
+    }else{
+        echo "Error";
+    }
+break;
+
+case 'update_campaign':
+    $id = $_POST['id'];
+    $nama_campaign = $_POST['nama_campaign'];
+    $tanggal_post = $_POST['tanggal_post'];
+    $deskripsi = $_POST['deskripsi'];
+    $gambar_lama = $_POST['gambar_lama'];
+    // Upload gambar
+    if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
+        $filename = '../assets/upload_images/campaign/'.$gambar_lama;
+        if(file_exists($filename)){
+            unlink($filename);
+        }
+        foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+            $file_name = $key.$_FILES['files']['name'][$key];
+            $file_size =$_FILES['files']['size'][$key];
+            $file_tmp =$_FILES['files']['tmp_name'][$key];
+            $file_type=$_FILES['files']['type'][$key];
+            $original_filename = $_FILES['files']['name'][$key];
+            $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
+            if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
+                $gambar = uniqid() . '.' . $ext;
+                move_uploaded_file($file_tmp,'../assets/upload_images/campaign/'.$gambar);
+            }
+        }
+        $query = update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar);
+        if($query == 'true'){
+            header("Location: ../admin/views/index?pesan=sukses");
+        }else if($query == 'false'){
+            header("Location: ../admin/views/index?pesan=gagal");
+        }else{
+            echo "Error";
+        }
+    }else{
+        $gambar = 'nodata';
+        $query = update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar);
+        if($query == 'true'){
+            header("Location: ../admin/views/index?pesan=sukses");
+        }else if($query == 'false'){
+            header("Location: ../admin/views/index?pesan=gagal");
+        }else{
+            echo "Error";
+        }
+    }
+break;
+
+case 'delete_campaign':
+    $id = $_POST['id'];
+    $gambar_lama = $_POST['gambar_lama'];
+    $filename = '../assets/upload_images/campaign/'.$gambar_lama;
+    if(file_exists($filename)){
+        unlink($filename);
+    }
+    $query = delete_campaign($id);
+    if($query == 'true'){
+        header("Location: ../admin/views/index?pesan=sukses");
+    }else if($query == 'false'){
+        header("Location: ../admin/views/index?pesan=gagal");
+    }else{
+        echo "Error";
+    }
+break;
 }
+
 
 ?>
