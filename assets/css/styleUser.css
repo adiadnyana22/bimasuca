@@ -39,6 +39,10 @@ nav > .logo {
     font-weight: bold;
 }
 
+.logo img {
+    height: 80px;
+}
+
 nav > ul {
     display: flex;
     list-style: none;
@@ -63,6 +67,11 @@ nav > .highlight > a {
     display: block;
     padding: .5rem 2rem;
     border-radius: .5rem;
+}
+
+.bars {
+    font-size: 1.5em;
+    margin-right: .5rem;
 }
 
 /* Banner */
@@ -320,6 +329,15 @@ footer {
     background-color: #1f1f1f;
 }
 
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.footer-logo img {
+    width: 100%;
+}
 
 footer p {
     color: #999;
@@ -376,4 +394,404 @@ footer hr {
     justify-content: space-between;
     align-items: center;
     color: #999;
+}
+
+@media(max-width: 576px) {
+    .nav-desk {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+    }
+
+    .banner-text h1 {
+        font-size: 3em;
+    }
+
+    .banner-text > span {
+        font-size: 1em;
+    }
+
+    .banner-text > div {
+        font-size: .75em;
+    }
+
+    .bg-intro .row {
+        flex-direction: column-reverse;
+    }
+
+    .bg-intro img {
+        margin-bottom: 2rem;
+    }
+
+    .event-title {
+        height: auto;
+        align-items: center;
+    }
+
+    .event-title a {
+        font-size: 1em;
+    }
+
+    .event-card-text h3 {
+        font-size: 1.5em;
+    }
+
+    .event-card-text span {
+        font-size: .75em;
+    }
+
+    .event-card {
+        margin-bottom: 1rem;
+    }
+
+    .bg-event iframe {
+        margin-top: 2rem !important;
+    }
+
+    .feature .first {
+        flex-direction: column-reverse;
+    }
+
+    .feature-text span {
+        font-size: 1.5em;
+    }
+
+    .feature-text h2 {
+        font-size: 3em;
+    }
+
+    .feature-text p {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .bg-suggest {
+        padding-top: 5rem;
+    }
+
+    .suggest img {
+        display: none;
+    }
+}
+
+@media(min-width: 576px) {
+    .nav-desk {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+    }
+
+    .banner-text h1 {
+        font-size: 3em;
+    }
+
+    .banner-text > span {
+        font-size: 1em;
+    }
+
+    .banner-text > div {
+        font-size: .75em;
+    }
+
+    .bg-intro .row {
+        flex-direction: column-reverse;
+    }
+
+    .bg-intro img {
+        margin-bottom: 2rem;
+    }
+
+    .event-title {
+        height: auto;
+        align-items: center;
+    }
+
+    .event-title a {
+        font-size: 1em;
+    }
+
+    .event-card-text h3 {
+        font-size: 1.5em;
+    }
+
+    .event-card-text span {
+        font-size: .75em;
+    }
+
+    .event-card {
+        margin-bottom: 1rem;
+    }
+
+    .bg-event iframe {
+        margin-top: 2rem !important;
+    }
+
+    .feature .first {
+        flex-direction: column-reverse;
+    }
+
+    .feature-text span {
+        font-size: 1.5em;
+    }
+
+    .feature-text h2 {
+        font-size: 3em;
+    }
+
+    .feature-text p {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .bg-suggest {
+        padding-top: 5rem;
+    }
+
+    .suggest img {
+        display: none;
+    }
+}
+
+@media(min-width: 768px) {
+    .nav-desk {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+    }
+
+    .banner-text h1 {
+        font-size: 6em;
+    }
+
+    .banner-text > span {
+        font-size: 1.25em;
+    }
+
+    .banner-text > div {
+        font-size: 1em;
+    }
+
+    .bg-intro .row {
+        flex-direction: column-reverse;
+    }
+
+    .bg-intro img {
+        margin-bottom: 2rem;
+    }
+
+    .event-title {
+        height: auto;
+        align-items: center;
+    }
+
+    .event-title a {
+        font-size: 1em;
+    }
+
+    .event-card-text h3 {
+        font-size: 1.5em;
+    }
+
+    .event-card-text span {
+        font-size: .75em;
+    }
+
+    .event-card {
+        margin-bottom: 1rem;
+    }
+
+    .bg-event iframe {
+        margin-top: 2rem !important;
+    }
+
+    .feature .first {
+        flex-direction: row;
+    }
+
+    .feature-text span {
+        font-size: 1.5em;
+    }
+
+    .feature-text h2 {
+        font-size: 3em;
+    }
+
+    .feature-text p {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .bg-suggest {
+        padding-top: 5rem;
+    }
+
+    .suggest img {
+        display: none;
+    }
+}
+
+@media(min-width: 992px) {
+    .nav-desk {
+        display: flex;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .banner-text h1 {
+        font-size: 6em;
+    }
+
+    .banner-text > span {
+        font-size: 1.25em;
+    }
+
+    .banner-text > div {
+        font-size: 1em;
+    }
+
+    .bg-intro .row {
+        flex-direction: row;
+    }
+
+    .bg-intro img {
+        margin-bottom: 0;
+    }
+
+    .event-title {
+        height: 100px;
+        align-items: center;
+    }
+
+    .event-title a {
+        font-size: 1.25em;
+    }
+
+    .event-card-text h3 {
+        font-size: 1.75em;
+    }
+
+    .event-card-text span {
+        font-size: 1em;
+    }
+
+    .event-card {
+        margin-bottom: 0;
+    }
+
+    .bg-event iframe {
+        margin-top: 0;
+    }
+
+    .feature .first {
+        flex-direction: row;
+    }
+
+    .feature-text span {
+        font-size: 1.5em;
+    }
+
+    .feature-text h2 {
+        font-size: 4em;
+    }
+
+    .feature-text p {
+        font-size: 1.25em;
+        width: 90%;
+    }
+
+    .bg-suggest {
+        padding-top: 5%;
+    }
+
+    .suggest img {
+        display: block;
+    }
+}
+
+@media(min-width: 1200px) {
+    .nav-desk {
+        display: flex;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .banner-text h1 {
+        font-size: 6em;
+    }
+
+    .banner-text > span {
+        font-size: 1.25em;
+    }
+
+    .banner-text > div {
+        font-size: 1em;
+    }
+
+    .bg-intro .row {
+        flex-direction: row;
+    }
+
+    .bg-intro img {
+        margin-bottom: 0;
+    }
+
+    .event-title {
+        height: 100px;
+        align-items: center;
+    }
+
+    .event-title a {
+        font-size: 1.25em;
+    }
+
+    .event-card-text h3 {
+        font-size: 1.75em;
+    }
+
+    .event-card-text span {
+        font-size: 1em;
+    }
+
+    .event-card {
+        margin-bottom: 0;
+    }
+
+    .bg-event iframe {
+        margin-top: 0;
+    }
+
+    .feature .first {
+        flex-direction: row;
+    }
+
+    .feature-text span {
+        font-size: 1.5em;
+    }
+
+    .feature-text h2 {
+        font-size: 4em;
+    }
+
+    .feature-text p {
+        font-size: 1.25em;
+        width: 90%;
+    }
+
+    .bg-suggest {
+        padding-top: 5%;
+    }
+
+    .suggest img {
+        display: block;
+    }
 }
