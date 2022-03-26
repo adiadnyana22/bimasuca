@@ -1,15 +1,17 @@
 <?php
 
 include '../koneksi.php';
+
+// Login
 require_once '../model/login.php';
 // Administrasi
-require_once '../model/add_user.php';
-require_once '../model/update_user.php';
-require_once '../model/delete_user.php';
+require_once '../model/user.php';
 // Event
-require_once '../model/add_event.php';
-require_once '../model/update_event.php';
-require_once '../model/delete_event.php';
+require_once '../model/event.php';
+// Campaign
+require_once '../model/campaign.php';
+// Kritik & Saran
+require_once '../model/suggestion.php';
 
 $data = $_REQUEST;
 
@@ -189,61 +191,87 @@ switch($data['aksi']){
         }
     break;
 
-   // Campaign
-   case 'add_campaign':
-    $nama_event = $_POST['nama_campaign'];
-    $tanggal_post = date("Y-m-d");
-    $deskripsi = $_POST['deskripsi'];
-    // Upload gambar
-    if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
-        foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-            $file_name = $key.$_FILES['files']['name'][$key];
-            $file_size =$_FILES['files']['size'][$key];
-            $file_tmp =$_FILES['files']['tmp_name'][$key];
-            $file_type=$_FILES['files']['type'][$key];
-            $original_filename = $_FILES['files']['name'][$key];
-            $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
-            if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
-                $gambar = uniqid() . '.' . $ext;
-                move_uploaded_file($file_tmp,'../assets/upload_images/campaign/'.$gambar);
+    // Campaign
+    case 'add_campaign':
+        $nama_event = $_POST['nama_campaign'];
+        $tanggal_post = date("Y-m-d");
+        $deskripsi = $_POST['deskripsi'];
+        // Upload gambar
+        if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
+            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+                $file_name = $key.$_FILES['files']['name'][$key];
+                $file_size =$_FILES['files']['size'][$key];
+                $file_tmp =$_FILES['files']['tmp_name'][$key];
+                $file_type=$_FILES['files']['type'][$key];
+                $original_filename = $_FILES['files']['name'][$key];
+                $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
+                if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
+                    $gambar = uniqid() . '.' . $ext;
+                    move_uploaded_file($file_tmp,'../assets/upload_images/campaign/'.$gambar);
+                }
             }
         }
-    }
-    $query = add_campaign($nama_campaign, $tanggal_post, $deskripsi, $gambar);
-    if($query == 'true'){
-        header("Location: ../admin/views/index?pesan=sukses");
-    }else if($query == 'false'){
-        header("Location: ../admin/views/index?pesan=gagal");
-    }else{
-        echo "Error";
-    }
-break;
-
-case 'update_campaign':
-    $id = $_POST['id'];
-    $nama_campaign = $_POST['nama_campaign'];
-    $tanggal_post = $_POST['tanggal_post'];
-    $deskripsi = $_POST['deskripsi'];
-    $gambar_lama = $_POST['gambar_lama'];
-    // Upload gambar
-    if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
+        $query = add_campaign($nama_campaign, $tanggal_post, $deskripsi, $gambar);
+        if($query == 'true'){
+            header("Location: ../admin/views/index?pesan=sukses");
+        }else if($query == 'false'){
+            header("Location: ../admin/views/index?pesan=gagal");
+        }else{
+            echo "Error";
+        }
+    break;
+    case 'update_campaign':
+        $id = $_POST['id'];
+        $nama_campaign = $_POST['nama_campaign'];
+        $tanggal_post = $_POST['tanggal_post'];
+        $deskripsi = $_POST['deskripsi'];
+        $gambar_lama = $_POST['gambar_lama'];
+        // Upload gambar
+        if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
+            $filename = '../assets/upload_images/campaign/'.$gambar_lama;
+            if(file_exists($filename)){
+                unlink($filename);
+            }
+            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+                $file_name = $key.$_FILES['files']['name'][$key];
+                $file_size =$_FILES['files']['size'][$key];
+                $file_tmp =$_FILES['files']['tmp_name'][$key];
+                $file_type=$_FILES['files']['type'][$key];
+                $original_filename = $_FILES['files']['name'][$key];
+                $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
+                if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
+                    $gambar = uniqid() . '.' . $ext;
+                    move_uploaded_file($file_tmp,'../assets/upload_images/campaign/'.$gambar);
+                }
+            }
+            $query = update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar);
+            if($query == 'true'){
+                header("Location: ../admin/views/index?pesan=sukses");
+            }else if($query == 'false'){
+                header("Location: ../admin/views/index?pesan=gagal");
+            }else{
+                echo "Error";
+            }
+        }else{
+            $gambar = 'nodata';
+            $query = update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar);
+            if($query == 'true'){
+                header("Location: ../admin/views/index?pesan=sukses");
+            }else if($query == 'false'){
+                header("Location: ../admin/views/index?pesan=gagal");
+            }else{
+                echo "Error";
+            }
+        }
+    break;
+    case 'delete_campaign':
+        $id = $_POST['id'];
+        $gambar_lama = $_POST['gambar_lama'];
         $filename = '../assets/upload_images/campaign/'.$gambar_lama;
         if(file_exists($filename)){
             unlink($filename);
         }
-        foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-            $file_name = $key.$_FILES['files']['name'][$key];
-            $file_size =$_FILES['files']['size'][$key];
-            $file_tmp =$_FILES['files']['tmp_name'][$key];
-            $file_type=$_FILES['files']['type'][$key];
-            $original_filename = $_FILES['files']['name'][$key];
-            $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
-            if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
-                $gambar = uniqid() . '.' . $ext;
-                move_uploaded_file($file_tmp,'../assets/upload_images/campaign/'.$gambar);
-            }
-        }
-        $query = update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar);
+        $query = delete_campaign($id);
         if($query == 'true'){
             header("Location: ../admin/views/index?pesan=sukses");
         }else if($query == 'false'){
@@ -251,35 +279,37 @@ case 'update_campaign':
         }else{
             echo "Error";
         }
-    }else{
-        $gambar = 'nodata';
-        $query = update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar);
-        if($query == 'true'){
-            header("Location: ../admin/views/index?pesan=sukses");
-        }else if($query == 'false'){
-            header("Location: ../admin/views/index?pesan=gagal");
-        }else{
-            echo "Error";
-        }
-    }
-break;
+    break;
 
-case 'delete_campaign':
-    $id = $_POST['id'];
-    $gambar_lama = $_POST['gambar_lama'];
-    $filename = '../assets/upload_images/campaign/'.$gambar_lama;
-    if(file_exists($filename)){
-        unlink($filename);
-    }
-    $query = delete_campaign($id);
-    if($query == 'true'){
-        header("Location: ../admin/views/index?pesan=sukses");
-    }else if($query == 'false'){
-        header("Location: ../admin/views/index?pesan=gagal");
-    }else{
-        echo "Error";
-    }
-break;
+    // Kritik & Saran
+    case 'add_suggestion':
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+        $isi = $_POST['isi'];
+        $query = add_suggestion($nama, $email, $isi);
+        if($query == 'true'){
+            header("Location: ../admin/views/index?pesan=sukses");
+        }else if($query == 'false'){
+            header("Location: ../admin/views/index?pesan=gagal");
+        }else{
+            echo "Error";
+        }
+    break;
+    case 'delete_suggestion':
+        $id = $_POST['id'];
+        $query = delete_suggestion($id);
+        if($query == 'true'){
+            header("Location: ../admin/views/index?pesan=sukses");
+        }else if($query == 'false'){
+            header("Location: ../admin/views/index?pesan=gagal");
+        }else{
+            echo "Error";
+        }
+    break;
+
+    // Unknown Request 
+    default:
+    echo "Error";
 }
 
 
