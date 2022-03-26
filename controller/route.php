@@ -43,11 +43,24 @@ switch($data['aksi']){
 
     case 'logout':
         if($_POST['logout']){
+            // Legacy untuk compatibility PHP lama
+            session_start();
+            $_SESSION = array();
+            // Session kill
+            if (ini_get("session.use_cookies")) {
+                $params = session_get_cookie_params();
+                setcookie(session_name(), '', time() - 42000,
+                    $params["path"], $params["domain"],
+                    $params["secure"], $params["httponly"]
+                );
+            }
+            // Session unset
             unset($_SESSION['id']);
             unset($_SESSION['nama']);
             unset($_SESSION['email']);
             unset($_SESSION['super']);
             session_unset();
+            // Session destroy
             session_destroy();
             header("Location: ../view/login?pesan=logout");
         }
