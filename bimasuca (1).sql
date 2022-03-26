@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Mar 2022 pada 18.02
+-- Waktu pembuatan: 26 Mar 2022 pada 15.07
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -98,6 +98,19 @@ CREATE TABLE `kritik` (
   `tanggal` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `suggestion`
+--
+
+CREATE TABLE `suggestion` (
+  `id` int(100) NOT NULL,
+  `nama` varchar(300) DEFAULT NULL,
+  `email` varchar(300) DEFAULT NULL,
+  `isi` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -134,6 +147,12 @@ ALTER TABLE `kritik`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `suggestion`
+--
+ALTER TABLE `suggestion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -165,6 +184,12 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `kritik`
 --
 ALTER TABLE `kritik`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `suggestion`
+--
+ALTER TABLE `suggestion`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
