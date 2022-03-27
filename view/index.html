@@ -44,6 +44,19 @@
                 </nav>
             </div>
         </header>
+        <div class="mobile-overlay">
+            <span class="close">x</span>
+            <img src="../assets/images/LogoPutih.png" alt="">
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Kalkulator</a></li>
+                <li><a href="#">Game</a></li>
+            </ul>
+            <div class="highlight">
+                <a href="#">Tentang Kami</a>
+            </div>
+        </div>
         <section class="bg-banner">
             <div class="banner">
                 <img src="../assets/images/awan.png" alt="Awan">
@@ -300,5 +313,22 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script>
+        document.querySelector(".mobile-overlay .close").addEventListener("click", () => {
+            document.querySelector(".mobile-overlay").style.width = 0;
+        })
+
+        document.querySelector(".bars").addEventListener("click", () => {
+            document.querySelector(".mobile-overlay").style.width = "100%";
+        })
+
+        window.addEventListener("scroll", () => {
+            if(window.scrollY <= 50){
+                document.querySelector("header").classList.remove("header-background");
+            } else {
+                document.querySelector("header").classList.add("header-background");
+            }
+        })
+    </script>
 </body>
 </html>
