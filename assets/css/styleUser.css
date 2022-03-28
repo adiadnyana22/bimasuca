@@ -20,6 +20,10 @@
     height: 100%;
 }
 
+/*  */
+/* Index */
+/*  */
+
 /* Header */
 header {
     position: fixed;
@@ -455,6 +459,118 @@ footer hr {
     color: #999;
 }
 
+/*  */
+/* Kalkulator */
+/*  */
+
+.bg-judul {
+    padding: 7.5rem 1rem;
+    padding-top: 10rem;
+}
+
+.bg-judul h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #53C351;
+}
+
+.kalkulator-section {
+    margin-bottom: 3rem;
+}
+
+.kalkulator-section h2 {
+    margin-bottom: 1rem;
+}
+
+.kalkulator-card {
+    padding: .5rem;
+}
+
+.kalkulator-card .icon {
+    padding: 1rem 2rem;
+    background-color: #FFF;
+    border-radius: 1rem;
+}
+
+.kalkulator-card .icon span {
+    display: block;
+    font-size: 2em;
+    text-align: center;
+}
+
+.kalkulator-card .input {
+    background-color: #ececec;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.kalkulator-card .input input {
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    padding: 1rem 0rem 1rem 1rem;
+}
+
+.kalkulator-card .input span {
+    display: block;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+/* Hasil Emisi */
+.bg-hasilEmisi {
+    background: url(../images/hasilEmisi.png);
+    background-repeat: no-repeat;
+    height: 396px;
+    margin-top: 2rem;
+    text-align: center;
+    color: #FFF;
+}
+
+.bg-hasilEmisi span {
+    display: block;
+    font-size: 2em;
+}
+
+.bg-hasilEmisi h2 {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+/* Convert Emisi */
+.bg-convertEmisi {
+    padding: 2rem 0;
+}
+
+.bg-convertEmisi p {
+    margin-top: 2rem;
+    font-size: 2em;
+}
+
+.bg-convertEmisi span {
+    font-weight: bold;
+    font-size: 3em;
+    display: block;
+}
+
+.listConvert {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.listConvert span {
+    font-size: 1.25em;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: #ececec;
+}
+
 @media(max-width: 576px) {
     .nav-desk {
         display: none;
@@ -532,6 +648,32 @@ footer hr {
 
     .suggest img {
         display: none;
+    }
+
+    /* Kalkulator */
+    .bg-judul {
+        padding: 5rem 1rem;
+        padding-top: 7.5rem;
+    }
+
+    .bg-hasilEmisi span {
+        font-size: 1.5em;
+    }
+    
+    .bg-hasilEmisi h2 {
+        font-size: 3.5em;
+    }
+
+    .bg-convertEmisi p {
+        font-size: 1.5em;
+    }
+    
+    .bg-convertEmisi span {
+        font-size: 2.5em;
+    }
+
+    .listConvert span {
+        font-size: 1em;
     }
 }
 
@@ -613,6 +755,32 @@ footer hr {
     .suggest img {
         display: none;
     }
+
+    /* Kalkulator */
+    .bg-judul {
+        padding: 5rem 1rem;
+        padding-top: 7.5rem;
+    }
+
+    .bg-hasilEmisi span {
+        font-size: 1.5em;
+    }
+    
+    .bg-hasilEmisi h2 {
+        font-size: 3em;
+    }
+
+    .bg-convertEmisi p {
+        font-size: 1.5em;
+    }
+    
+    .bg-convertEmisi span {
+        font-size: 2.5em;
+    }
+
+    .listConvert span {
+        font-size: 1em;
+    }
 }
 
 @media(min-width: 768px) {
@@ -692,6 +860,32 @@ footer hr {
 
     .suggest img {
         display: none;
+    }
+
+    /* Kalkulator */
+    .bg-judul {
+        padding: 5rem 1rem;
+        padding-top: 7.5rem;
+    }
+
+    .bg-hasilEmisi span {
+        font-size: 2em;
+    }
+    
+    .bg-hasilEmisi h2 {
+        font-size: 5em;
+    }
+
+    .bg-convertEmisi p {
+        font-size: 2em;
+    }
+    
+    .bg-convertEmisi span {
+        font-size: 3em;
+    }
+
+    .listConvert span {
+        font-size: 1.25em;
     }
 }
 
@@ -773,6 +967,32 @@ footer hr {
     .suggest img {
         display: block;
     }
+
+    /* Kalkulator */
+    .bg-judul {
+        padding: 7.5rem 1rem;
+        padding-top: 10rem;
+    }
+
+    .bg-hasilEmisi span {
+        font-size: 2em;
+    }
+    
+    .bg-hasilEmisi h2 {
+        font-size: 5em;
+    }
+
+    .bg-convertEmisi p {
+        font-size: 2em;
+    }
+    
+    .bg-convertEmisi span {
+        font-size: 3em;
+    }
+
+    .listConvert span {
+        font-size: 1.25em;
+    }
 }
 
 @media(min-width: 1200px) {
@@ -852,5 +1072,31 @@ footer hr {
 
     .suggest img {
         display: block;
+    }
+
+    /* Kalkulator */
+    .bg-judul {
+        padding: 7.5rem 1rem;
+        padding-top: 10rem;
+    }
+
+    .bg-hasilEmisi span {
+        font-size: 2em;
+    }
+    
+    .bg-hasilEmisi h2 {
+        font-size: 5em;
+    }
+
+    .bg-convertEmisi p {
+        font-size: 2em;
+    }
+    
+    .bg-convertEmisi span {
+        font-size: 3em;
+    }
+
+    .listConvert span {
+        font-size: 1.25em;
     }
 }
