@@ -513,6 +513,7 @@ footer hr {
     outline: none;
     border: 0;
     padding: 1rem 0rem 1rem 1rem;
+    min-width: 100px;
 }
 
 .kalkulator-card .input span {
@@ -700,6 +701,103 @@ footer hr {
     font-size: 1.25em;
 }
 
+/*  */
+/* About */
+/*  */
+
+/* About Intro */
+.bg-aboutIntro {
+    padding: 7.5rem 1rem;
+    padding-top: 10rem;
+}
+
+.about-judul img {
+    width: 300px;
+    max-width: 100%;
+}
+
+.about-judul h1 {
+    font-weight: bold;
+    font-size: 5em;
+}
+
+.about-judul hr {
+    height: 0;
+    width: 80%;
+    border: 1px solid #53C351;
+}
+
+.about-vismis {
+    padding: 2rem 0;
+}
+
+.about-vismis p {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.7;
+}
+
+.about-latar {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.about-latar h2 {
+    font-weight: bold;
+}
+
+.about-latar p {
+    line-height: 1.7;
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* About Team */
+.bg-ourTeam {
+    margin-bottom: 3rem;
+}
+
+.bg-ourTeam h2 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #53C351;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.team-container {
+    padding: 2rem 0;
+}
+
+.team-container h3 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.team-container img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.25);
+}
+
+.team-container span {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.25em;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
 @media(max-width: 576px) {
     .nav-desk {
         display: none;
@@ -832,6 +930,19 @@ footer hr {
 
     .bg-eventSearch .input button {
         padding: 0.5rem 2rem;
+    }
+
+    .bg-aboutIntro p {
+        width: 100%;
+    }
+
+    .bg-aboutIntro h1 {
+        font-size: 3em;
+    }
+
+    .team-container img {
+        height: 150px;
+        width: 150px;
     }
 }
 
