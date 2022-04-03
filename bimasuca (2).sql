@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Mar 2022 pada 15.07
+-- Waktu pembuatan: 03 Apr 2022 pada 05.29
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -87,20 +87,6 @@ CREATE TABLE `kategori` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kritik`
---
-
-CREATE TABLE `kritik` (
-  `id` int(100) NOT NULL,
-  `nama` varchar(300) DEFAULT NULL,
-  `email` varchar(300) DEFAULT NULL,
-  `isi` varchar(300) DEFAULT NULL,
-  `tanggal` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `suggestion`
 --
 
@@ -108,8 +94,17 @@ CREATE TABLE `suggestion` (
   `id` int(100) NOT NULL,
   `nama` varchar(300) DEFAULT NULL,
   `email` varchar(300) DEFAULT NULL,
-  `isi` varchar(300) DEFAULT NULL
+  `isi` varchar(300) DEFAULT NULL,
+  `tanggal` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `suggestion`
+--
+
+INSERT INTO `suggestion` (`id`, `nama`, `email`, `isi`, `tanggal`) VALUES
+(1, 'Michelle Angela Guntjoro', 'michelle.guntjoro@binus.ac.id', 'Keren banget', '2022-04-03'),
+(2, 'Hanustavira Guru Acarya', 'hanustavira.acarya@binus.ac.id', 'Mantap joss', '2022-04-03');
 
 --
 -- Indexes for dumped tables
@@ -138,12 +133,6 @@ ALTER TABLE `event`
 -- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `kritik`
---
-ALTER TABLE `kritik`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -181,16 +170,10 @@ ALTER TABLE `kategori`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `kritik`
---
-ALTER TABLE `kritik`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT untuk tabel `suggestion`
 --
 ALTER TABLE `suggestion`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
