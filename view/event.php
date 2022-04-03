@@ -11,7 +11,7 @@
     <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" /> -->
-    <link rel="stylesheet" href="../assets/css/styleUser.css">
+    <link rel="stylesheet" href="assets/css/styleUser.css">
     <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,43 +20,10 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <div class="container">
-                <nav class="nav-desk">
-                    <div class="logo">
-                        <img src="../assets/images/LogoSampingHitam.png" alt="Logo Bimasuca">
-                    </div>
-                    <ul>
-                        <li><a href="#">Beranda</a></li>
-                        <li><a href="#">Event</a></li>
-                        <li><a href="#">Kalkulator</a></li>
-                        <li><a href="#">Game</a></li>
-                    </ul>
-                    <div class="highlight">
-                        <a href="#">Tentang Kami</a>
-                    </div>
-                </nav>
-                <nav class="nav-mobile">
-                    <div class="logo">
-                        <img src="../assets/images/LogoSampingHitam.png" alt="Logo Bimasuca">
-                    </div>
-                    <div class="bars"><i class="fas fa-bars"></i></div>
-                </nav>
-            </div>
-        </header>
-        <div class="mobile-overlay">
-            <span class="close">x</span>
-            <img src="../assets/images/LogoPutih.png" alt="">
-            <ul>
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Event</a></li>
-                <li><a href="#">Kalkulator</a></li>
-                <li><a href="#">Game</a></li>
-            </ul>
-            <div class="highlight">
-                <a href="#">Tentang Kami</a>
-            </div>
-        </div>
+        <!-- Header -->
+        <?php
+            include 'layout/header.php';
+        ?>
         <div class="background">
             <section class="bg-eventSearch">
                 <div class="container">
@@ -76,7 +43,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -97,7 +64,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -118,7 +85,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -139,7 +106,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -160,7 +127,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -186,56 +153,10 @@
                 </div>
             </section>
         </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="footer-logo">
-                            <div class="row">
-                                <div class="col-7">
-                                    <img src="../assets/images/binusLogo.png" alt="Binus">
-                                </div>
-                                <div class="col-5">
-                                    <img src="../assets/images/LogoPutih.png" alt="Logo">
-                                </div>
-                            </div>
-                        </div>
-                        <p>
-                            Bimasuca merupakan platform edukasi lingkungan yang dibuat oleh Universitas Bina Nusantara @Malang dengan tujuan untuk meningkatkan kesadaran akan lingkungan yang sehat
-                        </p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-1">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>Related Link</h3>
-                                <div class="related-link">
-                                    <ul>
-                                        <li><a href="#">Campaign</a></li>
-                                        <li><a href="#">Event</a></li>
-                                        <li><a href="#">Kalkulator Emisi</a></li>
-                                        <li><a href="#">Green Maze Game</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Social Media</h3>
-                                <div class="social-media">
-                                    <ul>
-                                        <li><a href="#"><i class="fab fa-instagram"></i> <span>@bimasuca</span></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i> <span>@binus_malang</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="copyright">
-                    <span>Copyright © 2022 Bina Nusantara University</span>
-                    <span><strong>BIMASUCA</strong></span>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer -->
+        <?php
+            include 'layout/footer.php';
+        ?>
     </div>
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script> -->

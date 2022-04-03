@@ -301,9 +301,9 @@ switch($data['aksi']){
         $isi = $_POST['isi'];
         $query = add_suggestion($nama, $email, $isi);
         if($query == 'true'){
-            header("Location: ../admin/views/index?pesan=sukses");
+            header("Location: ../view/index?pesan=sukses");
         }else if($query == 'false'){
-            header("Location: ../admin/views/index?pesan=gagal");
+            header("Location: ../view/index?pesan=gagal");
         }else{
             echo "Error";
         }
