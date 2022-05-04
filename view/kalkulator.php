@@ -42,7 +42,7 @@
                                         <span>Motor</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-motor">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                         <span>Mobil</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-mobil">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                         <span>Kereta</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-kereta">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                         <span>Bus</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-bus">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                                         <span>AC</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-ac">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                         <span>Komputer</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-komputer">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                         <span>Kulkas</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-kulkas">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                         <span>Setrika</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-setrika">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                                         <span>Mesin Cuci</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-mesin-cuci">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                         <span>Hair Dryer</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-hair-dryer">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
                                         <span>Microwave</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-microwave">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@
                                         <span>Printer</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" placeholder="Insert number here">
+                                        <input type="number" placeholder="Insert number here" id="input-printer">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -193,7 +193,7 @@
                     <div class="flex-center">
                         <div>
                             <span>Total Emisi Anda</span>
-                            <h2>32393 BTU</h2>
+                            <h2><b id="total-emisi">0</b> BTU</h2>
                         </div>
                     </div>
                 </div>
@@ -203,12 +203,12 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>Energi yang anda gunakan setara dengan</p>
-                            <span>1 Kg Batu Bara</span>
+                            <span><b id="convert-batubara">0</b> Kg Batu Bara</span>
                             <div class="listConvert">
-                                <span>2 Kg Kayu Bakar</span>
-                                <span>2 Liter Bensin</span>
-                                <span>2 Liter LPG</span>
-                                <span>2 Liter Solar</span>
+                                <span><b id="convert-kayu">0</b> Kg Kayu Bakar</span>
+                                <span><b id="convert-bensin">0</b> Liter Bensin</span>
+                                <span><b id="convert-lpg">0</b> Liter LPG</span>
+                                <span><b id="convert-solar">0</b> Liter Solar</span>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -228,6 +228,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="../assets/js/kalkulator.js"></script>
     <script>
         document.querySelector(".mobile-overlay .close").addEventListener("click", () => {
             document.querySelector(".mobile-overlay").style.width = 0;
