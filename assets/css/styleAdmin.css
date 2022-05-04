@@ -156,6 +156,20 @@ nav .navbar {
     justify-content: flex-end;
 }
 
+/* Dashboard */
+.dashboard-card {
+    box-shadow: 4px 4px 16px rgb(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    border-right: 5px solid #38ee7d;
+    border-bottom: 5px solid #38ee7d;
+    text-align: center;
+    padding: 1rem .5rem;
+}
+
+.dashboard-card h2 {
+    font-size: 3em;
+}
+
 @media(max-width: 786px) {
     .flex-right {
         display: block;
