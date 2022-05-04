@@ -11,7 +11,7 @@
     <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" /> -->
-    <link rel="stylesheet" href="assets/css/styleUser.css">
+    <link rel="stylesheet" href="../assets/css/styleUser.css">
     <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -85,7 +85,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>
@@ -127,7 +127,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="eventList-image">
-                                        <img src="assets/images/event.png" alt="Event" class="w-100">
+                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
                                         <div class="eventList-kategori">
                                             <span>Kategori</span>
                                         </div>

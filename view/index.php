@@ -12,7 +12,7 @@
     <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" /> -->
-    <link rel="stylesheet" href="assets/css/styleUser.css">
+    <link rel="stylesheet" href="../assets/css/styleUser.css">
     <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,8 +42,8 @@
         ?>
         <section class="bg-banner">
             <div class="banner">
-                <img src="assets/images/awan.png" alt="Awan">
-                <img src="assets/images/banner.png" alt="Binus Malang">
+                <img src="../assets/images/awan.png" alt="Awan">
+                <img src="../assets/images/banner.png" alt="Binus Malang">
                 <div class="banner-text">
                     <span>Binus Malang Sustainable Campus</span>
                     <h1>BIMASUCA</h1>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="col-lg-5 offset-lg-1">
-                            <img src="assets/images/intro.jpeg" class="w-100" alt="Education">
+                            <img src="../assets/images/intro.jpeg" class="w-100" alt="Education">
                         </div>
                     </div>
                 </div>
@@ -82,28 +82,28 @@
                             </div>
                             <div class="event-list">
                                 <div class="event-card">
-                                    <img src="assets/images/event.png" alt="Event">
+                                    <img src="../assets/images/event.png" alt="Event">
                                     <div class="event-card-text">
                                         <h3>Green Campus</h3>
                                         <span>Binus @Malang, 12 Maret 2022</span>
                                     </div>
                                 </div>
                                 <div class="event-card">
-                                    <img src="assets/images/event.png" alt="Event">
+                                    <img src="../assets/images/event.png" alt="Event">
                                     <div class="event-card-text">
                                         <h3>Green Campus</h3>
                                         <span>Binus @Malang, 12 Maret 2022</span>
                                     </div>
                                 </div>
                                 <div class="event-card">
-                                    <img src="assets/images/event.png" alt="Event">
+                                    <img src="../assets/images/event.png" alt="Event">
                                     <div class="event-card-text">
                                         <h3>Green Campus</h3>
                                         <span>Binus @Malang, 12 Maret 2022</span>
                                     </div>
                                 </div>
                                 <div class="event-card">
-                                    <img src="assets/images/event.png" alt="Event">
+                                    <img src="../assets/images/event.png" alt="Event">
                                     <div class="event-card-text">
                                         <h3>Green Campus</h3>
                                         <span>Binus @Malang, 12 Maret 2022</span>
@@ -132,7 +132,7 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="assets/images/campaign.png" class="d-block w-100" alt="Campaign">
+                                        <img src="../assets/images/campaign.png" class="d-block w-100" alt="Campaign">
                                         <div class="backdrop"></div>
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Campaign Pertama</h5>
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/images/campaign.png" class="d-block w-100" alt="Campaign">
+                                        <img src="../assets/images/campaign.png" class="d-block w-100" alt="Campaign">
                                         <div class="backdrop"></div>
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Campaign Kedua</h5>
@@ -148,7 +148,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/images/campaign.png" class="d-block w-100" alt="Campaign">
+                                        <img src="../assets/images/campaign.png" class="d-block w-100" alt="Campaign">
                                         <div class="backdrop"></div>
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Campaign Ketiga</h5>
@@ -185,14 +185,14 @@
                             </div>
                             <div class="col-xl-4 offset-xl-1 col-md-4">
                                 <div class="flex-center">
-                                    <img src="assets/images/kalkulator.png" alt="Kalkulator" class="w-100">
+                                    <img src="../assets/images/kalkulator.png" alt="Kalkulator" class="w-100">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-4 offset-xl-1 col-md-4">
                                 <div class="flex-center">
-                                    <img src="assets/images/game.png" alt="Kalkulator" class="w-100">
+                                    <img src="../assets/images/game.png" alt="Kalkulator" class="w-100">
                                 </div>
                             </div>
                             <div class="col-xl-6 offset-xl-1 col-md-8">
@@ -218,7 +218,7 @@
                     <div class="suggest">
                         <div class="row">
                             <div class="col-lg-7">
-                                <form action="controller/route?aksi=add_suggestion" method="POST">
+                                <form action="../controller/route.php?aksi=add_suggestion" method="POST">
                                     <div class="row">
                                         <div class="col-6">
                                             <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda ...">
@@ -234,7 +234,7 @@
                                 </form>
                             </div>
                             <div class="col-lg-4 offset-lg-1">
-                                <img src="assets/images/msg.png" alt="Message" class="w-100">
+                                <img src="../assets/images/msg.png" alt="Message" class="w-100">
                             </div>
                         </div>
                     </div>

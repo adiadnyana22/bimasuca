@@ -1,5 +1,5 @@
 <?php 
 
-header("Location: beranda");
+header("Location: view/index.php");
 
 ?>

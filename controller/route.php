@@ -31,13 +31,13 @@ switch($data['aksi']){
             $_SESSION['nama'] = $decode->nama;
             $_SESSION['email'] = $decode->email;
             $_SESSION['super'] = $decode->super;
-            header("Location: ../view/admin/index?pesan=sukses");
+            header("Location: ../view/admin/index.php?pesan=sukses");
             // Jika inputan salah
         }else if($decode->id == 'FALSE'){
-            header("Location: ../view/login?pesan=salah");
+            header("Location: ../view/login.php?pesan=salah");
             // Jika data tidak ditemukan
         }else if($decode->id == NULL){
-            header("Location: ../view/login?pesan=not_found");
+            header("Location: ../view/login.php?pesan=not_found");
         }
     break;
 
@@ -301,9 +301,9 @@ switch($data['aksi']){
         $isi = $_POST['isi'];
         $query = add_suggestion($nama, $email, $isi);
         if($query == 'true'){
-            header("Location: ../view/index?pesan=sukses");
+            header("Location: ../view/index.php?pesan=sukses");
         }else if($query == 'false'){
-            header("Location: ../view/index?pesan=gagal");
+            header("Location: ../view/index.php?pesan=gagal");
         }else{
             echo "Error";
         }

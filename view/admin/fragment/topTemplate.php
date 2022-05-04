@@ -19,7 +19,7 @@
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styleAdmin.css">
+  <link rel="stylesheet" href="../../../assets/css/styleAdmin.css">
   <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
 </head>
 

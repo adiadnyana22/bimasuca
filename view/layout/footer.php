@@ -5,10 +5,10 @@
                         <div class="footer-logo">
                             <div class="row">
                                 <div class="col-7">
-                                    <img src="assets/images/binusLogo.png" alt="Binus">
+                                    <img src="../assets/images/binusLogo.png" alt="Binus">
                                 </div>
                                 <div class="col-5">
-                                    <img src="assets/images/LogoPutih.png" alt="Logo">
+                                    <img src="../assets/images/LogoPutih.png" alt="Logo">
                                 </div>
                             </div>
                         </div>
