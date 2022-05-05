@@ -8,8 +8,8 @@
 
   <!-- <script type="text/javascript" src="/backend/js/sweetalert2.js"></script>
   <script type="text/javascript" src="/backend/js/alert_label.js"></script> -->
-  <script src="../../../assets/js/sidebar.js"></script>
-  <script src="../../../assets/js/chart.js"></script>
+  <script src="../../assets/js/sidebar.js"></script>
+  <script src="../../assets/js/chart.js"></script>
 </body>
 
 </html>

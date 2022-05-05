@@ -62,13 +62,22 @@
         $query = $koneksi->prepare("DELETE FROM campaign WHERE id=?");
         $query->bind_param('s', $r_id);
         if($query->execute()){
+            // Reset Auto Increment
+            // Cek nilai terbesar
+            // $autoI = $koneksi->prepare("SELECT MAX(`id`) AS highest FROM campaign");
+            // $autoI->execute();
+            // $autoI_res = $autoI->get_result();
+            // $autoI_fetch = $autoI_res->fetch_assoc();
+            // $terbesar = $autoI_fetch['highest'] + 1;
+            // // Setel nilai auto increment
+            // $setelAutoI = $koneksi->prepare("ALTER TABLE campaign AUTO_INCREMENT = $terbesar");
+            // $setelAutoI->execute();
             $response = 'true';
             return $response;
         }else{
             $response = 'false';
             return $response;
         }
-    
     }
 
 ?>

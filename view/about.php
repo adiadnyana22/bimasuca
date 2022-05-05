@@ -29,7 +29,7 @@
                 <div class="about-judul">
                     <div class="container">
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                            <img src="assets/images/LogoHitam.png" alt="Logo Bimasuca">
+                            <img src="../assets/images/LogoHitam.png" alt="Logo Bimasuca">
                             <h1>BIMASUCA</h1>
                             <hr>
                         </div>
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                                    <img src="assets/images/visi.png" alt="Visi">
+                                    <img src="../assets/images/visi.png" alt="Visi">
                                     <p>
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores sequi eligendi ab fugit, ipsum numquam architecto commodi, perferendis, voluptatum optio quaerat incidunt minus deleniti!
                                     </p>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                                    <img src="assets/images/misi.png" alt="Misi">
+                                    <img src="../assets/images/misi.png" alt="Misi">
                                     <p>
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores sequi eligendi ab fugit, ipsum numquam architecto commodi, perferendis, voluptatum optio quaerat incidunt minus deleniti!
                                     </p>
@@ -73,19 +73,19 @@
                         <h3>Inisiator</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>
@@ -94,19 +94,19 @@
                         <h3>Website</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>
@@ -115,19 +115,19 @@
                         <h3>Marketing</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>
@@ -136,35 +136,35 @@
                         <h3>Designer</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="assets/images/hanpir.png" alt="Hanpir">
+                                <img src="../assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>

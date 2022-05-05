@@ -2,7 +2,7 @@
             <div class="container">
                 <nav class="nav-desk">
                     <div class="logo">
-                        <a href="beranda">
+                        <a href="index.php">
                             <img src="../assets/images/LogoSampingHitam.png" alt="Logo Bimasuca">
                         </a>
                     </div>
@@ -13,7 +13,7 @@
                         <li><a href="#">Game</a></li>
                     </ul>
                     <div class="highlight">
-                        <a href="tentang-kami">Tentang Kami</a>
+                        <a href="about.php">Tentang Kami</a>
                     </div>
                 </nav>
                 <nav class="nav-mobile">
@@ -38,6 +38,6 @@
                 <li><a href="#">Game</a></li>
             </ul>
             <div class="highlight">
-                <a href="tentang-kami">Tentang Kami</a>
+                <a href="about.php">Tentang Kami</a>
             </div>
         </div>

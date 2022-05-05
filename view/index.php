@@ -1,3 +1,6 @@
+<?php
+    include '../koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,34 +84,36 @@
                                 <a href="#">More Event</a>
                             </div>
                             <div class="event-list">
-                                <div class="event-card">
-                                    <img src="../assets/images/event.png" alt="Event">
-                                    <div class="event-card-text">
-                                        <h3>Green Campus</h3>
-                                        <span>Binus @Malang, 12 Maret 2022</span>
+                                <?php
+                                    $event = $koneksi->prepare("SELECT * FROM event ORDER BY id DESC LIMIT 4");
+                                    $event->execute();
+                                    $event_res = $event->get_result();
+                                ?>
+                                <?php while($event_assoc = $event_res->fetch_assoc()) { ?>
+                                    <div class="event-card">
+                                        <img src="../assets/images/event.png" alt="<?= $event_assoc['gambar'];?>">
+                                        <div class="event-card-text">
+                                            <h3><?php 
+                                            if(strlen($event_assoc['nama_event']) > 12){
+                                                echo substr($event_assoc['nama_event'], 0, 18);
+                                                echo ' ...';
+                                            }else{
+                                                echo $event_assoc['nama_event'];
+                                            }
+                                            ?></h3>
+
+                                            <?php
+                                                $date = $event_assoc['tanggal'];
+                                                $month = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+                                                $tanggal_hari = (int)date('d', strtotime($date));
+                                                $bulan_hari = $month[((int)date('m', strtotime($date))) - 1];
+                                                $tahun_hari = (int)date('Y', strtotime($date));
+                                            ?>
+
+                                            <span><?= $event_assoc['tempat'];?>, <?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="event-card">
-                                    <img src="../assets/images/event.png" alt="Event">
-                                    <div class="event-card-text">
-                                        <h3>Green Campus</h3>
-                                        <span>Binus @Malang, 12 Maret 2022</span>
-                                    </div>
-                                </div>
-                                <div class="event-card">
-                                    <img src="../assets/images/event.png" alt="Event">
-                                    <div class="event-card-text">
-                                        <h3>Green Campus</h3>
-                                        <span>Binus @Malang, 12 Maret 2022</span>
-                                    </div>
-                                </div>
-                                <div class="event-card">
-                                    <img src="../assets/images/event.png" alt="Event">
-                                    <div class="event-card-text">
-                                        <h3>Green Campus</h3>
-                                        <span>Binus @Malang, 12 Maret 2022</span>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="col-lg-5 offset-lg-1">
@@ -125,36 +130,42 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                                <?php 
+                                    $campaign = $koneksi->prepare("SELECT * FROM campaign ORDER BY id ASC LIMIT 3");
+                                    $campaign->execute();
+                                    $campaign_res = $campaign->get_result();
+                                ?>
                                 <ol class="carousel-indicators">
-                                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                    <?php for($a = 0; $a<$campaign_res->num_rows; $a++) {?>
+                                        <?php if($a == 0) { ?>
+                                            <li data-target="#carouselExampleCaptions" data-slide-to="<?= $a ?>" class="active"></li>
+                                        <?php } else { ?>
+                                            <li data-target="#carouselExampleCaptions" data-slide-to="<?= $a ?>"></li>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </ol>
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="../assets/images/campaign.png" class="d-block w-100" alt="Campaign">
-                                        <div class="backdrop"></div>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Campaign Pertama</h5>
-                                            <p>Ini adalah deskripsi untuk campaign pertama</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="../assets/images/campaign.png" class="d-block w-100" alt="Campaign">
-                                        <div class="backdrop"></div>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Campaign Kedua</h5>
-                                            <p>Ini adalah deskripsi untuk campaign kedua</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="../assets/images/campaign.png" class="d-block w-100" alt="Campaign">
-                                        <div class="backdrop"></div>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Campaign Ketiga</h5>
-                                            <p>Ini adalah deskripsi untuk campaign ketiga</p>
-                                        </div>
-                                    </div>
+                                    <?php while($campaign_assoc = $campaign_res->fetch_assoc()) { ?>
+                                        <?php if($campaign_assoc['id'] == 1) { ?>
+                                            <div class="carousel-item active">
+                                                <img src="../assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
+                                                <div class="backdrop"></div>
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5><?= $campaign_assoc['nama_campaign'];?></h5>
+                                                    <p><?= $campaign_assoc['deskripsi'];?></p>
+                                                </div>
+                                            </div>
+                                        <?php } else { ?>
+                                            <div class="carousel-item">
+                                                <img src="../assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
+                                                <div class="backdrop"></div>
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5><?= $campaign_assoc['nama_campaign'];?></h5>
+                                                    <p><?= $campaign_assoc['deskripsi'];?></p>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -180,7 +191,7 @@
                                     <p>
                                         Kalkulator untuk menghitung seberapa besar emisi yang anda keluarkan setiap harinya dan konversinya dalam bahan energi
                                     </p>
-                                    <a href="kalkulator-emisi"><button>Buka Kalkulator</button></a>
+                                    <a href="kalkulator.php"><button>Buka Kalkulator</button></a>
                                 </div>
                             </div>
                             <div class="col-xl-4 offset-xl-1 col-md-4">

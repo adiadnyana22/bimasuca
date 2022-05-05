@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Apr 2022 pada 05.29
+-- Waktu pembuatan: 05 Bulan Mei 2022 pada 10.58
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -56,6 +56,16 @@ CREATE TABLE `campaign` (
   `gambar` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `campaign`
+--
+
+INSERT INTO `campaign` (`id`, `nama_campaign`, `tanggal_post`, `deskripsi`, `gambar`) VALUES
+(1, 'Bersih Hijau', '2022-05-05', 'Bersih hijau merupakan gerakan seribu sampah, seribu penanaman pohon', 'gogreen.png'),
+(2, 'Kompos Untuk Lingkungan', '2022-05-05', 'Pembuatan pupuk kompos yang ramah lingkungan dan harganya terjangkau', 'kompos.png'),
+(3, 'Memilah & Memilih Sampah', '2022-05-05', 'Gerakan pemilahan sampah yang terpadu dan terarah', 'pemilahan.png'),
+(4, 'Kertas Daur Ulang', '2022-05-05', 'Pembuatan kertas daur ulang yang juga multipurpose', 'kertas.png');
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +83,16 @@ CREATE TABLE `event` (
   `kategori` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `event`
+--
+
+INSERT INTO `event` (`id`, `nama_event`, `tempat`, `tanggal_post`, `tanggal`, `deskripsi`, `gambar`, `kategori`) VALUES
+(1, 'Pameran Karya Barang Daur Ulang', 'Lobby Binus@Malang', '2022-05-05', '2022-05-12', 'Ikuti pameran dan bazaar barang daur ulang yang tentunya sangat bermanfaat bagi masyarakat', 'event1.jpeg', 2),
+(2, 'Penukaran Sampah', 'Parkir Binus@Malang', '2022-05-05', '2022-05-06', 'Giat penukaran sampah menjadi uang', 'event2.jpg', 2),
+(3, 'Pembuatan Pupuk Kompos', 'BBIB Singosari', '2022-05-05', '2022-05-13', 'Ikuti giat pembuatan sumur resapan di Balai Besar Inseminasi Buatan, Singosari, Malang', 'event3.jpg', 3),
+(4, 'Pembuatan Sumur Resapan', 'Kantor Kecamatan Pakis', '2022-05-05', '2022-05-17', 'Giat pembuatan sumur resapan bagi kantor kecamatan Pakis, Malang', 'event4.jpg', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +103,15 @@ CREATE TABLE `kategori` (
   `id` int(100) NOT NULL,
   `kategori` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `kategori`) VALUES
+(1, 'Kreativitas'),
+(2, 'Bisnis'),
+(3, 'Sosial');
 
 -- --------------------------------------------------------
 
@@ -104,7 +133,9 @@ CREATE TABLE `suggestion` (
 
 INSERT INTO `suggestion` (`id`, `nama`, `email`, `isi`, `tanggal`) VALUES
 (1, 'Michelle Angela Guntjoro', 'michelle.guntjoro@binus.ac.id', 'Keren banget', '2022-04-03'),
-(2, 'Hanustavira Guru Acarya', 'hanustavira.acarya@binus.ac.id', 'Mantap joss', '2022-04-03');
+(2, 'Hanustavira Guru Acarya', 'hanustavira.acarya@binus.ac.id', 'Mantap joss', '2022-04-03'),
+(3, 'Andru Baskara', 'andru.putra@binus.ac.id', 'Juoss', '2022-05-04'),
+(4, 'Fangandro Dodo Ndruru', 'fangandro@gmail.com', 'Mantap gaes', '2022-05-04');
 
 --
 -- Indexes for dumped tables
@@ -155,25 +186,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `campaign`
 --
 ALTER TABLE `campaign`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `suggestion`
 --
 ALTER TABLE `suggestion`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
