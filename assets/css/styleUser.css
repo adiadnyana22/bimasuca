@@ -284,6 +284,9 @@ nav > .highlight > a {
 
 .event-card > img {
     border-radius: .5rem;
+    object-fit: cover;
+    height: 100%;
+    width: 150px;
 }
 
 .event-card-text {
@@ -304,7 +307,15 @@ nav > .highlight > a {
     bottom: 0;
     width: 100%;
     height: 75%;
-    background: linear-gradient(to top, rgb(0, 0, 0, .75), transparent);
+    border-radius: 1rem;
+    background: linear-gradient(to top, rgb(0, 0, 0, 1), transparent);
+}
+
+.carousel-item > img {
+    border-radius: 1rem;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .carousel-caption h5 {
@@ -860,8 +871,25 @@ footer hr {
         margin-bottom: 1rem;
     }
 
+    .event-card img {
+        width: 100px;
+    }
+
     .bg-event iframe {
         margin-top: 2rem !important;
+    }
+
+    .carousel-caption {
+        display: block !important;
+    }
+
+    .carousel-caption h5 {
+        font-size: 2em;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-caption p {
+        display: none !important;
     }
 
     .feature .first {
@@ -1008,6 +1036,10 @@ footer hr {
         margin-bottom: 1rem;
     }
 
+    .event-card img {
+        width: 150px;
+    }
+
     .bg-event iframe {
         margin-top: 2rem !important;
     }
@@ -1141,6 +1173,10 @@ footer hr {
 
     .event-card {
         margin-bottom: 1rem;
+    }
+
+    .event-card img {
+        width: 150px;
     }
 
     .bg-event iframe {
@@ -1278,6 +1314,10 @@ footer hr {
         margin-bottom: 0;
     }
 
+    .event-card img {
+        width: 150px;
+    }
+
     .bg-event iframe {
         margin-top: 0;
     }
@@ -1411,6 +1451,10 @@ footer hr {
 
     .event-card {
         margin-bottom: 0;
+    }
+
+    .event-card img {
+        width: 150px;
     }
 
     .bg-event iframe {
