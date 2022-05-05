@@ -62,7 +62,7 @@ switch($data['aksi']){
             session_unset();
             // Session destroy
             session_destroy();
-            header("Location: ../view/login?pesan=logout");
+            header("Location: ../view/login.php?pesan=logout");
         }
     break;
     
