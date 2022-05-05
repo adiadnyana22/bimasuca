@@ -150,7 +150,7 @@
                     </div>
                     <div class="eventList-page">
                         <a href="#">Prev</a>
-                        <input type="text" value="1">
+                        <input type="text" value="1" readonly>
                         <a href="">Next</a>
                     </div>
                 </div>
