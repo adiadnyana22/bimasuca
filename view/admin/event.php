@@ -541,7 +541,11 @@
     </div>
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                "language": {
+                    "url": "../../assets/plugin/datatable/indonesia.json"
+                }
+            });
         } );
     </script>
 <?php

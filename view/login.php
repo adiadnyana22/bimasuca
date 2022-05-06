@@ -1,18 +1,18 @@
 <!DOCTYPE html><html lang="en">
     <head>
-        <meta name="application-name" content="Binusmaya Practicum"/>
+        <meta name="application-name" content="Bimasuca"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-        <meta name="apple-mobile-web-app-title" content="Binusmaya Practicum"/>
+        <meta name="apple-mobile-web-app-title" content="Bimasuca"/>
         <meta name="theme-color" content="#ffffff"/>
         <link rel="apple-touch-icon" href="/prk//prk/assets/logo-binus.png"/>
         <link rel="manifest" href="/prk/manifest.json"/>
         <link rel="shortcut icon" href="/prk/static/favicon.ico"/>
-        <meta charSet="UTF-8"/><meta name="author" content="GB18-2 Jonathan Gobiel, LT20-1 Lukas Tanto Kurniawan, DX20-1 Adrian, CV20-1 Calvin Arihta"/>
+        <meta charSet="UTF-8"/><meta name="author" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <meta charSet="utf-8"/>
         <title>Login</title>
-        <meta name="description" content="Login to Binusmaya Practicum"/>
+        <meta name="description" content="Login to Bimasuca"/>
         <meta name="next-head-count" content="4"/>
         <link rel="preload" href="../assets/login/files/e32c7914c4f4ca10.css" as="style"/>
         <link rel="stylesheet" href="../assets/login/files/e32c7914c4f4ca10.css" data-n-g=""/>
@@ -29,8 +29,37 @@
         <script src="../assets/login/files/_buildManifest.js" defer=""></script>
         <script src="../assets/login/files/_ssgManifest.js" defer=""></script>
         <script src="../assets/login/files/_middlewareManifest.js" defer=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
+        <?php
+            if(isset($_GET['logout']) == '1'){             
+                echo    "<script type = 'text/javascript'>
+                            Swal.fire(
+                                'Sukses!',
+                                'Berhasil Logout !',
+                                'success'
+                            )
+                        </script>";
+            }else if(isset($_GET['salah']) == '1'){
+                echo    "<script type = 'text/javascript'>
+                            Swal.fire(
+                                'Gagal!',
+                                'Username/Password salah !',
+                                'error'
+                            )
+                        </script>";
+            }else if(isset($_GET['not_found']) == '1'){
+                echo    "<script type = 'text/javascript'>
+                            Swal.fire(
+                                'Gagal!',
+                                'Data tidak ditemukan !',
+                                'error'
+                            )
+                        </script>";
+            }
+        ?>
         <div id="__next">
             <main>
                 <div class="Login_itemCenter__9j8nI">
@@ -78,7 +107,7 @@
                 </div>
             </div>
             <footer class="hidden sm:block Login_textCenter__m5Sf9">
-                <div class="Login_desktopFooter__pyfbd">Copyright © 2022 - Binus Malang Sustainable Campus</div>
+                <div class="Login_desktopFooter__pyfbd">Hak Cipta © 2022 - Binus Malang Sustainable Campus</div>
             </footer>
             <div class="Login_particlesJS__m712S" id="tsparticles">
                 <canvas style="width:100%;height:100%"></canvas>
