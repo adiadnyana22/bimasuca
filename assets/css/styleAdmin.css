@@ -117,7 +117,7 @@ nav .navbar {
 
 .weather-data img {
     margin-left: .5rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .weather-data > div  > span {
@@ -145,11 +145,17 @@ nav .navbar {
 
 .admin-judul button {
     background-color: #0d6efd;
+    border: 1px solid #0d6efd;
     color: #fff;
     border-radius: .5rem;
     padding: .5rem 2rem;
-    border: 0;
     font-weight: bold;
+    transition: .3s;
+}
+
+.admin-judul button:hover {
+    background-color: transparent;
+    color: #0d6efd;
 }
 
 /* Tambahan */

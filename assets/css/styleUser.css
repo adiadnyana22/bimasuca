@@ -79,16 +79,29 @@ nav > ul > li > a {
     display: block;
     padding: 1rem 1.5rem;
     margin: 0 .5rem;
+    transition: .3s;
+}
+
+nav > ul > li > a:hover {
+    text-decoration: none;
+    color: #53C351;
 }
 
 nav > .highlight > a {
     color: #fff;
     background-color: #53C351;
+    border: 1px solid #53C351;
     text-decoration: none;
     font-weight: bold;
     display: block;
     padding: .5rem 2rem;
     border-radius: .5rem;
+    transition: .3s;
+}
+
+nav > .highlight > a:hover {
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
 .bars {
@@ -262,9 +275,16 @@ nav > .highlight > a {
     text-decoration: none;
     display: block;
     background-color: #53C351;
+    border: 1px solid #53C351;
     color: #fff;
     padding: .5rem 1.5rem;
     border-radius: 1rem;
+    transition: .3s;
+}
+
+.event-title > a:hover {
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
 .event-list {
@@ -356,13 +376,19 @@ nav > .highlight > a {
 .feature-text > a > button {
     padding: .5rem 2rem;
     background-color: #53C351;
+    border: 1px solid #53C351;
     color: #fff;
     border-radius: 1rem;
-    border: 0;
     font-weight: bold;
     font-size: 1.25em;
     margin-top: .5rem;
     outline: none;
+    transition: .3s;
+}
+
+.feature-text > a > button:hover {
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
 .feature .row {
@@ -398,7 +424,7 @@ nav > .highlight > a {
 .suggest button {
     display: block;
     background-color: #53C351;
-    border: 0;
+    border: 1px solid #53C351;
     color: #fff;
     outline: none;
     width: 100%;
@@ -407,6 +433,12 @@ nav > .highlight > a {
     border-radius: 1rem;
     margin: .75rem 0;
     font-weight: bold;
+    transition: .3s;
+}
+
+.suggest button:hover {
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
 /* Footer */
@@ -450,6 +482,12 @@ footer ul li a {
     color: #999;
     text-decoration: none;
     font-size: 1em;
+    transition: .15s;
+}
+
+footer ul li a:hover {
+    text-decoration: none;
+    color: #ececec;
 }
 
 .social-media ul {
@@ -463,6 +501,12 @@ footer ul li a {
     justify-content: flex-start;
     align-items: center;
     font-size: 1em;
+    transition: .15s;
+}
+
+.social-media ul li a:hover {
+    text-decoration: none;
+    color: #999;
 }
 
 .social-media ul li a i {
@@ -632,7 +676,7 @@ footer hr {
 }
 
 .bg-eventSearch .input button {
-    border: 0;
+    border: 1px solid #53C351;
     padding: .5rem 3rem;
     background-color: #53C351;
     border-radius: 1rem;
@@ -640,6 +684,12 @@ footer hr {
     font-weight: bold;
     font-size: 1.25em;
     cursor: pointer;
+    transition: .3s;
+}
+
+.bg-eventSearch .input button:hover {
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
 .eventList-card {
@@ -705,12 +755,20 @@ footer hr {
 
 .eventList-page a {
     background-color: #53C351;
+    border: 1px solid #53C351;
     padding: .5rem 3rem;
     font-weight: bold;
     border-radius: 1rem;
     color: #fff;
     margin: 0 1rem;
     font-size: 1.25em;
+    transition: .3s;
+}
+
+.eventList-page a:hover {
+    color: #1f1f1f;
+    text-decoration: none;
+    background-color: transparent;
 }
 
 .eventList-page input {
@@ -722,6 +780,41 @@ footer hr {
     width: 150px;
     text-align: center;
     font-size: 1.25em;
+}
+
+/*  */
+/* Detail Event */
+/*  */
+
+/* Detail Event Info */
+.bg-eventDetailInfo {
+    padding: 1rem 0;
+    padding-top: 7.5rem;
+}
+
+.bg-eventDetailInfo img {
+    border-radius: 5rem 0 5rem 0;
+    object-fit: cover;
+    min-height: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.eventDetailText {
+    margin-bottom: 2rem;
+}
+
+.eventDetailText h1 {
+    font-size: 4em;
+}
+
+.eventDetailText span, .eventDetailText b {
+    font-size: 1.25em;
+}
+
+/* Detail Event Description */
+.bg-eventDetailDesc {
+    margin: 1rem 0 3rem;
 }
 
 /*  */
@@ -984,6 +1077,10 @@ footer hr {
         height: 150px;
         width: 150px;
     }
+
+    .eventDetailText h1 {
+        font-size: 3em;
+    }
 }
 
 @media(min-width: 576px) {
@@ -1122,6 +1219,10 @@ footer hr {
 
     .bg-eventSearch .input button {
         padding: 0.5rem 3rem;
+    }
+
+    .eventDetailText h1 {
+        font-size: 3em;
     }
 }
 
@@ -1262,6 +1363,10 @@ footer hr {
     .bg-eventSearch .input button {
         padding: 0.5rem 3rem;
     }
+
+    .eventDetailText h1 {
+        font-size: 3em;
+    }
 }
 
 @media(min-width: 992px) {
@@ -1401,6 +1506,10 @@ footer hr {
     .bg-eventSearch .input button {
         padding: 0.5rem 3rem;
     }
+
+    .eventDetailText h1 {
+        font-size: 3em;
+    }
 }
 
 @media(min-width: 1200px) {
@@ -1539,5 +1648,9 @@ footer hr {
 
     .bg-eventSearch .input button {
         padding: 0.5rem 3rem;
+    }
+
+    .eventDetailText h1 {
+        font-size: 4em;
     }
 }
