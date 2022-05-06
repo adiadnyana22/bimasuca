@@ -55,6 +55,7 @@
                         <a href="../../controller/route.php?aksi=delete_campaign&id=<?=$campaign_fetch['id'];?>">
                             <button class="btn btn-danger" type="button">Hapus</button>
                         </a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal">Contoh Detail</button>
                     </td>
                 </tr>
             <?php } ?>
@@ -68,6 +69,30 @@
         </tfoot>
     </table>
 
+    <!-- Modal Detail -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nama Campaign</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="../../assets/upload_images/campaign/kertas.png" alt="" class="w-100 mb-3">
+                <p>
+                    Ini Deskripsi
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nihil in ducimus laudantium incidunt officiis beatae iure adipisci! Veniam, explicabo dignissimos. Vitae exercitationem laborum vel adipisci esse labore quam dolorum! Blanditiis ducimus amet at fuga nam, nobis id animi? Quam dolores nemo deserunt recusandae dolor beatae consequuntur, cum modi odio.
+                </p>
+                <p>
+                    Tanggal Post : <span>24/11/2001</span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <!-- Modal Add -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
