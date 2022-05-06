@@ -3,8 +3,7 @@
 ?>
 
     <div class="admin-judul">
-        <h1>Event</h1>
-        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Event</button>
+        <h1>Suggestion</h1>
     </div>
     <table id="example" class="table table-striped" style="width:100%">
         <thead>
@@ -24,7 +23,11 @@
                 <td>Edinburgh</td>
                 <td>61</td>
                 <td>2011/04/25</td>
-                <td>$320,800</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Contoh Detail
+                    </button>
+                </td>
             </tr>
             <tr>
                 <td>Garrett Winters</td>
@@ -487,58 +490,56 @@
         </tfoot>
     </table>
 
-    <!-- Modal Add -->
+    <!-- Modal Detail -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Event</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Suggestion</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingNama" placeholder="Menanam Pohon Bersama">
-                        <label for="floatingNama">Nama Event</label>
+                <div class="row mb-3">
+                    <div class="col-2">
+                        <b>Nama</b>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingTempat" placeholder="Binus@Malang">
-                        <label for="floatingTempat">Tempat</label>
+                    <div class="col-1">
+                        <span>:</span>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingDeskripsi" placeholder="Apa aje dah">
-                        <label for="floatingDeskripsi">Deskripsi</label>
+                    <div class="col-9">
+                        <span>Hanustavira</span>
                     </div>
-                    <div class="mb-3">
-                        <label for="floatingTanggal" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="floatingTanggal">
+                    <div class="col-2">
+                        <b>Email</b>
                     </div>
-                    <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="floatingGambar">
+                    <div class="col-1">
+                        <span>:</span>
                     </div>
-                    <div class="mb-3">
-                        <label for="floatingKategori" class="form-label">Kategori</label>
-                        <select class="form-select" aria-label="Default select example" id="floatingKategori">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                    <div class="col-9">
+                        <span>hanpir@gmail.com</span>
                     </div>
-                    <hr class="mt-3">
-                    <div class="flex-right my-1">
-                        <button class="btn btn-primary">Add New Event</button>
+                    <div class="col-2">
+                        <b>Tanggal</b>
                     </div>
-                </form>
+                    <div class="col-1">
+                        <span>:</span>
+                    </div>
+                    <div class="col-9">
+                        <span>24/11/2001</span>
+                    </div>
+                </div>
+                <p>
+                    Ini Isi
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro libero odio aliquam vitae architecto ex necessitatibus eaque esse qui molestias recusandae voluptatibus non exercitationem totam magnam, autem at nam, nisi veniam? Voluptatum minus perspiciatis veritatis neque, libero vitae eveniet, quod labore ut ratione sint ipsa velit natus fugit consectetur adipisci saepe incidunt? Alias nobis eius ratione, autem et, excepturi maxime saepe animi nisi suscipit harum nihil, quasi atque id? Vitae aspernatur iure sed voluptatum ullam iusto minima magnam totam amet ad, vero esse porro consequuntur dolorum, soluta quo, saepe rerum? Libero in, commodi impedit minus ullam, debitis est adipisci nulla blanditiis quas quis, quos obcaecati! Rerum ad tempora officia distinctio accusamus, ea dicta eaque libero, exercitationem velit quas sit dolorum cupiditate assumenda? Quae odio consequatur expedita commodi repudiandae! Atque, dolorem perspiciatis repudiandae facere esse quasi earum. Similique sapiente, magnam quia animi odit omnis impedit voluptatem aperiam, voluptates itaque quae nulla.
+                </p>
             </div>
-            <!-- <div class="modal-footer">
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
+            </div>
             </div>
         </div>
     </div>
+
     <script>
         $(document).ready(function() {
             $('#example').DataTable();

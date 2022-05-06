@@ -8,6 +8,7 @@
             <li><a href="#"><i class="fas fa-layer-group"></i><span>Dashboard</span></a></li>
             <li><a href="#"><i class="fas fa-calendar"></i><span>Event</span></a></li>
             <li><a href="#"><i class="fas fa-images"></i><span>Campaign</span></a></li>
+            <li><a href="#"><i class="fas fa-comment"></i><span>Suggestion</span></a></li>
             <li><a href="#"><i class="fas fa-user-check"></i><span>Admin</span></a></li>
         </ul>
         <div class="navbar">
