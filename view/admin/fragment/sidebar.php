@@ -5,10 +5,10 @@
             <button class="text-danger" id="closeSidebar">X</button>
         </div>
         <ul>
-            <li><a href="#"><i class="fas fa-layer-group"></i><span>Dashboard</span></a></li>
-            <li><a href="#"><i class="fas fa-calendar"></i><span>Event</span></a></li>
-            <li><a href="#"><i class="fas fa-images"></i><span>Campaign</span></a></li>
-            <li><a href="#"><i class="fas fa-user-check"></i><span>Admin</span></a></li>
+            <li><a href="index.php"><i class="fas fa-layer-group"></i><span>Dashboard</span></a></li>
+            <li><a href="event.php"><i class="fas fa-calendar"></i><span>Event</span></a></li>
+            <li><a href="campaign.php"><i class="fas fa-images"></i><span>Campaign</span></a></li>
+            <li><a href="admin.php"><i class="fas fa-user-check"></i><span>Admin</span></a></li>
         </ul>
         <div class="navbar">
             <div class="user-data">

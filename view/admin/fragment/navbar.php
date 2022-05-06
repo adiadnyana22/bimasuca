@@ -1,12 +1,15 @@
 <?php
 
 require_once "geoplugin.php";
+include '../../koneksi.php';
 $geoplugin = new geoPlugin();
 $geoplugin->locate();
 // $lokasi = $geoplugin->city;
 $lokasi = 'Malang';
+// Weather API Key
+$key = $_ENV['WEATHER_API_KEY'];
 
-$link = "http://api.weatherapi.com/v1/current.json?key=e21884c678314b28a9c34220221603&q={$lokasi}&aqi=no";
+$link = "http://api.weatherapi.com/v1/current.json?key=$key&q={$lokasi}&aqi=no";
 $suhu = file_get_contents($link);
 $cek_suhu = json_decode($suhu);
 $nilai_suhu = $cek_suhu->current->feelslike_c;

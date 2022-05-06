@@ -23,7 +23,7 @@
     $suggestion_jumlah = $suggestion_res->fetch_assoc();
 ?>
 
-    <h1>Ini Dashboard</h1>
+    <h1>Dashboard</h1>
     <div class="container mt-4">
         <div class="row">
             <div class="col-lg-3 col-md-6">

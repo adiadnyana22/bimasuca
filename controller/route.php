@@ -34,10 +34,10 @@ switch($data['aksi']){
             header("Location: ../view/admin/index.php?pesan=sukses");
             // Jika inputan salah
         }else if($decode->id == 'FALSE'){
-            header("Location: ../view/login.php?pesan=salah");
+            header("Location: ../view/login.php?salah=1");
             // Jika data tidak ditemukan
         }else if($decode->id == NULL){
-            header("Location: ../view/login.php?pesan=not_found");
+            header("Location: ../view/login.php?not_found=1");
         }
     break;
 
@@ -62,21 +62,21 @@ switch($data['aksi']){
             session_unset();
             // Session destroy
             session_destroy();
-            header("Location: ../view/login.php?pesan=logout");
+            header("Location: ../view/login.php?logout=1");
         }
     break;
     
     // Administrasi
     case 'add_user':
-        $nama = $_POST['nama'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $super = $_POST['super'];
+        $nama = $_POST['floatingNama'];
+        $email = $_POST['floatingEmail'];
+        $password = $_POST['floatingPassword'];
+        $super = $_POST['floatingSuper'];
         $query = add_user($nama, $email, $password, $super);
         if($query == 'true'){
-            header("Location: ../admin/views/index?pesan=sukses");
+            header("Location: ../view/admin/admin.php?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../admin/views/index?pesan=gagal");
+            header("Location: ../view/admin/admin.php?gagal=1");
         }else{
             echo "Error";
         }
@@ -98,12 +98,12 @@ switch($data['aksi']){
         }
     break;
     case 'delete_user':
-        $id = $_POST['id'];
+        $id = $_GET['id'];
         $query = delete_user($id);
         if($query == 'true'){
-            header("Location: ../admin/views/index?pesan=sukses");
+            header("Location: ../view/admin/admin.php?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../admin/views/index?pesan=gagal");
+            header("Location: ../view/admin/admin.php?gagal=1");
         }else{
             echo "Error";
         }
