@@ -52,11 +52,11 @@
                     <td><span id="tanggal_post<?=$campaign_fetch['id'];?>"><?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span></td>
                     <td>
                         <button type="button" class="btn btn-warning edit" value="<?php echo $campaign_fetch['id']; ?>"><span class="glyphicon glyphicon-edit"></span>Edit</button>
-                        <a href="../../controller/route.php?aksi=delete_campaign&id=<?=$campaign_fetch['id'];?>">
-                            <button class="btn btn-danger" type="button">Hapus</button>
-                        </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal">Contoh Detail</button>
+                        <a class="btn btn-danger del" data-gambar="<?=$campaign_fetch['gambar'];?>" data-id="<?=$campaign_fetch['id'];?>">Hapus</a>
+                        <button type="button" class="btn btn-primary detail" value="<?php echo $campaign_fetch['id']; ?>"><span class="glyphicon glyphicon-detail"></span>Detail</button>
                     </td>
+                    <span hidden id="deskripsi<?=$campaign_fetch['id'];?>"><?=$campaign_fetch['deskripsi'];?></span>
+                    <span hidden id="gambar<?=$campaign_fetch['id'];?>"><?=$campaign_fetch['gambar'];?></span>
                 </tr>
             <?php } ?>
         </tbody>
@@ -74,17 +74,17 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nama Campaign</h5>
+                <h5 class="modal-title" id="m_nama_campaign">Nama Campaign</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="../../assets/upload_images/campaign/kertas.png" alt="" class="w-100 mb-3">
-                <p>
+                <img src="../../assets/upload_images/campaign/kertas.png" alt="" class="w-100 mb-3" id="m_gambar">
+                <p id="m_deskripsi">
                     Ini Deskripsi
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nihil in ducimus laudantium incidunt officiis beatae iure adipisci! Veniam, explicabo dignissimos. Vitae exercitationem laborum vel adipisci esse labore quam dolorum! Blanditiis ducimus amet at fuga nam, nobis id animi? Quam dolores nemo deserunt recusandae dolor beatae consequuntur, cum modi odio.
                 </p>
                 <p>
-                    Tanggal Post : <span>24/11/2001</span>
+                    Tanggal Post : <span id="m_tanggal_post">24/11/2001</span>
                 </p>
             </div>
             <div class="modal-footer">
@@ -102,22 +102,22 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="../../controller/route.php?aksi=add_campaign" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingNama" placeholder="Menanam Pohon Bersama">
+                        <input type="text" class="form-control" id="nama_campaign" name="nama_campaign" placeholder="Menanam Pohon Bersama">
                         <label for="floatingNama">Nama Event</label>
                     </div>
                     <div class="mb-3">
                         <label for="floatingDeskripsi" class="form-label">Deskripsi</label>
-                        <textarea name="" id="floatingDeskripsi" class="form-control" placeholder="Ini adalah acara tahunan dari Binus@Malang ..."></textarea>
+                        <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="Ini adalah acara tahunan dari Binus@Malang ..."></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="floatingGambar">
+                        <input type="file" class="form-control" id="files[]" name="files[]" accept="image">
                     </div>
                     <hr class="mt-3">
                     <div class="flex-right my-1">
-                        <button class="btn btn-primary">Add New Campaign</button>
+                        <button type="submit" class="btn btn-primary">Tambah Campaign</button>
                     </div>
                 </form>
             </div>
@@ -137,26 +137,28 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="../../controller/route.php?aksi=update_campaign" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="m_namacampaign" placeholder="Menanam Pohon Bersama">
-                        <label for="floatingNama">Nama Event</label>
+                        <input type="text" class="form-control" id="edit_namacampaign" name="edit_namacampaign" placeholder="Menanam Pohon Bersama">
+                        <label for="floatingNama">Nama Campaign</label>
                     </div>
                     <div class="mb-3">
                         <label for="floatingDeskripsi" class="form-label">Deskripsi</label>
-                        <textarea name="" id="m_deskripsi" class="form-control" placeholder="Ini adalah acara tahunan dari Binus@Malang ..."></textarea>
+                        <textarea name="edit_deskripsi" id="edit_deskripsi" class="form-control" placeholder="Ini adalah acara tahunan dari Binus@Malang ..."></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar Lama</label>
-                        <a href = "../../assets/upload_images/campaign/" target="_blank" id="m_gambar">
+                        <label for="floatingGambar" class="form-label">Gambar Lama : </label>
+                        <a class="btn btn-primary" href = "../../assets/upload_images/campaign/" target="_blank" id="edit_gambar_l">Preview</a>
+                        <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Baru</label>
-                        <a href = "../../assets/upload_images/campaign/" target="_blank" id="upload_gambar">
+                        <input type="file" class="form-control" id="files[]" name="files[]" accept="image">
                     </div>
+                    <input type="hidden" id="m_id" name="m_id">
                     <hr class="mt-3">
                     <div class="flex-right my-1">
-                        <button class="btn btn-primary">Add New Campaign</button>
+                        <button class="btn btn-primary">Edit Campaign</button>
                     </div>
                 </form>
             </div>
@@ -176,21 +178,74 @@
             });
         } );
     </script>
+    <!-- Scipt detail -->
+    <script>
+       $(document).ready(function(){
+        $('.detail').on('click', function(){
+            var id=$(this).val();
+            var nama_campaign=$('#nama_campaign'+id).text();
+            var tanggal_post=$('#tanggal_post'+id).text();
+            var deskripsi=$('#deskripsi'+id).text();
+            var gambar=$('#gambar'+id).text();
+            
+            const nama_cpgn = document.getElementById('m_nama_campaign');
+            const tgl_post = document.getElementById('m_tanggal_post');
+            const desc = document.getElementById('m_deskripsi');
+            const pic = document.getElementById('m_gambar');
+            
+            $('#detailModal').modal('show');
+            nama_cpgn.textContent = nama_campaign;
+            tgl_post.textContent = tanggal_post;
+            desc.textContent = deskripsi;
+            pic.src='../../assets/upload_images/campaign/'+gambar;
+
+        });
+    });
+    </script>
+    <!-- Script edit -->
     <script>
        $(document).ready(function(){
         $('.edit').on('click', function(){
             var id=$(this).val();
-            var nama_campaign=$('#nama'+id).text();
-            var tanggal_post=$('#email'+id).text();
-            var deskripsi=$('#super'+id).text();
+            var nama_campaign2=$('#nama_campaign'+id).text();
+            var deskripsi2=$('#deskripsi'+id).text();
+            var gambar2=$('#gambar'+id).text();
             
+            const edit_cpgn = document.getElementById('edit_namacampaign');
+            const edit_desc = document.getElementById('edit_deskripsi');
+            const edit_pic = document.getElementById('edit_gambar_l');
             
             $('#editModal').modal('show');
-            $('#m_nama').val(nama);
-            $('#m_email').val(email);
-            $('#m_super').val(supers);
+            $('#edit_namacampaign').val(nama_campaign2);
+            edit_desc.textContent = deskripsi2;
+            $('#m_gambar_lama').val(gambar2);
+            edit_pic.href='../../assets/upload_images/campaign/'+gambar2;
+            $('#m_id').val(id);
         });
     });
+    </script>
+    <!-- Script delete -->
+    <script>
+        $(document).ready(function(){
+            $('.del').on('click', function () {
+                id = $(this).data('id');
+                gambar = $(this).data('gambar');
+                Swal.fire({
+                    title: "Anda yakin ?",
+                    text: "Apa anda yakin ingin menghapus data ini ?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: 'Hapus',
+                    cancelButtonText: 'Batal',
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if (willDelete.isConfirmed) {
+                        window.location.href = '../../controller/route.php?aksi=delete_campaign&id='+id+'&gambar='+gambar;
+                    }
+                });
+            })
+        });
     </script>
 <?php
     include "fragment/bottomTemplate.php";

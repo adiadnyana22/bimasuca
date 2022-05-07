@@ -2,7 +2,7 @@
   session_start();
   session_regenerate_id(true);
   if(!$_SESSION['id']){
-    header("Location: ../login?pesan=nologin");
+    header("Location: ../login.php?pesan=nologin");
   }
 ?>
 

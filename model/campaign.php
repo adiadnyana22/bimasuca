@@ -21,18 +21,16 @@
         }
     }
 
-    function update_campaign($id, $nama_campaign, $tanggal_post, $deskripsi, $gambar){
+    function update_campaign($id, $nama_campaign, $deskripsi, $gambar){
         global $koneksi;
         // Sanitize input
         $r_id = mysqli_real_escape_string($koneksi, htmlspecialchars($id, ENT_QUOTES)); 
         $r_nama_campaign = mysqli_real_escape_string($koneksi, $nama_campaign);
-        $r_tanggal_post = mysqli_real_escape_string($koneksi, $tanggal_post);
         $r_deskripsi = mysqli_real_escape_string($koneksi, $deskripsi);
-        $r_gambar = mysqli_real_escape_string($koneksi, $gambar);
         // Query
-        if($gambar == 'nodata'){
-            $query = $koneksi->prepare("UPDATE campaign SET nama_campaign=?, tanggal_post=?, deskripsi=? WHERE id=?");
-            $query->bind_param('ssss', $r_nama_campaign, $r_tanggal_post, $r_deskripsi, $r_id);
+        if($gambar == NULL){
+            $query = $koneksi->prepare("UPDATE campaign SET nama_campaign=?, deskripsi=? WHERE id=?");
+            $query->bind_param('sss', $r_nama_campaign, $r_deskripsi, $r_id);
             if($query->execute()){
                 $response = 'true';
                 return $response;
@@ -41,8 +39,9 @@
                 return $response;
             }
         }else{
-            $query = $koneksi->prepare("UPDATE campaign SET nama_campaign=?, tanggal_post=?, deskripsi=?, gambar=? WHERE id=?");
-            $query->bind_param('sssss', $r_nama_campaign, $r_tanggal_post, $r_deskripsi, $r_gambar, $r_id);
+            $r_gambar = mysqli_real_escape_string($koneksi, $gambar);
+            $query = $koneksi->prepare("UPDATE campaign SET nama_campaign=?, deskripsi=?, gambar=? WHERE id=?");
+            $query->bind_param('ssss', $r_nama_campaign, $r_deskripsi, $r_gambar, $r_id);
             if($query->execute()){
                 $response = 'true';
                 return $response;
@@ -62,16 +61,6 @@
         $query = $koneksi->prepare("DELETE FROM campaign WHERE id=?");
         $query->bind_param('s', $r_id);
         if($query->execute()){
-            // Reset Auto Increment
-            // Cek nilai terbesar
-            // $autoI = $koneksi->prepare("SELECT MAX(`id`) AS highest FROM campaign");
-            // $autoI->execute();
-            // $autoI_res = $autoI->get_result();
-            // $autoI_fetch = $autoI_res->fetch_assoc();
-            // $terbesar = $autoI_fetch['highest'] + 1;
-            // // Setel nilai auto increment
-            // $setelAutoI = $koneksi->prepare("ALTER TABLE campaign AUTO_INCREMENT = $terbesar");
-            // $setelAutoI->execute();
             $response = 'true';
             return $response;
         }else{

@@ -60,7 +60,7 @@
                 <?php if($_SESSION['super'] == '1'){ ?>
                     <td>
                         <button type="button" class="btn btn-warning edit" value="<?php echo $fetch_admin['id']; ?>"><span class="glyphicon glyphicon-edit"></span>Edit</button>
-                        <a class="btn btn-danger del" data-id="<?=$fetch_admin['id'];?>">Delete</a>
+                        <a class="btn btn-danger del" data-id="<?=$fetch_admin['id'];?>">Hapus</a>
                     </td>
                 <?php } else { ?>
 
@@ -134,26 +134,27 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="../../controller/route.php?aksi=update_user" method="POST">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="m_nama" placeholder="Hanustavira Guru">
+                        <input type="text" class="form-control" id="m_nama" name="m_nama" placeholder="Hanustavira Guru">
                         <label for="floatingNama">Nama</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="m_email" placeholder="hanpir@gmail.com">
+                        <input type="email" class="form-control" id="m_email" name="m_email" placeholder="hanpir@gmail.com">
                         <label for="floatingEmail">Email</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="m_password" placeholder="apahayo123">
+                        <input type="password" class="form-control" id="m_password" name="m_password" placeholder="apahayo123">
                         <label for="floatingPassword">Password</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select class="form-control" id="m_super">
+                        <select class="form-control" id="m_super" name="m_super">
                             <option value="1">Ya</option>
                             <option value="0">Tidak</option>
                         </select>
                         <label for="floatingSuper">Super Admin ?</label>
                     </div>
+                    <input type="hidden" id="m_id" name="m_id">
                     <hr class="mt-3">
                     <div class="flex-right my-1">
                         <button class="btn btn-primary">Edit Admin</button>
@@ -176,6 +177,7 @@
             });
         } );
     </script>
+    <!-- Edit -->
     <script>
        $(document).ready(function(){
         $('.edit').on('click', function(){
@@ -188,21 +190,26 @@
             $('#m_nama').val(nama);
             $('#m_email').val(email);
             $('#m_super').val(supers);
+            $('#m_id').val(id);
         });
     });
     </script>
+    <!-- Delete -->
     <script>
         $(document).ready(function(){
-            $(".del").on("click", function () {
+            $('.del').on('click', function () {
                 id = $(this).data('id');
-                swal({
+                Swal.fire({
                     title: "Anda yakin ?",
                     text: "Apa anda yakin ingin menghapus data ini ?",
                     icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: 'Hapus',
+                    cancelButtonText: 'Batal',
                     buttons: true,
                     dangerMode: true,
                 }).then((willDelete) => {
-                    if (willDelete) {
+                    if (willDelete.isConfirmed) {
                         window.location.href = '../../controller/route.php?aksi=delete_user&id='+id;
                     }
                 });
