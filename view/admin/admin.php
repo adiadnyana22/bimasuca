@@ -56,6 +56,7 @@
                             <?php echo 'Tidak' ?>
                         <?php } ?>
                     </span>
+                    <span hidden id="super_id<?=$fetch_admin['id'];?>"><?=$fetch_admin['super'];?></span>
                 </td>
                 <?php if($_SESSION['super'] == '1'){ ?>
                     <td>
@@ -184,12 +185,14 @@
             var id=$(this).val();
             var nama=$('#nama'+id).text();
             var email=$('#email'+id).text();
-            var supers=$('#super'+id).text();
+            var supers=$('#super_id'+id).text();
             
+            const supers_status = document.getElementById('m_super');
+
             $('#editModal').modal('show');
             $('#m_nama').val(nama);
             $('#m_email').val(email);
-            $('#m_super').val(supers);
+            supers_status.value = supers;
             $('#m_id').val(id);
         });
     });

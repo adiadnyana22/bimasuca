@@ -33,9 +33,8 @@
         $r_tanggal = mysqli_real_escape_string($koneksi, $tanggal);
         $r_deskripsi = mysqli_real_escape_string($koneksi, $deskripsi);
         $r_kategori = mysqli_real_escape_string($koneksi, $kategori);
-        $r_gambar = mysqli_real_escape_string($koneksi, $gambar);
         // Query
-        if($gambar == 'nodata'){
+        if($gambar == NULL){
             $query = $koneksi->prepare("UPDATE event SET nama_event=?, tempat=?, tanggal=?, deskripsi=?, kategori=? WHERE id=?");
             $query->bind_param('ssssss', $r_nama_event, $r_tempat, $r_tanggal, $r_deskripsi, $r_kategori, $r_id);
             if($query->execute()){
@@ -46,6 +45,7 @@
                 return $response;
             }
         }else{
+            $r_gambar = mysqli_real_escape_string($koneksi, $gambar);
             $query = $koneksi->prepare("UPDATE event SET nama_event=?, tempat=?, tanggal=?, deskripsi=?, kategori=?, gambar=? WHERE id=?");
             $query->bind_param('sssssss', $r_nama_event, $r_tempat, $r_tanggal, $r_deskripsi, $r_kategori, $r_gambar, $r_id);
             if($query->execute()){

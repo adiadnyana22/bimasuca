@@ -111,12 +111,12 @@ switch($data['aksi']){
 
     // Event
     case 'add_event':
-        $nama_event = $_POST['nama_event'];
-        $tempat = $_POST['tempat'];
+        $nama_event = $_POST['floatingNama'];
+        $tempat = $_POST['floatingTempat'];
         $tanggal_post = date("Y-m-d");
-        $tanggal = $_POST['tanggal'];
-        $deskripsi = $_POST['deskripsi'];
-        $kategori = $_POST['kategori'];
+        $tanggal = $_POST['floatingTanggal'];
+        $deskripsi = $_POST['m_deskripsi'];
+        $kategori = $_POST['floatingKategori'];
         // Upload gambar
         if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
             foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
@@ -134,27 +134,24 @@ switch($data['aksi']){
         }
         $query = add_event($nama_event, $tempat, $tanggal_post, $tanggal, $deskripsi, $gambar, $kategori);
         if($query == 'true'){
-            header("Location: ../admin/views/index?pesan=sukses");
+            header("Location: ../view/admin/event.php?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../admin/views/index?pesan=gagal");
+            header("Location: ../view/admin/event.php?gagal=1");
         }else{
             echo "Error";
         }
     break;
     case 'update_event':
-        $id = $_POST['id'];
-        $nama_event = $_POST['nama_event'];
-        $tempat = $_POST['tempat'];
-        $tanggal = $_POST['tanggal'];
-        $deskripsi = $_POST['deskripsi'];
-        $kategori = $_POST['kategori'];
-        $gambar_lama = $_POST['gambar_lama'];
+        $id = $_POST['m_id'];
+        $nama_event = $_POST['m_nama_edit'];
+        $tempat = $_POST['m_tempat_edit'];
+        $tanggal = $_POST['m_tanggal'];
+        $deskripsi = $_POST['ubah_desc'];
+        $kategori = $_POST['m_kategori'];
+        $gambar_lama = $_POST['m_gambar_lama'];
+
         // Upload gambar
         if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
-            $filename = '../assets/upload_images/event/'.$gambar_lama;
-            if(file_exists($filename)){
-                unlink($filename);
-            }
             foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
                 $file_name = $key.$_FILES['files']['name'][$key];
                 $file_size =$_FILES['files']['size'][$key];
@@ -164,41 +161,49 @@ switch($data['aksi']){
                 $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
                 if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
                     $gambar = uniqid() . '.' . $ext;
-                    move_uploaded_file($file_tmp,'../assets/upload_images/event/'.$gambar);
+                    if(is_null($gambar)){
+                        $gambar = NULL;
+                    }else{
+                        $filename = '../assets/upload_images/event/'.$gambar_lama;
+                        if(file_exists($filename)){
+                            unlink($filename);
+                        }
+                        move_uploaded_file($file_tmp,'../assets/upload_images/event/'.$gambar);
+                    }
                 }
             }
             $query = update_event($id, $nama_event, $tempat, $tanggal, $deskripsi, $kategori, $gambar);
             if($query == 'true'){
-                header("Location: ../admin/views/index?pesan=sukses");
+                header("Location: ../view/admin/event.php?sukses=1");
             }else if($query == 'false'){
-                header("Location: ../admin/views/index?pesan=gagal");
+                header("Location: ../view/admin/event.php?gagal=1");
             }else{
                 echo "Error";
             }
         }else{
-            $gambar = 'nodata';
+            $gambar = NULL;
             $query = update_event($id, $nama_event, $tempat, $tanggal, $deskripsi, $kategori, $gambar);
             if($query == 'true'){
-                header("Location: ../admin/views/index?pesan=sukses");
+                header("Location: ../view/admin/event.php?sukses=1");
             }else if($query == 'false'){
-                header("Location: ../admin/views/index?pesan=gagal");
+                header("Location: ../view/admin/event.php?gagal=1");
             }else{
                 echo "Error";
             }
         }
     break;
     case 'delete_event':
-        $id = $_POST['id'];
-        $gambar_lama = $_POST['gambar_lama'];
+        $id = $_GET['id'];
+        $gambar_lama = $_GET['gambar'];
         $filename = '../assets/upload_images/event/'.$gambar_lama;
         if(file_exists($filename)){
             unlink($filename);
         }
         $query = delete_event($id);
         if($query == 'true'){
-            header("Location: ../admin/views/index?pesan=sukses");
+            header("Location: ../view/admin/event.php?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../admin/views/index?pesan=gagal");
+            header("Location: ../view/admin/event.php?gagal=1");
         }else{
             echo "Error";
         }
@@ -262,11 +267,7 @@ switch($data['aksi']){
             }
             $query = update_campaign($id, $nama_campaign, $deskripsi, $gambar);
             if($query == 'true'){
-                // header("Location: ../view/admin/campaign.php?sukses=1");
-                echo var_dump($gambar);
-                // echo var_dump($nama_campaign);
-                // echo var_dump($deskripsi);
-                // echo var_dump($gambar_lama);
+                header("Location: ../view/admin/campaign.php?sukses=1");
             }else if($query == 'false'){
                 header("Location: ../view/admin/campaign.php?gagal=1");
             }else{
