@@ -36,7 +36,6 @@
             <tr>
                 <th>Nama</th>
                 <th>Tempat</th>
-                <th>Tanggal Event</th>
                 <th>Kategori</th>
                 <th>Tanggal Post</th>
                 <th>Aksi</th>
@@ -60,7 +59,7 @@
                 ?>
                 <tr>
                     <td><span id="nama_event<?=$event_fetch['id'];?>"><?=$event_fetch['nama_event'];?></span></td>
-                    <td><span id="tempat<?=$event_fetch['id'];?>"><?=$event_fetch['tempat'];?></span></td>
+                    <span hidden id="tempat<?=$event_fetch['id'];?>"><?=$event_fetch['tempat'];?></span>
                     <td><span id="tanggal<?=$event_fetch['id'];?>"><?=$tanggal_hari_event.' '.$bulan_hari_event.' '.$tahun_hari_event ?></span></td>
                     <td><span id="kategori<?=$event_fetch['id'];?>"><?=$event_fetch['nama_kategori'];?></span></td>
                     <td><span id="tanggal_post<?=$event_fetch['id'];?>"><?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span></td>
@@ -80,7 +79,6 @@
             <tr>
                 <th>Nama</th>
                 <th>Tempat</th>
-                <th>Tanggal Event</th>
                 <th>Kategori</th>
                 <th>Tanggal Post</th>
                 <th>Aksi</th>
