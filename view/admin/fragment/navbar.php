@@ -4,8 +4,8 @@ require_once "geoplugin.php";
 include '../../koneksi.php';
 $geoplugin = new geoPlugin();
 $geoplugin->locate();
-$lokasi = $geoplugin->city;
-// $lokasi = 'Malang';
+// $lokasi = $geoplugin->city;
+$lokasi = 'Malang';
 // Weather API Key
 $key = $_ENV['WEATHER_API_KEY'];
 

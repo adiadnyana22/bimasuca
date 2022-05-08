@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
   <link rel="stylesheet" href="../../assets/css/styleAdmin.css">
   <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
-  
+  <script src="https://cdn.tiny.cloud/1/nns9dr1li8ktblwem27nin3svzbxy1spk5qi838b96r4jmjf/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 

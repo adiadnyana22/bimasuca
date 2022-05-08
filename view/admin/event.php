@@ -63,7 +63,7 @@
                     <td><span id="tanggal<?=$event_fetch['id'];?>"><?=$tanggal_hari_event.' '.$bulan_hari_event.' '.$tahun_hari_event ?></span></td>
                     <td><span id="kategori<?=$event_fetch['id'];?>"><?=$event_fetch['nama_kategori'];?></span></td>
                     <td><span id="tanggal_post<?=$event_fetch['id'];?>"><?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span></td>
-                    <span hidden id="deskripsi<?php echo $event_fetch['id'];?>"><?php echo $event_fetch['deskripsi'];?></span>
+                    <span hidden id="deskripsi<?= $event_fetch['id'];?>"><?= $event_fetch['deskripsi'];?></span>
                     <td>
                         <button type="button" class="btn btn-warning edit" value="<?php echo $event_fetch['id']; ?>"><span class="glyphicon glyphicon-edit"></span>Edit</button>
                         <a class="btn btn-danger del" data-gambar="<?=$event_fetch['gambar'];?>" data-id="<?=$event_fetch['id'];?>">Hapus</a>
@@ -217,16 +217,39 @@
     <!-- Script edit -->
     <script>
        $(document).ready(function(){
+        // Prevent Bootstrap dialog from blocking focusin
+        document.addEventListener('focusin', (e) => {
+        if (e.target.closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root") !== null) {
+            e.stopImmediatePropagation();
+        }
+        });
+
+        tinymce.init({
+            selector: '#ubah_desc',
+            language: 'id',
+            plugins: 'a11ychecker code advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            forced_root_block : 'div',
+            setup: function (editor) {
+            editor.on('init', function (e) {
+                editor.setContent('Helo');
+            });
+            }
+        });
         $('.edit').on('click', function(){
             var id=$(this).val();
             var nama_event=$('#nama_event'+id).text();
             var tempat=$('#tempat'+id).text();
-            var deskripsi=$('#deskripsi'+id).text();
+            var deskripsi=$('#deskripsi'+id).html();
             var tanggal=$('#tanggal_asli'+id).text();
             var gambar_l=$('#gambar'+id).text();
             var kategori_val=$('#id_kategori'+id).text();
             
-            const edit_desk = document.getElementById('ubah_desc');
+            tinymce.get("ubah_desc").setContent(deskripsi);
+
             const edit_pic = document.getElementById('edit_gambar_l');
             const edit_tgl = document.getElementById('m_tanggal');
             
@@ -234,7 +257,6 @@
             $('#m_nama_edit').val(nama_event);
             $('#m_tempat_edit').val(tempat);
             
-            edit_desk.textContent = deskripsi;
             $('#m_tanggal').val(tanggal);
             $('#m_gambar_lama').val(gambar_l);
             edit_pic.href='../../assets/upload_images/event/'+gambar_l;
@@ -264,6 +286,18 @@
                     }
                 });
             })
+        });
+    </script>
+    <!-- TinyMCE -->
+    <script>
+        tinymce.init({
+            selector: '#m_deskripsi',
+            language: 'id',
+            plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
         });
     </script>
 <?php

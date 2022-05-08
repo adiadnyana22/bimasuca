@@ -90,7 +90,7 @@
                                             </a>
                                             <span><?=$event_fetch['tempat'];?> / <?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span>
                                             <p>
-                                                <?=$event_fetch['deskripsi'];?>
+                                                <?=strip_tags($event_fetch['deskripsi']);?>
                                             </p>
                                         </div>
                                     </div>

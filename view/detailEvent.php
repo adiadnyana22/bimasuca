@@ -103,9 +103,7 @@
             </section>
             <section class="bg-eventDetailDesc">
                 <div class="container">
-                    <p>
-                        <?= $query_fetch['deskripsi']; ?>
-                    </p>
+                    <?= $query_fetch['deskripsi']; ?>
                 </div>
             </section>
         </div>
