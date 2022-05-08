@@ -1,6 +1,6 @@
 <?php
     include '../koneksi.php';
-    $id = isset($_GET['id']);
+    $id = $_GET['id'];
     $query = $koneksi->prepare("SELECT 
     event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
     kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
