@@ -1,5 +1,27 @@
 <?php
     include '../koneksi.php';
+    if(isset($_GET['cari'])){
+        $cari = $_GET['cari'];
+        $query = "SELECT 
+        event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
+        kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
+        FROM event INNER JOIN kategori ON event.kategori = kategori.id
+        WHERE (nama_event LIKE '%$cari%') ORDER BY tanggal DESC";
+    }else{
+        $query = "SELECT event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, kategori.kategori AS nama_kategori, event.kategori AS id_kategori FROM event INNER JOIN kategori ON event.kategori = kategori.id ORDER BY tanggal DESC";
+    }
+    $exec = mysqli_query($koneksi, $query);
+
+    $jumlahDataHalaman = 5;
+    $totalData = mysqli_num_rows($exec);
+    $jumlahHalaman = ceil($totalData/$jumlahDataHalaman);
+
+    $halamanAktif = isset($_GET['halaman']) ? $_GET['halaman'] : 1;
+
+    $awalData = ($jumlahDataHalaman * $halamanAktif) - $jumlahDataHalaman;
+
+    $query.=" LIMIT $awalData, $jumlahDataHalaman";
+    $exec = mysqli_query($koneksi,$query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +55,8 @@
                 <div class="container">
                     <h1>Event List</h1>
                     <div class="input">
-                        <form action="" class="d-flex justify-content-between w-100">
-                            <input type="text" placeholder="Enter Event Name Here ...">
+                        <form action="event.php" class="d-flex justify-content-between w-100" method="GET">
+                            <input type="text" placeholder="Masukkan Nama Event Disini ..." id="cari" name="cari">
                             <button>Cari</button>
                         </form>
                     </div>
@@ -43,111 +65,38 @@
             <section class="bg-eventList">
                 <div class="container">
                     <div class="eventList-container">
-                        <div class="eventList-card">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
-                                        <div class="eventList-kategori">
-                                            <span>Kategori</span>
+                        <?php while($event_fetch = mysqli_fetch_array($exec)) { ?>
+                            <div class="eventList-card">
+                                <?php 
+                                    $date = $event_fetch['tanggal'];
+                                    $month = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+                                    $tanggal_hari = (int)date('d', strtotime($date));
+                                    $bulan_hari = $month[((int)date('m', strtotime($date))) - 1];
+                                    $tahun_hari = (int)date('Y', strtotime($date));
+                                ?>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="eventList-image">
+                                            <img src="../assets/upload_images/event/<?=$event_fetch['gambar'];?>" alt="<?=$event_fetch['gambar'];?>" class="w-100">
+                                            <div class="eventList-kategori">
+                                                <span><?=$event_fetch['nama_kategori'];?></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="eventList-text">
+                                            <a href="detailEvent.php?id=<?=$event_fetch['id'];?>">
+                                                <h2><?=$event_fetch['nama_event'];?></h2>
+                                            </a>
+                                            <span><?=$event_fetch['tempat'];?> / <?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span>
+                                            <p>
+                                                <?=$event_fetch['deskripsi'];?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-9">
-                                    <div class="eventList-text">
-                                        <h2>Event Name</h2>
-                                        <span>Binus @Malang / 12 Maret 2022</span>
-                                        <p>
-                                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                        <div class="eventList-card">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
-                                        <div class="eventList-kategori">
-                                            <span>Kategori</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="eventList-text">
-                                        <h2>Event Name</h2>
-                                        <span>Binus @Malang / 12 Maret 2022</span>
-                                        <p>
-                                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="eventList-card">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
-                                        <div class="eventList-kategori">
-                                            <span>Kategori</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="eventList-text">
-                                        <h2>Event Name</h2>
-                                        <span>Binus @Malang / 12 Maret 2022</span>
-                                        <p>
-                                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="eventList-card">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
-                                        <div class="eventList-kategori">
-                                            <span>Kategori</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="eventList-text">
-                                        <h2>Event Name</h2>
-                                        <span>Binus @Malang / 12 Maret 2022</span>
-                                        <p>
-                                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="eventList-card">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="eventList-image">
-                                        <img src="../assets/images/event.png" alt="Event" class="w-100">
-                                        <div class="eventList-kategori">
-                                            <span>Kategori</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="eventList-text">
-                                        <h2>Event Name</h2>
-                                        <span>Binus @Malang / 12 Maret 2022</span>
-                                        <p>
-                                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                     <div class="eventList-page">
                         <a href="#">Prev</a>

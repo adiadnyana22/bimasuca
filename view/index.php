@@ -82,7 +82,7 @@
                         <div class="col-lg-6">
                             <div class="event-title">
                                 <h2>Event</h2>
-                                <a href="#">More Event</a>
+                                <a href="#">Selengkapnya</a>
                             </div>
                             <div class="event-list">
                                 <?php
@@ -93,26 +93,28 @@
                                 <?php while($event_assoc = $event_res->fetch_assoc()) { ?>
                                     <div class="event-card">
                                         <img src="../assets/upload_images/event/<?= $event_assoc['gambar'];?>" alt="<?= $event_assoc['gambar'];?>">
-                                        <div class="event-card-text">
-                                            <h3><?php 
-                                            // if(strlen($event_assoc['nama_event']) > 12){
-                                            //     echo substr($event_assoc['nama_event'], 0, 18);
-                                            //     echo ' ...';
-                                            // }else{
-                                                echo $event_assoc['nama_event'];
-                                            // }
-                                            ?></h3>
+                                        <a href="detailEvent.php?id=<?= $event_assoc['id'];?>">
+                                            <div class="event-card-text">
+                                                <h3><?php 
+                                                // if(strlen($event_assoc['nama_event']) > 12){
+                                                //     echo substr($event_assoc['nama_event'], 0, 18);
+                                                //     echo ' ...';
+                                                // }else{
+                                                    echo $event_assoc['nama_event'];
+                                                // }
+                                                ?></h3>
 
-                                            <?php
-                                                $date = $event_assoc['tanggal'];
-                                                $month = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
-                                                $tanggal_hari = (int)date('d', strtotime($date));
-                                                $bulan_hari = $month[((int)date('m', strtotime($date))) - 1];
-                                                $tahun_hari = (int)date('Y', strtotime($date));
-                                            ?>
+                                                <?php
+                                                    $date = $event_assoc['tanggal'];
+                                                    $month = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+                                                    $tanggal_hari = (int)date('d', strtotime($date));
+                                                    $bulan_hari = $month[((int)date('m', strtotime($date))) - 1];
+                                                    $tahun_hari = (int)date('Y', strtotime($date));
+                                                ?>
 
-                                            <span><?= $event_assoc['tempat'];?>, <?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span>
-                                        </div>
+                                                <span><?= $event_assoc['tempat'];?>, <?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span>
+                                            </div>
+                                        </a>
                                     </div>
                                 <?php } ?>
                             </div>

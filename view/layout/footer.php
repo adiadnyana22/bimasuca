@@ -19,18 +19,18 @@
                     <div class="col-lg-6 offset-lg-1">
                         <div class="row">
                             <div class="col-md-6">
-                                <h3>Related Link</h3>
+                                <h3>Link</h3>
                                 <div class="related-link">
                                     <ul>
                                         <li><a href="#">Campaign</a></li>
-                                        <li><a href="event">Event</a></li>
-                                        <li><a href="kalkulator-emisi">Kalkulator Emisi</a></li>
+                                        <li><a href="event.php">Event</a></li>
+                                        <li><a href="kalkulator.php">Kalkulator Emisi</a></li>
                                         <li><a href="#">Green Maze Game</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h3>Social Media</h3>
+                                <h3>Media Sosial</h3>
                                 <div class="social-media">
                                     <ul>
                                         <li><a href="https://www.instagram.com/bimasucabinus/"><i class="fab fa-instagram"></i> <span>@bimasuca</span></a></li>
@@ -43,7 +43,7 @@
                 </div>
                 <hr>
                 <div class="copyright">
-                    <span>Copyright © 2022 Bina Nusantara University</span>
+                    <span>Hak Cipta © 2022 Bina Nusantara University</span>
                     <span><strong>BIMASUCA</strong></span>
                 </div>
             </div>

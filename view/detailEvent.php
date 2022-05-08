@@ -1,5 +1,29 @@
 <?php
     include '../koneksi.php';
+    $id = isset($_GET['id']);
+    $query = $koneksi->prepare("SELECT 
+    event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
+    kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
+    FROM event INNER JOIN kategori ON event.kategori = kategori.id
+    WHERE event.id = ?");
+    $query->bind_param('s', $id);
+    $query->execute();
+    $query_res = $query->get_result();
+    $query_fetch = $query_res->fetch_assoc();
+
+    // Tanggal Post
+    $date = $query_fetch['tanggal_post'];
+    $month = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+    $tanggal_hari = (int)date('d', strtotime($date));
+    $bulan_hari = $month[((int)date('m', strtotime($date))) - 1];
+    $tahun_hari = (int)date('Y', strtotime($date));
+    // Tanggal Event
+    $date_event = $query_fetch['tanggal'];
+    $month_event = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+    $tanggal_hari_event = (int)date('d', strtotime($date_event));
+    $bulan_hari_event = $month_event[((int)date('m', strtotime($date_event))) - 1];
+    $tahun_hari_event = (int)date('Y', strtotime($date_event));
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,18 +57,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <img src="../assets/images/event.png" alt="" class="w-100">
+                            <img src="../assets/upload_images/event/<?= $query_fetch['gambar']; ?>" alt="" class="w-100">
                         </div>
                         <div class="offset-lg-1 col-lg-6">
                             <div class="flex-center">
                                 <div class="eventDetailText">
-                                    <h1>Event Menanam Pohon Tahunan</h1>
+                                    <h1><?= $query_fetch['nama_event']; ?></h1>
                                     <div class="row mb-2 mt-4">
                                         <div class="col-5">
                                             <span>Kategori</span>
                                         </div>
                                         <div class="col-7">
-                                            <b>Sosial</b>
+                                            <b><?= $query_fetch['nama_kategori']; ?></b>
                                         </div>
                                     </div>
                                     <div class="row mb-2">
@@ -52,7 +76,7 @@
                                             <span>Tempat</span>
                                         </div>
                                         <div class="col-7">
-                                            <b>Lobby Binus@Malang</b>
+                                            <b><?= $query_fetch['tempat']; ?></b>
                                         </div>
                                     </div>
                                     <div class="row mb-2">
@@ -60,7 +84,7 @@
                                             <span>Tanggal Event</span>
                                         </div>
                                         <div class="col-7">
-                                            <b>24/11/2001</b>
+                                            <b><?=$tanggal_hari_event.' '.$bulan_hari_event.' '.$tahun_hari_event ?></b>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -68,7 +92,7 @@
                                             <span>Tanggal Post</span>
                                         </div>
                                         <div class="col-7">
-                                            <b>24/11/2022</b>
+                                            <b><?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -80,16 +104,7 @@
             <section class="bg-eventDetailDesc">
                 <div class="container">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem incidunt magni, id possimus minima voluptatum nisi quas reiciendis. Accusantium quisquam consectetur autem itaque laborum iusto aliquam nostrum fugiat, veritatis placeat dicta ut nam consequatur ipsam tempora. Quam nostrum eum veniam veritatis cupiditate quia laboriosam nemo, sequi ut fugiat quisquam dignissimos incidunt? Commodi vero, dicta itaque autem animi ullam odio repudiandae incidunt velit veritatis, alias reprehenderit aperiam maxime sit amet, quod eum corrupti! Odit qui tempora dolorem, totam delectus necessitatibus debitis nisi consequatur explicabo aliquid quae molestiae saepe laboriosam reiciendis eaque nam maxime voluptas exercitationem accusantium rem rerum aliquam iste at. Eligendi aspernatur consequatur, aut, iure ut dolorem molestiae odio unde nobis sint repudiandae maxime quisquam ad, et accusamus nihil beatae? Iste explicabo dignissimos enim? Eligendi voluptate praesentium facere excepturi cum placeat eos blanditiis adipisci non tempore? Doloribus iure assumenda pariatur nemo deserunt asperiores quia enim voluptate? Beatae, et! Repellat sequi officiis et maiores totam numquam nemo est cum quos libero rerum commodi quod ut adipisci ullam voluptatum, quo voluptatem impedit illo suscipit molestiae eaque reiciendis mollitia odio. Ut cum ipsam, nulla dolorum laborum eum hic ducimus dignissimos sint quae voluptate labore quibusdam nihil quidem. Quam pariatur eveniet culpa omnis autem.
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis delectus ex est nostrum molestias voluptate sequi blanditiis accusamus iusto? Ipsum dolores commodi illo quis nam nostrum quibusdam. Incidunt debitis cumque eligendi libero soluta blanditiis voluptatibus, eum, rerum perferendis sunt temporibus nemo iusto exercitationem maxime earum, rem doloribus neque eos nisi.
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate officiis sint fugiat optio quae ipsum, dolore voluptatem earum soluta? Distinctio nobis ab quae cum amet repellat quo adipisci ipsa mollitia alias, pariatur iusto enim recusandae in doloribus assumenda temporibus labore ullam totam sunt eligendi, nisi maxime quam tenetur. Quod, quisquam accusamus delectus veritatis, dolorum provident quia iusto sit, exercitationem sed perferendis earum nostrum dicta dolor. Iste rerum quo dolores nulla blanditiis quod provident praesentium dolore a nam. Minus dolore magnam velit possimus maxime distinctio mollitia nostrum accusantium eos explicabo atque incidunt quasi quaerat, iusto vel, eveniet doloremque eligendi fuga necessitatibus!
-                        <br>
-                        <br>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla porro vero harum? Veniam illo ut ea error maiores, tempore consequatur voluptate ipsa culpa mollitia pariatur.
+                        <?= $query_fetch['deskripsi']; ?>
                     </p>
                 </div>
             </section>
