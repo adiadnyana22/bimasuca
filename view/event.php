@@ -56,7 +56,11 @@
                     <h1>Event List</h1>
                     <div class="input">
                         <form action="event.php" class="d-flex justify-content-between w-100" method="GET">
-                            <input type="text" placeholder="Masukkan Nama Event Disini ..." id="cari" name="cari">
+                            <?php if(isset($_GET['cari'])) {?>
+                                <input type="text" placeholder="Masukkan Nama Event Disini ..." id="cari" name="cari" value="<?=$cari?>">
+                            <?php } else { ?>
+                                <input type="text" placeholder="Masukkan Nama Event Disini ..." id="cari" name="cari">
+                            <?php } ?>
                             <button>Cari</button>
                         </form>
                     </div>
@@ -98,11 +102,41 @@
                             </div>
                         <?php } ?>
                     </div>
-                    <div class="eventList-page">
-                        <a href="#">Prev</a>
-                        <input type="text" value="1" readonly>
-                        <a href="">Next</a>
-                    </div>
+                    <!-- Tidak ada pencarian -->
+                    <?php if(!isset($_GET['cari'])): ?>
+                        <div class="eventList-page">
+                            <?php if($halamanAktif - 1 == 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
+                                <a href="#">Prev</a>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
+                                <a href="?halaman=<?= $halamanAktif + 1 ?>">Next</a>
+                            <?php } else if($halamanAktif - 1 != 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
+                                <a href="?halaman=<?= $halamanAktif - 1 ?>">Prev</a>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
+                                <a href="?halaman=<?= $halamanAktif + 1 ?>">Next</a>
+                            <?php } else { ?>
+                                <a href="?halaman=<?= $halamanAktif - 1 ?>">Prev</a>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
+                                <a href="#">Next</a>
+                            <?php } ?>
+                        </div>
+                    <!-- Ada pencarian -->
+                    <?php else: ?>
+                        <div class="eventList-page">
+                            <?php if($halamanAktif - 1 == 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
+                                <a href="#">Prev</a>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
+                                <a href="?halaman=<?= $halamanAktif + 1 ?>&cari=<?= $cari ?>">Next</a>
+                            <?php } else if($halamanAktif - 1 != 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
+                                <a href="?halaman=<?= $halamanAktif - 1 ?>&cari=<?= $cari ?>">Prev</a>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
+                                <a href="?halaman=<?= $halamanAktif + 1 ?>&cari=<?= $cari ?>">Next</a>
+                            <?php } else { ?>
+                                <a href="?halaman=<?= $halamanAktif - 1 ?>&cari=<?= $cari ?>">Prev</a>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
+                                <a href="#">Next</a>
+                            <?php } ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </section>
         </div>
