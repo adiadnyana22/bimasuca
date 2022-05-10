@@ -302,6 +302,21 @@ nav > .highlight > a:hover {
     border-radius: .5rem;
 }
 
+.event-card a {
+    text-decoration: none;
+}
+
+.event-card a h3 {
+    color: #000;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.event-card a h3:hover {
+    color: #53C351;
+    text-decoration: none;
+}
+
 .event-card > img {
     border-radius: .5rem;
     object-fit: cover;

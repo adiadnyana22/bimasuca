@@ -216,7 +216,7 @@
                                     <p style="text-align: justify;">
                                         Green Maze adalah game yang dibuat sebagai edukasi kesadaran akan kebersihan dengan cara yang lebih menarik
                                     </p>
-                                    <a href="#"><button>Mainkan Game</button></a>
+                                    <a href="game.php"><button>Mainkan Game</button></a>
                                 </div>
                             </div>
                         </div>

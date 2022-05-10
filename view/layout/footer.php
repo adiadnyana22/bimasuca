@@ -24,7 +24,7 @@
                                     <ul>
                                         <li><a href="event.php">Event</a></li>
                                         <li><a href="kalkulator.php">Kalkulator Emisi</a></li>
-                                        <li><a href="#">Green Maze Game</a></li>
+                                        <li><a href="game.php">Green Maze Game</a></li>
                                     </ul>
                                 </div>
                             </div>
