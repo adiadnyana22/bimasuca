@@ -740,6 +740,17 @@ footer hr {
     font-weight: bold;
 }
 
+.eventList-text > a {
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+}
+
+.eventList-text > a:hover {
+    text-decoration: none;
+    color: #53C351;
+}
+
 .eventList-text p {
     padding: 1rem 0;
     color: #999;
@@ -912,6 +923,28 @@ footer hr {
     width: 90%;
     text-align: center;
     margin: auto;
+}
+
+/*  */
+/* Game */
+/*  */
+
+.bg-game {
+    padding: 7.5rem 0;
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.bg-game h1 {
+    font-size: 2em;
+    color: #53C351;
+}
+
+.bg-game span {
+    font-weight: bold;
+    font-size: 4em;
+    margin-bottom: 3rem;
+    display: block;
 }
 
 @media(max-width: 576px) {

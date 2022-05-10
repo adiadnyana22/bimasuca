@@ -97,11 +97,11 @@
             <div class="modal-body">
                 <form action="../../controller/route.php?aksi=add_event" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingNama" name="floatingNama" placeholder="Menanam Pohon Bersama">
+                        <input type="text" class="form-control" id="floatingNama" name="floatingNama" placeholder="Menanam Pohon Bersama" maxlength="30">
                         <label for="floatingNama">Nama Event</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingTempat" name="floatingTempat" placeholder="Binus@Malang">
+                        <input type="text" class="form-control" id="floatingTempat" name="floatingTempat" placeholder="Binus@Malang" maxlength="50">
                         <label for="floatingTempat">Tempat</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -114,7 +114,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="files[]" name="files[]">
+                        <input type="file" class="form-control add-image" id="files[]" name="files[]" accept="image/*">
+                        <div class="text-danger" id="add-feedback" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <?php
@@ -131,7 +132,7 @@
                     </div>
                     <hr class="mt-3">
                     <div class="flex-right my-1">
-                        <button type="submit" class="btn btn-primary">Tambah Event</button>
+                        <button type="submit" class="btn btn-primary" id="add-btn">Tambah Event</button>
                     </div>
                 </form>
             </div>
@@ -154,11 +155,11 @@
             <div class="modal-body">
                 <form action="../../controller/route.php?aksi=update_event" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="m_nama_edit" name="m_nama_edit" placeholder="Menanam Pohon Bersama">
+                        <input type="text" class="form-control" id="m_nama_edit" name="m_nama_edit" placeholder="Menanam Pohon Bersama" maxlength="30">
                         <label for="floatingNama">Nama Event</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="m_tempat_edit" name="m_tempat_edit" placeholder="Binus@Malang">
+                        <input type="text" class="form-control" id="m_tempat_edit" name="m_tempat_edit" placeholder="Binus@Malang" maxlength="50">
                         <label for="floatingTempat">Tempat</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -176,7 +177,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="files[]" name="files[]">
+                        <input type="file" class="form-control edit-image" id="files[]" name="files[]" accept="image/*">
+                        <div class="text-danger" id="edit-feedback" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <?php
@@ -194,7 +196,7 @@
                     <input type="hidden" id="m_id" name="m_id">
                     <hr class="mt-3">
                     <div class="flex-right my-1">
-                        <button type="submit" class="btn btn-primary">Edit Event</button>
+                        <button type="submit" class="btn btn-primary" id="edit-btn">Edit Event</button>
                     </div>
                 </form>
             </div>
@@ -205,6 +207,39 @@
             </div>
         </div>
     </div>
+    <script>
+        $(".edit-image").change(function() {
+            if(!this.files[0]) {
+                $("#edit-btn").prop("disabled", false);
+                $("#edit-feedback").hide();
+            } else if(this.files[0].size > 2097152) {
+                $("#edit-feedback").show();
+                $("#edit-btn").prop("disabled", true);
+            } else {
+                $("#edit-feedback").hide();
+                $("#edit-btn").prop("disabled", false);
+            }
+        })
+
+        $("button.edit").click(() => {
+            $("#edit-feedback").hide();
+            $("#edit-btn").prop("disabled", false);
+            $(".edit-image").val(null)
+        })
+
+        $(".add-image").change(function() {
+            if(!this.files[0]) {
+                $("#add-btn").prop("disabled", false);
+                $("#add-feedback").hide();
+            } else if(this.files[0].size > 2 * 1024 * 1024) {
+                $("#add-feedback").show();
+                $("#add-btn").prop("disabled", true);
+            } else {
+                $("#add-feedback").hide();
+                $("#add-btn").prop("disabled", false);
+            }
+        })
+    </script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable({
