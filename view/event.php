@@ -12,7 +12,7 @@
     }
     $exec = mysqli_query($koneksi, $query);
 
-    $jumlahDataHalaman = 5;
+    $jumlahDataHalaman = 2;
     $totalData = mysqli_num_rows($exec);
     $jumlahHalaman = ceil($totalData/$jumlahDataHalaman);
 
@@ -106,34 +106,34 @@
                     <?php if(!isset($_GET['cari']) && $totalData > 0) { ?>
                         <div class="eventList-page">
                             <?php if($halamanAktif - 1 == 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
-                                <a href="#"><</a>
                                 <input type="text" value="<?= $halamanAktif ?>" readonly>
                                 <a href="?halaman=<?= $halamanAktif + 1 ?>">></a>
                             <?php } else if($halamanAktif - 1 != 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
                                 <a href="?halaman=<?= $halamanAktif - 1 ?>"><</a>
                                 <input type="text" value="<?= $halamanAktif ?>" readonly>
                                 <a href="?halaman=<?= $halamanAktif + 1 ?>">></a>
+                            <?php } else if($halamanAktif == 1 && $halamanAktif == $jumlahHalaman) { ?>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
                             <?php } else { ?>
                                 <a href="?halaman=<?= $halamanAktif - 1 ?>"><</a>
                                 <input type="text" value="<?= $halamanAktif ?>" readonly>
-                                <a href="#">></a>
                             <?php } ?>
                         </div>
                     <!-- Ada pencarian dan ketemu -->
                     <?php } else if (isset($_GET['cari']) && $totalData > 0) { ?>
                         <div class="eventList-page">
                             <?php if($halamanAktif - 1 == 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
-                                <a href="#"><</a>
                                 <input type="text" value="<?= $halamanAktif ?>" readonly>
                                 <a href="?halaman=<?= $halamanAktif + 1 ?>&cari=<?= $cari ?>">></a>
                             <?php } else if($halamanAktif - 1 != 0 && $halamanAktif + 1 <= $jumlahHalaman) { ?>
                                 <a href="?halaman=<?= $halamanAktif - 1 ?>&cari=<?= $cari ?>"><</a>
                                 <input type="text" value="<?= $halamanAktif ?>" readonly>
                                 <a href="?halaman=<?= $halamanAktif + 1 ?>&cari=<?= $cari ?>">></a>
+                            <?php } else if($halamanAktif == 1 && $halamanAktif == $jumlahHalaman) { ?>
+                                <input type="text" value="<?= $halamanAktif ?>" readonly>
                             <?php } else { ?>
                                 <a href="?halaman=<?= $halamanAktif - 1 ?>&cari=<?= $cari ?>"><</a>
                                 <input type="text" value="<?= $halamanAktif ?>" readonly>
-                                <a href="#">></a>
                             <?php } ?>
                         </div>
                     <!-- Ada pencarian dan tidak ketemu -->
