@@ -10,7 +10,7 @@
                         <li><a href="index.php">Beranda</a></li>
                         <li><a href="event.php">Event</a></li>
                         <li><a href="kalkulator.php">Kalkulator</a></li>
-                        <li><a href="#">Game</a></li>
+                        <li><a href="game.php">Game</a></li>
                     </ul>
                     <div class="highlight">
                         <a href="about.php">Tentang Kami</a>
