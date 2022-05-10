@@ -43,7 +43,7 @@
                                         <span>Motor</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-motor">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-motor">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
                                         <span>Mobil</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-mobil">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-mobil">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                         <span>Kereta</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-kereta">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-kereta">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                         <span>Bus</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-bus">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-bus">
                                         <span>KM</span>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                         <span>AC</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-ac">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-ac">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                         <span>Komputer</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-komputer">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-komputer">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                         <span>Kulkas</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-kulkas">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-kulkas">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                         <span>Setrika</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-setrika">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-setrika">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@
                                         <span>Mesin Cuci</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-mesin-cuci">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-mesin-cuci">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                         <span>Hair Dryer</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-hair-dryer">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-hair-dryer">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                                         <span>Microwave</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-microwave">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-microwave">
                                         <span>Jam</span>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@
                                         <span>Printer</span>
                                     </div>
                                     <div class="input">
-                                        <input type="number" placeholder="Insert number here" id="input-printer">
+                                        <input type="number" placeholder="Masukkan Angka" id="input-printer">
                                         <span>Jam</span>
                                     </div>
                                 </div>

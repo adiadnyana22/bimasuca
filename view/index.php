@@ -191,7 +191,7 @@
                                 <div class="feature-text">
                                     <span>Kalkulator</span>
                                     <h2>Hitung Emisi Harianmu</h2>
-                                    <p>
+                                    <p style="text-align: justify;">
                                         Kalkulator untuk menghitung seberapa besar emisi yang anda keluarkan setiap harinya dan konversinya dalam bahan energi
                                     </p>
                                     <a href="kalkulator.php"><button>Buka Kalkulator</button></a>
@@ -213,7 +213,7 @@
                                 <div class="feature-text">
                                     <span>Game</span>
                                     <h2>Mainkan Game Green Maze</h2>
-                                    <p>
+                                    <p style="text-align: justify;">
                                         Green Maze adalah game yang dibuat sebagai edukasi kesadaran akan kebersihan dengan cara yang lebih menarik
                                     </p>
                                     <a href="#"><button>Mainkan Game</button></a>

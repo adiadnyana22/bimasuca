@@ -12,7 +12,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p>
+                        <p style="text-align:justify">
                             Bimasuca merupakan platform edukasi lingkungan yang dibuat oleh Universitas Bina Nusantara @Malang dengan tujuan untuk meningkatkan kesadaran akan lingkungan yang sehat
                         </p>
                     </div>
@@ -22,7 +22,6 @@
                                 <h3>Link</h3>
                                 <div class="related-link">
                                     <ul>
-                                        <li><a href="#">Campaign</a></li>
                                         <li><a href="event.php">Event</a></li>
                                         <li><a href="kalkulator.php">Kalkulator Emisi</a></li>
                                         <li><a href="#">Green Maze Game</a></li>
