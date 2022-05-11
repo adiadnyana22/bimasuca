@@ -82,7 +82,7 @@
                         <div class="col-lg-6">
                             <div class="event-title">
                                 <h2>Event</h2>
-                                <a href="#">Selengkapnya</a>
+                                <a href="event">Selengkapnya</a>
                             </div>
                             <div class="event-list">
                                 <?php
@@ -93,7 +93,7 @@
                                 <?php while($event_assoc = $event_res->fetch_assoc()) { ?>
                                     <div class="event-card">
                                         <img src="assets/upload_images/event/<?= $event_assoc['gambar'];?>" alt="<?= $event_assoc['gambar'];?>">
-                                        <a href="detailEvent.php?id=<?= $event_assoc['id'];?>">
+                                        <a href="detailEvent?id=<?= $event_assoc['id'];?>">
                                             <div class="event-card-text">
                                                 <h3><?php 
                                                 // if(strlen($event_assoc['nama_event']) > 12){
@@ -194,7 +194,7 @@
                                     <p style="text-align: justify;">
                                         Kalkulator untuk menghitung seberapa besar emisi yang anda keluarkan setiap harinya dan konversinya dalam bahan energi
                                     </p>
-                                    <a href="kalkulator.php"><button>Buka Kalkulator</button></a>
+                                    <a href="kalkulator-emisi"><button>Buka Kalkulator</button></a>
                                 </div>
                             </div>
                             <div class="col-xl-4 offset-xl-1 col-md-4">
@@ -216,7 +216,7 @@
                                     <p style="text-align: justify;">
                                         Green Maze adalah game yang dibuat sebagai edukasi kesadaran akan kebersihan dengan cara yang lebih menarik
                                     </p>
-                                    <a href="game.php"><button>Mainkan Game</button></a>
+                                    <a href="game"><button>Mainkan Game</button></a>
                                 </div>
                             </div>
                         </div>

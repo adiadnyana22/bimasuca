@@ -11,6 +11,9 @@ RewriteEngine on
 RewriteRule ^event(|/)$ view/event.php [L]
 
 RewriteEngine on
+RewriteRule ^detailEvent(|/)$ view/detailEvent.php [L]
+
+RewriteEngine on
 RewriteRule ^tentang-kami(|/)$ view/about.php [L]
 
 RewriteEngine on
@@ -21,6 +24,8 @@ RewriteRule ^game(|/)$ view/game.php [L]
 
 RewriteEngine on
 RewriteRule ^login(|/)$ view/login.php [L]
+
+# Dashboard
 
 RewriteEngine on
 RewriteRule ^admin/dashboard(|/)$ view/admin/index.php [L]

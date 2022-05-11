@@ -55,7 +55,7 @@
                 <div class="container">
                     <h1>Event List</h1>
                     <div class="input">
-                        <form action="event.php" class="d-flex justify-content-between w-100" method="GET">
+                        <form action="event" class="d-flex justify-content-between w-100" method="GET">
                             <?php if(isset($_GET['cari'])) {?>
                                 <input type="text" placeholder="Masukkan Nama Event Disini ..." id="cari" name="cari" value="<?=$cari?>">
                             <?php } else { ?>
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="col-lg-9">
                                         <div class="eventList-text">
-                                            <a href="detailEvent.php?id=<?=$event_fetch['id'];?>">
+                                            <a href="detailEvent?id=<?=$event_fetch['id'];?>">
                                                 <h2><?=$event_fetch['nama_event'];?></h2>
                                             </a>
                                             <span><?=$event_fetch['tempat'];?> / <?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span>
