@@ -1,7 +1,7 @@
 <?php
     include '../koneksi.php';
     if(isset($_GET['cari'])){
-        $cari = $_GET['cari'];
+        $cari = mysqli_real_escape_string($koneksi, htmlspecialchars($_GET['cari'], ENT_QUOTES));
         $query = "SELECT 
         event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
         kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
