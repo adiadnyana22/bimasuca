@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bimasuca - Binus Malang Sustainable Campus</title>
-    <link rel="icon" href="../assets/images/LogoIcon.png">
+    <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -16,7 +16,7 @@
     <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" /> -->
-    <link rel="stylesheet" href="../assets/css/styleUser.css">
+    <link rel="stylesheet" href="assets/css/styleUser.css">
     <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,8 +46,8 @@
         ?>
         <section class="bg-banner">
             <div class="banner">
-                <img src="../assets/images/awan.png" alt="Awan">
-                <img src="../assets/images/banner.png" alt="Binus Malang">
+                <img src="assets/images/awan.png" alt="Awan">
+                <img src="assets/images/banner.png" alt="Binus Malang">
                 <div class="banner-text">
                     <span>Binus Malang Sustainable Campus</span>
                     <h1>BIMASUCA</h1>
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <div class="col-lg-5 offset-lg-1">
-                            <img src="../assets/images/intro.jpeg" class="w-100" alt="Education">
+                            <img src="assets/images/intro.jpeg" class="w-100" alt="Education">
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                                 ?>
                                 <?php while($event_assoc = $event_res->fetch_assoc()) { ?>
                                     <div class="event-card">
-                                        <img src="../assets/upload_images/event/<?= $event_assoc['gambar'];?>" alt="<?= $event_assoc['gambar'];?>">
+                                        <img src="assets/upload_images/event/<?= $event_assoc['gambar'];?>" alt="<?= $event_assoc['gambar'];?>">
                                         <a href="detailEvent.php?id=<?= $event_assoc['id'];?>">
                                             <div class="event-card-text">
                                                 <h3><?php 
@@ -151,7 +151,7 @@
                                     <?php while($campaign_assoc = $campaign_res->fetch_assoc()) { ?>
                                         <?php if($campaign_assoc['id'] == 1) { ?>
                                             <div class="carousel-item active">
-                                                <img src="../assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
+                                                <img src="assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
                                                 <div class="backdrop"></div>
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h5><?= $campaign_assoc['nama_campaign'];?></h5>
@@ -160,7 +160,7 @@
                                             </div>
                                         <?php } else { ?>
                                             <div class="carousel-item">
-                                                <img src="../assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
+                                                <img src="assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
                                                 <div class="backdrop"></div>
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h5><?= $campaign_assoc['nama_campaign'];?></h5>
@@ -199,14 +199,14 @@
                             </div>
                             <div class="col-xl-4 offset-xl-1 col-md-4">
                                 <div class="flex-center">
-                                    <img src="../assets/images/kalkulator.png" alt="Kalkulator" class="w-100">
+                                    <img src="assets/images/kalkulator.png" alt="Kalkulator" class="w-100">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-4 offset-xl-1 col-md-4">
                                 <div class="flex-center">
-                                    <img src="../assets/images/game.png" alt="Kalkulator" class="w-100">
+                                    <img src="assets/images/game.png" alt="Kalkulator" class="w-100">
                                 </div>
                             </div>
                             <div class="col-xl-6 offset-xl-1 col-md-8">
@@ -232,7 +232,7 @@
                     <div class="suggest">
                         <div class="row">
                             <div class="col-lg-7">
-                                <form action="../controller/route.php?aksi=add_suggestion" method="POST">
+                                <form action="controller/route.php?aksi=add_suggestion" method="POST">
                                     <div class="row">
                                         <div class="col-6">
                                             <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda ...">
@@ -248,7 +248,7 @@
                                 </form>
                             </div>
                             <div class="col-lg-4 offset-lg-1">
-                                <img src="../assets/images/msg.png" alt="Message" class="w-100">
+                                <img src="assets/images/msg.png" alt="Message" class="w-100">
                             </div>
                         </div>
                     </div>

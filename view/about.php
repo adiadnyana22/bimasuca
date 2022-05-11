@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Kami - Binus Malang Sustainable Campus</title>
-    <link rel="icon" href="../assets/images/LogoIcon.png">
+    <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" /> -->
-    <link rel="stylesheet" href="../assets/css/styleUser.css">
+    <link rel="stylesheet" href="assets/css/styleUser.css">
     <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
                 <div class="about-judul">
                     <div class="container">
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                            <img src="../assets/images/LogoHitam.png" alt="Logo Bimasuca">
+                            <img src="assets/images/LogoHitam.png" alt="Logo Bimasuca">
                             <h1>BIMASUCA</h1>
                             <hr>
                         </div>
@@ -41,7 +41,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                                    <img src="../assets/images/visi.png" alt="Visi">
+                                    <img src="assets/images/visi.png" alt="Visi">
                                     <p>
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores sequi eligendi ab fugit, ipsum numquam architecto commodi, perferendis, voluptatum optio quaerat incidunt minus deleniti!
                                     </p>
@@ -49,7 +49,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                                    <img src="../assets/images/misi.png" alt="Misi">
+                                    <img src="assets/images/misi.png" alt="Misi">
                                     <p>
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores sequi eligendi ab fugit, ipsum numquam architecto commodi, perferendis, voluptatum optio quaerat incidunt minus deleniti!
                                     </p>
@@ -74,19 +74,19 @@
                         <h3>Inisiator</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>
@@ -95,19 +95,19 @@
                         <h3>Website</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>
@@ -116,19 +116,19 @@
                         <h3>Marketing</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>
@@ -137,35 +137,35 @@
                         <h3>Designer</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                             <div class="col">
-                                <img src="../assets/images/hanpir.png" alt="Hanpir">
+                                <img src="assets/images/hanpir.png" alt="Hanpir">
                                 <span>Hanustavira Guru Acarya</span>
                             </div>
                         </div>

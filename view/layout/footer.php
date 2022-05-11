@@ -5,10 +5,10 @@
                         <div class="footer-logo">
                             <div class="row">
                                 <div class="col-7">
-                                    <img src="../assets/images/binusLogo.png" alt="Binus">
+                                    <img src="assets/images/binusLogo.png" alt="Binus">
                                 </div>
                                 <div class="col-5">
-                                    <img src="../assets/images/LogoPutih.png" alt="Logo">
+                                    <img src="assets/images/LogoPutih.png" alt="Logo">
                                 </div>
                             </div>
                         </div>
@@ -22,9 +22,9 @@
                                 <h3>Link</h3>
                                 <div class="related-link">
                                     <ul>
-                                        <li><a href="event.php">Event</a></li>
-                                        <li><a href="kalkulator.php">Kalkulator Emisi</a></li>
-                                        <li><a href="game.php">Green Maze Game</a></li>
+                                        <li><a href="event">Event</a></li>
+                                        <li><a href="kalkulator-emisi">Kalkulator Emisi</a></li>
+                                        <li><a href="game">Green Maze Game</a></li>
                                     </ul>
                                 </div>
                             </div>

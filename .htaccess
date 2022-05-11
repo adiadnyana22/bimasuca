@@ -1,0 +1,26 @@
+# Disable directory browsing
+
+Options -Indexes
+
+# Pemetaan halaman & hidden folder path
+
+RewriteEngine on
+RewriteRule ^beranda(|/)$ view/index.php [L]
+
+RewriteEngine on
+RewriteRule ^event(|/)$ view/event.php [L]
+
+RewriteEngine on
+RewriteRule ^tentang-kami(|/)$ view/about.php [L]
+
+RewriteEngine on
+RewriteRule ^kalkulator-emisi(|/)$ view/kalkulator.php [L]
+
+RewriteEngine on
+RewriteRule ^game(|/)$ view/game.php [L]
+
+# Deny access to files with extensions .ini, .psd, .log, .sh .sql .env .htaccess
+
+<FilesMatch "\.(ini|psd|log|sh|sql|env|htaccess)$">
+    Deny from all
+</FilesMatch>
