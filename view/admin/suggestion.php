@@ -126,7 +126,7 @@
         $(document).ready(function() {
             $('#example').DataTable({
                 "language": {
-                    "url": "../../assets/plugin/datatable/indonesia.json"
+                    "url": "../assets/plugin/datatable/indonesia.json"
                 }
             });
         } );
@@ -168,7 +168,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete.isConfirmed) {
-                        window.location.href = '../../controller/route.php?aksi=delete_suggestion&id='+id;
+                        window.location.href = '../controller/route.php?aksi=delete_suggestion&id='+id;
                     }
                 });
             })

@@ -5,11 +5,11 @@
             <button class="text-danger" id="closeSidebar">X</button>
         </div>
         <ul>
-            <li><a href="index.php"><i class="fas fa-layer-group"></i><span>Dashboard</span></a></li>
-            <li><a href="event.php"><i class="fas fa-calendar"></i><span>Event</span></a></li>
-            <li><a href="campaign.php"><i class="fas fa-images"></i><span>Campaign</span></a></li>
-            <li><a href="suggestion.php"><i class="fas fa-comment"></i><span>Saran & Pendapat</span></a></li>
-            <li><a href="admin.php"><i class="fas fa-user-check"></i><span>Admin</span></a></li>
+            <li><a href="dashboard"><i class="fas fa-layer-group"></i><span>Dashboard</span></a></li>
+            <li><a href="event"><i class="fas fa-calendar"></i><span>Event</span></a></li>
+            <li><a href="campaign"><i class="fas fa-images"></i><span>Campaign</span></a></li>
+            <li><a href="suggestion"><i class="fas fa-comment"></i><span>Saran & Pendapat</span></a></li>
+            <li><a href="admin-set"><i class="fas fa-user-check"></i><span>Admin</span></a></li>
         </ul>
         <div class="navbar">
             <div class="user-data">
@@ -18,7 +18,7 @@
         </div>
     </nav>
     <div class="logout p-3">
-        <form action="../../controller/route.php?aksi=logout" method="post">
+        <form action="../controller/route.php?aksi=logout" method="post">
             <button type="submit" id="logout" name="logout" class="text-danger btn btn-transparent" value="logout"><i class="fas fa-angle-left"></i><span>&nbsp;&nbsp;Logout</span></button>
         </form>
     </div>

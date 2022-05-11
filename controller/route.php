@@ -31,13 +31,13 @@ switch($data['aksi']){
             $_SESSION['nama'] = $decode->nama;
             $_SESSION['email'] = $decode->email;
             $_SESSION['super'] = $decode->super;
-            header("Location: ../view/admin/index.php?pesan=sukses");
+            header("Location: ../admin/dashboard");
             // Jika inputan salah
         }else if($decode->id == 'FALSE'){
-            header("Location: ../view/login.php?salah=1");
+            header("Location: ../login?salah=1");
             // Jika data tidak ditemukan
         }else if($decode->id == NULL){
-            header("Location: ../view/login.php?not_found=1");
+            header("Location: ../login?not_found=1");
         }
     break;
 
@@ -62,7 +62,7 @@ switch($data['aksi']){
             session_unset();
             // Session destroy
             session_destroy();
-            header("Location: ../view/login.php?logout=1");
+            header("Location: ../login?logout=1");
         }
     break;
     
@@ -74,9 +74,9 @@ switch($data['aksi']){
         $super = $_POST['floatingSuper'];
         $query = add_user($nama, $email, $password, $super);
         if($query == 'true'){
-            header("Location: ../view/admin/admin.php?sukses=1");
+            header("Location: ../admin/admin-set?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/admin.php?gagal=1");
+            header("Location: ../admin/admin-set?gagal=1");
         }else{
             echo "Error";
         }
@@ -90,9 +90,9 @@ switch($data['aksi']){
         // Query
         $query = update_user($id, $nama, $email, $password, $super);
         if($query == 'true'){
-            header("Location: ../view/admin/admin.php?sukses=1");
+            header("Location: ../admin/admin-set?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/admin.php?gagal=1");
+            header("Location: ../admin/admin-set?gagal=1");
         }else{
             echo "Error";
         }
@@ -101,9 +101,9 @@ switch($data['aksi']){
         $id = $_GET['id'];
         $query = delete_user($id);
         if($query == 'true'){
-            header("Location: ../view/admin/admin.php?sukses=1");
+            header("Location: ../admin/admin-set?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/admin.php?gagal=1");
+            header("Location: ../admin/admin-set?gagal=1");
         }else{
             echo "Error";
         }
@@ -134,9 +134,9 @@ switch($data['aksi']){
         }
         $query = add_event($nama_event, $tempat, $tanggal_post, $tanggal, $deskripsi, $gambar, $kategori);
         if($query == 'true'){
-            header("Location: ../view/admin/event.php?sukses=1");
+            header("Location: ../admin/event?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/event.php?gagal=1");
+            header("Location: ../admin/event?gagal=1");
         }else{
             echo "Error";
         }
@@ -174,9 +174,9 @@ switch($data['aksi']){
             }
             $query = update_event($id, $nama_event, $tempat, $tanggal, $deskripsi, $kategori, $gambar);
             if($query == 'true'){
-                header("Location: ../view/admin/event.php?sukses=1");
+                header("Location: ../admin/event?sukses=1");
             }else if($query == 'false'){
-                header("Location: ../view/admin/event.php?gagal=1");
+                header("Location: ../admin/event?gagal=1");
             }else{
                 echo "Error";
             }
@@ -184,9 +184,9 @@ switch($data['aksi']){
             $gambar = NULL;
             $query = update_event($id, $nama_event, $tempat, $tanggal, $deskripsi, $kategori, $gambar);
             if($query == 'true'){
-                header("Location: ../view/admin/event.php?sukses=1");
+                header("Location: ../admin/event?sukses=1");
             }else if($query == 'false'){
-                header("Location: ../view/admin/event.php?gagal=1");
+                header("Location: ../admin/event?gagal=1");
             }else{
                 echo "Error";
             }
@@ -201,9 +201,9 @@ switch($data['aksi']){
         }
         $query = delete_event($id);
         if($query == 'true'){
-            header("Location: ../view/admin/event.php?sukses=1");
+            header("Location: ../admin/event?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/event.php?gagal=1");
+            header("Location: ../admin/event?gagal=1");
         }else{
             echo "Error";
         }
@@ -231,9 +231,9 @@ switch($data['aksi']){
         }
         $query = add_campaign($nama_campaign, $tanggal_post, $deskripsi, $gambar);
         if($query == 'true'){
-            header("Location: ../view/admin/campaign.php?sukses=1");
+            header("Location: ../admin/campaign?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/campaign.php?gagal=1");
+            header("Location: ../admin/campaign?gagal=1");
         }else{
             echo "Error";
         }
@@ -267,9 +267,9 @@ switch($data['aksi']){
             }
             $query = update_campaign($id, $nama_campaign, $deskripsi, $gambar);
             if($query == 'true'){
-                header("Location: ../view/admin/campaign.php?sukses=1");
+                header("Location: ../admin/campaign?sukses=1");
             }else if($query == 'false'){
-                header("Location: ../view/admin/campaign.php?gagal=1");
+                header("Location: ../admin/campaign?gagal=1");
             }else{
                 echo "Error";
             }
@@ -277,9 +277,9 @@ switch($data['aksi']){
             $gambar = NULL;
             $query = update_campaign($id, $nama_campaign, $deskripsi, $gambar);
             if($query == 'true'){
-                header("Location: ../view/admin/campaign.php?sukses=1");
+                header("Location: ../admin/campaign?sukses=1");
             }else if($query == 'false'){
-                header("Location: ../view/admin/campaign.php?gagal=1");
+                header("Location: ../admin/campaign?gagal=1");
             }else{
                 echo "Error";
             }
@@ -294,9 +294,9 @@ switch($data['aksi']){
         }
         $query = delete_campaign($id);
         if($query == 'true'){
-            header("Location: ../view/admin/campaign.php?sukses=1");
+            header("Location: ../admin/campaign?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/campaign.php?gagal=1");
+            header("Location: ../admin/campaign?gagal=1");
         }else{
             echo "Error";
         }
@@ -309,9 +309,9 @@ switch($data['aksi']){
         $isi = $_POST['isi'];
         $query = add_suggestion($nama, $email, $isi);
         if($query == 'true'){
-            header("Location: ../view/index.php?pesan=sukses");
+            header("Location: ../admin/suggestion?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/index.php?pesan=gagal");
+            header("Location: ../admin/suggestion?gagal=1");
         }else{
             echo "Error";
         }
@@ -320,9 +320,9 @@ switch($data['aksi']){
         $id = $_GET['id'];
         $query = delete_suggestion($id);
         if($query == 'true'){
-            header("Location: ../view/admin/suggestion.php?sukses=1");
+            header("Location: ../admin/suggestion?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/suggestion.php?gagal=1");
+            header("Location: ../admin/suggestion?gagal=1");
         }else{
             echo "Error";
         }

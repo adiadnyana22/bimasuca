@@ -78,7 +78,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="../../assets/upload_images/campaign/kertas.png" alt="" class="w-100 mb-3" id="m_gambar">
+                <img src="../assets/upload_images/campaign/kertas.png" alt="" class="w-100 mb-3" id="m_gambar">
                 <p id="m_deskripsi">
                     Ini Deskripsi
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nihil in ducimus laudantium incidunt officiis beatae iure adipisci! Veniam, explicabo dignissimos. Vitae exercitationem laborum vel adipisci esse labore quam dolorum! Blanditiis ducimus amet at fuga nam, nobis id animi? Quam dolores nemo deserunt recusandae dolor beatae consequuntur, cum modi odio.
@@ -102,7 +102,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/route.php?aksi=add_campaign" method="POST" enctype="multipart/form-data">
+                <form action="../controller/route.php?aksi=add_campaign" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="nama_campaign" name="nama_campaign" placeholder="Menanam Pohon Bersama" maxlength="25">
                         <label for="floatingNama">Nama Event</label>
@@ -138,7 +138,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/route.php?aksi=update_campaign" method="POST" enctype="multipart/form-data">
+                <form action="../controller/route.php?aksi=update_campaign" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="edit_namacampaign" name="edit_namacampaign" placeholder="Menanam Pohon Bersama" maxlength="25">
                         <label for="floatingNama">Nama Campaign</label>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Lama : </label>
-                        <a class="btn btn-primary" href = "../../assets/upload_images/campaign/" target="_blank" id="edit_gambar_l">Preview</a>
+                        <a class="btn btn-primary" href = "../assets/upload_images/campaign/" target="_blank" id="edit_gambar_l">Preview</a>
                         <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
                     </div>
                     <div class="mb-3">
@@ -208,7 +208,7 @@
         $(document).ready(function() {
             $('#example').DataTable({
                 "language": {
-                    "url": "../../assets/plugin/datatable/indonesia.json"
+                    "url": "../assets/plugin/datatable/indonesia.json"
                 }
             });
         } );
@@ -232,7 +232,7 @@
             nama_cpgn.textContent = nama_campaign;
             tgl_post.textContent = tanggal_post;
             desc.textContent = deskripsi;
-            pic.src='../../assets/upload_images/campaign/'+gambar;
+            pic.src='../assets/upload_images/campaign/'+gambar;
 
         });
     });
@@ -254,7 +254,7 @@
             $('#edit_namacampaign').val(nama_campaign2);
             edit_desc.textContent = deskripsi2;
             $('#m_gambar_lama').val(gambar2);
-            edit_pic.href='../../assets/upload_images/campaign/'+gambar2;
+            edit_pic.href='../assets/upload_images/campaign/'+gambar2;
             $('#m_id').val(id);
         });
     });
@@ -276,7 +276,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete.isConfirmed) {
-                        window.location.href = '../../controller/route.php?aksi=delete_campaign&id='+id+'&gambar='+gambar;
+                        window.location.href = '../controller/route.php?aksi=delete_campaign&id='+id+'&gambar='+gambar;
                     }
                 });
             })

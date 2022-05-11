@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game - Binus Malang Sustainable Campus</title>
-    <link rel="icon" href="../assets/images/LogoIcon.png">
+    <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" /> -->
-    <link rel="stylesheet" href="../assets/css/styleUser.css">
+    <link rel="stylesheet" href="assets/css/styleUser.css">
     <script src="https://kit.fontawesome.com/f0f2d9386c.js" crossorigin="anonymous"></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,8 @@
             <div class="container">
                 <h1>Green Maze</h1>
                 <span>Coming Soon</span>
-                <img src="../assets/images/Game.gif" alt="" class="w-100">
+                <!-- <img src="assets/images/Game.gif" alt="" class="w-100"> -->
+                <a href="https://gifyu.com/image/SsUXA" target="_blank"><img src="https://s8.gifyu.com/images/Game.gif" alt="Game.gif" border="0"  class="w-100"/></a>
             </div>
         </section>
         <!-- Footer -->

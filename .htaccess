@@ -19,6 +19,24 @@ RewriteRule ^kalkulator-emisi(|/)$ view/kalkulator.php [L]
 RewriteEngine on
 RewriteRule ^game(|/)$ view/game.php [L]
 
+RewriteEngine on
+RewriteRule ^login(|/)$ view/login.php [L]
+
+RewriteEngine on
+RewriteRule ^admin/dashboard(|/)$ view/admin/index.php [L]
+
+RewriteEngine on
+RewriteRule ^admin/campaign(|/)$ view/admin/campaign.php [L]
+
+RewriteEngine on
+RewriteRule ^admin/event(|/)$ view/admin/event.php [L]
+
+RewriteEngine on
+RewriteRule ^admin/suggestion(|/)$ view/admin/suggestion.php [L]
+
+RewriteEngine on
+RewriteRule ^admin/admin-set(|/)$ view/admin/admin.php [L]
+
 # Deny access to files with extensions .ini, .psd, .log, .sh .sql .env .htaccess
 
 <FilesMatch "\.(ini|psd|log|sh|sql|env|htaccess)$">

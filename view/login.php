@@ -5,30 +5,31 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
         <meta name="apple-mobile-web-app-title" content="Bimasuca"/>
         <meta name="theme-color" content="#ffffff"/>
-        <link rel="apple-touch-icon" href="/prk//prk/assets/logo-binus.png"/>
+        <link rel="icon" href="assets/images/LogoIcon.png">
+        <link rel="apple-touch-icon" href="assets/images/LogoIcon.png"/>
         <link rel="manifest" href="/prk/manifest.json"/>
-        <link rel="shortcut icon" href="/prk/static/favicon.ico"/>
+        <link rel="shortcut icon" href="assets/images/LogoIcon.png"/>
         <meta charSet="UTF-8"/><meta name="author" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <meta charSet="utf-8"/>
         <title>Login</title>
         <meta name="description" content="Login to Bimasuca"/>
         <meta name="next-head-count" content="4"/>
-        <link rel="preload" href="../assets/login/files/e32c7914c4f4ca10.css" as="style"/>
-        <link rel="stylesheet" href="../assets/login/files/e32c7914c4f4ca10.css" data-n-g=""/>
-        <link rel="preload" href="../assets/login/files/2a30f54440cbdc1f.css" as="style"/>
-        <link rel="stylesheet" href="../assets/login/files/2a30f54440cbdc1f.css" data-n-p=""/>
+        <link rel="preload" href="assets/login/files/e32c7914c4f4ca10.css" as="style"/>
+        <link rel="stylesheet" href="assets/login/files/e32c7914c4f4ca10.css" data-n-g=""/>
+        <link rel="preload" href="assets/login/files/2a30f54440cbdc1f.css" as="style"/>
+        <link rel="stylesheet" href="assets/login/files/2a30f54440cbdc1f.css" data-n-p=""/>
         <noscript data-n-css=""></noscript>
-        <script defer="" nomodule="" src="../assets/login/files/polyfills-5cd94c89d3acac5f.js"></script>
-        <script src="../assets/login/files/webpack-9ccb70cc6ca8dc70.js" defer=""></script>
-        <script src="../assets/login/files/framework-dc33c0b5493501f0.js" defer=""></script>
-        <script src="../assets/login/files/main-49a929add637ce78.js" defer=""></script>
-        <script src="../assets/login/files/_app-b30aab0c324c49d8.js" defer=""></script>
-        <script src="../assets/login/files/201-427fc7678903b451.js" defer=""></script>
-        <script src="../assets/login/files/login-c5432f134a550b5f.js" defer=""></script>
-        <script src="../assets/login/files/_buildManifest.js" defer=""></script>
-        <script src="../assets/login/files/_ssgManifest.js" defer=""></script>
-        <script src="../assets/login/files/_middlewareManifest.js" defer=""></script>
+        <script defer="" nomodule="" src="assets/login/files/polyfills-5cd94c89d3acac5f.js"></script>
+        <script src="assets/login/files/webpack-9ccb70cc6ca8dc70.js" defer=""></script>
+        <script src="assets/login/files/framework-dc33c0b5493501f0.js" defer=""></script>
+        <script src="assets/login/files/main-49a929add637ce78.js" defer=""></script>
+        <script src="assets/login/files/_app-b30aab0c324c49d8.js" defer=""></script>
+        <script src="assets/login/files/201-427fc7678903b451.js" defer=""></script>
+        <script src="assets/login/files/login-c5432f134a550b5f.js" defer=""></script>
+        <script src="assets/login/files/_buildManifest.js" defer=""></script>
+        <script src="assets/login/files/_ssgManifest.js" defer=""></script>
+        <script src="assets/login/files/_middlewareManifest.js" defer=""></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
@@ -64,7 +65,7 @@
             <main>
                 <div class="Login_itemCenter__9j8nI">
                     <div class="z-10">
-                        <form name="formLogin" class="rounded-lg lg:bg-grey-700 Login_formLogin__j5vR8" id="form-login" autoComplete="off" action="../controller/route.php?aksi=login" method="POST">
+                        <form name="formLogin" class="rounded-lg lg:bg-grey-700 Login_formLogin__j5vR8" id="form-login" autoComplete="off" action="controller/route.php?aksi=login" method="POST">
                             <i class="Login_CIbanner__mdkqr"></i>
                             <span class="Login_logoBinus__sQIUQ"></span>
                             <div class="Login_loginInputContainer__H2EA_">

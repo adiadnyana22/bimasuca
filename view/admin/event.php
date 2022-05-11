@@ -95,7 +95,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/route.php?aksi=add_event" method="POST" enctype="multipart/form-data">
+                <form action="../controller/route.php?aksi=add_event" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingNama" name="floatingNama" placeholder="Menanam Pohon Bersama" maxlength="30">
                         <label for="floatingNama">Nama Event</label>
@@ -153,7 +153,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/route.php?aksi=update_event" method="POST" enctype="multipart/form-data">
+                <form action="../controller/route.php?aksi=update_event" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="m_nama_edit" name="m_nama_edit" placeholder="Menanam Pohon Bersama" maxlength="30">
                         <label for="floatingNama">Nama Event</label>
@@ -244,7 +244,7 @@
         $(document).ready(function() {
             $('#example').DataTable({
                 "language": {
-                    "url": "../../assets/plugin/datatable/indonesia.json"
+                    "url": "../assets/plugin/datatable/indonesia.json"
                 }
             });
         } );
@@ -294,7 +294,7 @@
             
             $('#m_tanggal').val(tanggal);
             $('#m_gambar_lama').val(gambar_l);
-            edit_pic.href='../../assets/upload_images/event/'+gambar_l;
+            edit_pic.href='../assets/upload_images/event/'+gambar_l;
             $('#m_kategori').val(kategori_val);
             $('#m_id').val(id);
         });
@@ -317,7 +317,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete.isConfirmed) {
-                        window.location.href = '../../controller/route.php?aksi=delete_event&id='+id+'&gambar='+gambar;
+                        window.location.href = '../controller/route.php?aksi=delete_event&id='+id+'&gambar='+gambar;
                     }
                 });
             })
