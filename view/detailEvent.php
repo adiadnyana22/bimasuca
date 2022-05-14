@@ -31,7 +31,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $query_fetch['nama_event']; ?> - Binus Malang Sustainable Campus</title>
+    <title><?= $query_fetch['nama_event']; ?> - Bimasuca</title>
     <link rel="icon" href="../assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -45,6 +45,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Flickity Carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -97,6 +100,26 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Pengecekan apakah ada gambar carousel untuk detail event ini -->
+            <section class="bg-eventImageCarousel">
+                <div class="container">
+                    <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellAlign": "center", "imagesLoaded": true, "percentPosition": false }'>
+                        <!-- Foreach (Looping) -->
+                        <div class="carousel-cell">
+                            <img src="../assets/images/banner.png" alt="Image Detail">
+                        </div>
+                        <div class="carousel-cell">
+                            <img src="../assets/images/hasilEmisi.png" alt="Image Detail">
+                        </div>
+                        <div class="carousel-cell">
+                            <img src="../assets/images/batuBara.png" alt="Image Detail">
+                        </div>
+                        <div class="carousel-cell">
+                            <img src="../assets/images/awan.png" alt="Image Detail">
                         </div>
                     </div>
                 </div>

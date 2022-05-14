@@ -86,7 +86,91 @@
         </tfoot>
     </table>
 
-    <!-- Modal Add -->
+    <div class="admin-judul mt-5">
+        <h1>Kategori Event</h1>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Tambah Kategori</button>
+    </div>
+    <table id="example2" class="table table-striped" style="width:100%">
+        <thead>
+            <?php
+                $kategori = $koneksi->prepare("SELECT * FROM kategori");
+                $kategori->execute();
+                $kategori_res = $kategori->get_result();
+            ?>
+            <tr>
+                <th>Kategori</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($kategori_fetch = $kategori_res->fetch_assoc()) { ?>
+                <tr>
+                    <td><span id="kategori_<?=$kategori_fetch['id'];?>"><?=$kategori_fetch['kategori'];?></span></td>
+                    <td>
+                        <button type="button" class="btn btn-warning edit-category" value="<?php echo $kategori_fetch['id']; ?>"><span class="glyphicon glyphicon-edit"></span>Edit</button>
+                        <a class="btn btn-danger del" data-id="<?= $kategori_fetch['id'];?>">Hapus</a>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Kategori</th>
+                <th>Aksi</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Modal Add (Category) -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../controller/route.php?aksi=add_kategori" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingKategori" name="floatingKategori" placeholder="Menanam Pohon Bersama" maxlength="30">
+                            <label for="floatingKategori">Nama Kategori</label>
+                        </div>
+                        <hr class="mt-3">
+                        <div class="flex-right my-1">
+                            <button type="submit" class="btn btn-primary" id="add-btn">Tambah Kategori</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit (Category) -->
+    <div class="modal fade" id="editKategoriModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Kategori</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../controller/route.php?aksi=edit_kategori" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingKategoriEdit" name="floatingKategori" placeholder="Menanam Pohon Bersama" maxlength="30">
+                            <label for="floatingKategoriEdit">Nama Kategori</label>
+                        </div>
+                        <hr class="mt-3">
+                        <input type="hidden" id="m_id_category" name="m_id_category">
+                        <div class="flex-right my-1">
+                            <button type="submit" class="btn btn-primary" id="add-btn">Edit Kategori</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Add (Event) -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -113,7 +197,22 @@
                         <input type="date" class="form-control" id="floatingTanggal" name="floatingTanggal">
                     </div>
                     <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar</label>
+                        <label for="floatingGambar" class="form-label">Gambar Cover</label>
+                        <input type="file" class="form-control add-image" id="files[]" name="files[]" accept="image/*">
+                        <div class="text-danger" id="add-feedback" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingGambar" class="form-label">Gambar 1</label>
+                        <input type="file" class="form-control add-image" id="files[]" name="files[]" accept="image/*">
+                        <div class="text-danger" id="add-feedback" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingGambar" class="form-label">Gambar 2</label>
+                        <input type="file" class="form-control add-image" id="files[]" name="files[]" accept="image/*">
+                        <div class="text-danger" id="add-feedback" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingGambar" class="form-label">Gambar 3</label>
                         <input type="file" class="form-control add-image" id="files[]" name="files[]" accept="image/*">
                         <div class="text-danger" id="add-feedback" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
@@ -144,7 +243,7 @@
         </div>
     </div>
 
-    <!-- Modal Edit -->
+    <!-- Modal Edit (Event) -->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -247,6 +346,12 @@
                     "url": "../../assets/plugin/datatable/indonesia.json"
                 }
             });
+
+            $('#example2').DataTable({
+                "language": {
+                    "url": "../../assets/plugin/datatable/indonesia.json"
+                }
+            });
         } );
     </script>
     <!-- Script edit -->
@@ -297,6 +402,15 @@
             edit_pic.href='../../assets/upload_images/event/'+gambar_l;
             $('#m_kategori').val(kategori_val);
             $('#m_id').val(id);
+        });
+
+        $('.edit-category').on('click', function(){
+            var id=$(this).val();
+            var nama_kategori=$('#kategori_'+id).text();
+            
+            $('#editKategoriModal').modal('show');
+            $('#floatingKategoriEdit').val(nama_kategori);
+            $('#m_id_category').val(id);
         });
     });
     </script>

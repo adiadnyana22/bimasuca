@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimasuca - Binus Malang Sustainable Campus</title>
+    <title>Bimasuca - Bimasuca</title>
     <link rel="icon" href="../assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -148,8 +148,9 @@
                                     <?php } ?>
                                 </ol>
                                 <div class="carousel-inner">
+                                    <?php $cnt = 1; ?>
                                     <?php while($campaign_assoc = $campaign_res->fetch_assoc()) { ?>
-                                        <?php if($campaign_assoc['id'] == 1) { ?>
+                                        <?php if($cnt == 1) { ?>
                                             <div class="carousel-item active">
                                                 <img src="../assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
                                                 <div class="backdrop"></div>
@@ -158,7 +159,7 @@
                                                     <p><?= $campaign_assoc['deskripsi'];?></p>
                                                 </div>
                                             </div>
-                                        <?php } else { ?>
+                                        <?php $cnt += 1; } else { ?>
                                             <div class="carousel-item">
                                                 <img src="../assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
                                                 <div class="backdrop"></div>
