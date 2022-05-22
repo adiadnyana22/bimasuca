@@ -2,7 +2,7 @@
     include '../koneksi.php';
     $id = $_GET['id'];
     $query = $koneksi->prepare("SELECT 
-    event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
+    ident, event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar_cover, 
     kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
     FROM event INNER JOIN kategori ON event.kategori = kategori.id
     WHERE event.id = ?");
@@ -10,6 +10,7 @@
     $query->execute();
     $query_res = $query->get_result();
     $query_fetch = $query_res->fetch_assoc();
+    $ident = $query_fetch['ident'];
 
     // Tanggal Post
     $date = $query_fetch['tanggal_post'];
@@ -60,7 +61,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <img src="../assets/upload_images/event/<?= $query_fetch['gambar']; ?>" alt="" class="w-100">
+                            <img src="../assets/upload_images/event/<?= $query_fetch['gambar_cover']; ?>" alt="" class="w-100">
                         </div>
                         <div class="offset-lg-1 col-lg-6">
                             <div class="flex-center">
@@ -105,25 +106,25 @@
                 </div>
             </section>
             <!-- Pengecekan apakah ada gambar carousel untuk detail event ini -->
-            <section class="bg-eventImageCarousel">
-                <div class="container">
-                    <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellAlign": "center", "imagesLoaded": true, "percentPosition": false }'>
-                        <!-- Foreach (Looping) -->
-                        <div class="carousel-cell">
-                            <img src="../assets/images/banner.png" alt="Image Detail">
-                        </div>
-                        <div class="carousel-cell">
-                            <img src="../assets/images/hasilEmisi.png" alt="Image Detail">
-                        </div>
-                        <div class="carousel-cell">
-                            <img src="../assets/images/batuBara.png" alt="Image Detail">
-                        </div>
-                        <div class="carousel-cell">
-                            <img src="../assets/images/awan.png" alt="Image Detail">
+            <?php
+                $carousel = mysqli_query($koneksi, "SELECT * FROM image WHERE id_event = '$ident' ORDER BY urutan");
+            ?>
+            <?php if(mysqli_num_rows($carousel) > 0) { ?>
+                <section class="bg-eventImageCarousel">
+                    <div class="container">
+                        <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellAlign": "center", "imagesLoaded": true, "percentPosition": false }'>
+                            <!-- Foreach (Looping) -->
+                            <?php while($carousel_fetch = mysqli_fetch_assoc($carousel)) { ?>
+                                <div class="carousel-cell">
+                                    <img src="../assets/upload_images/event/carousel/<?= $carousel_fetch['image']; ?>" alt="<?= $carousel_fetch['image']; ?>">
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            <?php } else { ?>
+                    
+            <?php } ?>
             <section class="bg-eventDetailDesc">
                 <div class="container">
                     <?= $query_fetch['deskripsi']; ?>

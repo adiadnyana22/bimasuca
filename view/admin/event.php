@@ -32,7 +32,10 @@
     <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <?php
-                $event = $koneksi->prepare("SELECT event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, kategori.kategori AS nama_kategori, event.kategori AS id_kategori FROM event INNER JOIN kategori ON event.kategori = kategori.id");
+                $event = $koneksi->prepare("SELECT event.id, ident, nama_event, tempat, tanggal_post, 
+                tanggal, deskripsi, gambar_cover, kategori.kategori AS nama_kategori, 
+                event.kategori AS id_kategori FROM event 
+                INNER JOIN kategori ON event.kategori = kategori.id");
                 $event->execute();
                 $event_res = $event->get_result();
             ?>
@@ -62,19 +65,20 @@
                 ?>
                 <tr>
                     <td><span id="nama_event<?=$event_fetch['id'];?>"><?=$event_fetch['nama_event'];?></span></td>
-                    <span hidden id="tempat<?=$event_fetch['id'];?>"><?=$event_fetch['tempat'];?></span>
-                    <td><span id="tanggal<?=$event_fetch['id'];?>"><?=$tanggal_hari_event.' '.$bulan_hari_event.' '.$tahun_hari_event ?></span></td>
+                    <td><span  id="tempat<?=$event_fetch['id'];?>"><?=$event_fetch['tempat'];?></span></td>
+                    <span hidden id="tanggal<?=$event_fetch['id'];?>"><?=$tanggal_hari_event.' '.$bulan_hari_event.' '.$tahun_hari_event ?></span>
                     <td><span id="kategori<?=$event_fetch['id'];?>"><?=$event_fetch['nama_kategori'];?></span></td>
                     <td><span id="tanggal_post<?=$event_fetch['id'];?>"><?=$tanggal_hari.' '.$bulan_hari.' '.$tahun_hari ?></span></td>
                     <span hidden id="deskripsi<?= $event_fetch['id'];?>"><?= $event_fetch['deskripsi'];?></span>
                     <td>
                         <button type="button" class="btn btn-warning edit" value="<?php echo $event_fetch['id']; ?>"><span class="glyphicon glyphicon-edit"></span>Edit</button>
-                        <a class="btn btn-danger del" data-gambar="<?=$event_fetch['gambar'];?>" data-id="<?=$event_fetch['id'];?>">Hapus</a>
+                        <a class="btn btn-danger del" data-gambar="<?=$event_fetch['gambar_cover'];?>" data-id="<?=$event_fetch['id'];?>" data-ident="<?=$event_fetch['ident'];?>">Hapus</a>
                         <a href="../detailEvent.php?id=<?=$event_fetch['id'];?>" class="btn btn-primary" target="_blank">Detail</a>
                     </td>
-                    <span hidden id="gambar<?=$event_fetch['id'];?>"><?=$event_fetch['gambar'];?></span>
+                    <span hidden id="gambar<?=$event_fetch['id'];?>"><?=$event_fetch['gambar_cover'];?></span>
                     <span hidden id="id_kategori<?=$event_fetch['id'];?>"><?=$event_fetch['id_kategori'];?></span>
                     <span hidden id="tanggal_asli<?=$event_fetch['id'];?>"><?=$event_fetch['tanggal'];?></span>
+                    <span hidden id="ident<?=$event_fetch['id'];?>"><?=$event_fetch['ident'];?></span>
                 </tr>
             <?php } ?>
         </tbody>
@@ -221,17 +225,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 1 (Opsional)</label>
-                        <input type="file" class="form-control add-image1" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control add-image1" id="carousels[]" name="carousels[]" accept="image/*">
                         <div class="text-danger" id="add-feedback1" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 2 (Opsional)</label>
-                        <input type="file" class="form-control add-image2" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control add-image2" id="carousels[]" name="carousels[]" accept="image/*">
                         <div class="text-danger" id="add-feedback2" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 3 (Opsional)</label>
-                        <input type="file" class="form-control add-image3" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control add-image3" id="carousels[]" name="carousels[]" accept="image/*">
                         <div class="text-danger" id="add-feedback3" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
@@ -293,42 +297,39 @@
                         <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
                     </div>
                     <!-- Loop untuk setiap gambar carousel yang ada -->
-                    <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar Carousel 1 Lama : </label>
-                        <a class="btn btn-primary" href = "../../assets/upload_images/event/" target="_blank" id="edit_gambar_l">Preview</a>
-                        <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
-                    </div>
-                    <!-- Sampe Sni -->
-                    <!-- Ini hapus kalau loop udh ada -->
-                    <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar Carousel 2 Lama : </label>
-                        <a class="btn btn-primary" href = "../../assets/upload_images/event/" target="_blank" id="edit_gambar_l">Preview</a>
-                        <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
-                    </div>
-                    <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar Carousel 3 Lama : </label>
-                        <a class="btn btn-primary" href = "../../assets/upload_images/event/" target="_blank" id="edit_gambar_l">Preview</a>
-                        <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
-                    </div>
+                    <?php 
+                        $ident = $_COOKIE["ident"];
+                        $query_ident = $koneksi->prepare("SELECT * FROM image WHERE id_event = ?");
+                        $query_ident->bind_param('s', $ident);
+                        $query_ident->execute();
+                        $query_ident_get = $query_ident->get_result();
+                    ?>
+                    <?php $no = 1; while($query_ident_fetch = $query_ident_get->fetch_assoc()) { ?>
+                        <div class="mb-3">
+                            <label for="floatingGambar" class="form-label">Gambar Carousel <?= $no += 1 ?> Lama : </label>
+                            <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/<?php echo $query_ident_fetch['image']; ?>" target="_blank" id="edit_gambar_l">Preview</a>
+                            <input type="hidden" id="m_gambar_lama<?= $no += 1 ?>" name="m_gambar_lama<?= $no += 1 ?>">
+                        </div>
+                    <?php } ?>
                     <!-- Sampe Sni -->
                     <div class="mb-3">
-                        <label for="floatingGambar" class="form-label">Gambar</label>
+                        <label for="floatingGambar" class="form-label">Gambar Cover : </label>
                         <input type="file" class="form-control edit-image-cover" id="files[]" name="files[]" accept="image/*">
                         <div class="text-danger" id="edit-feedback-cover" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 1 (Opsional)</label>
-                        <input type="file" class="form-control edit-image1" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control edit-image1" id="carousels[]" name="carousels[]" accept="image/*">
                         <div class="text-danger" id="edit-feedback1" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 2 (Opsional)</label>
-                        <input type="file" class="form-control edit-image2" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control edit-image2" id="carousels[]" name="carousels[]" accept="image/*">
                         <div class="text-danger" id="edit-feedback2" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 3 (Opsional)</label>
-                        <input type="file" class="form-control edit-image3" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control edit-image3" id="carousels[]" name="carousels[]" accept="image/*">
                         <div class="text-danger" id="edit-feedback3" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
@@ -499,22 +500,35 @@
             var tanggal=$('#tanggal_asli'+id).text();
             var gambar_l=$('#gambar'+id).text();
             var kategori_val=$('#id_kategori'+id).text();
+            var ident = $('#ident'+id).text();
             
             tinymce.get("ubah_desc").setContent(deskripsi);
-
+            createCookie("ident", ident, "10");
             const edit_pic = document.getElementById('edit_gambar_l');
             const edit_tgl = document.getElementById('m_tanggal');
             
             $('#editModal').modal('show');
             $('#m_nama_edit').val(nama_event);
             $('#m_tempat_edit').val(tempat);
-            
             $('#m_tanggal').val(tanggal);
             $('#m_gambar_lama').val(gambar_l);
             edit_pic.href='../../assets/upload_images/event/'+gambar_l;
             $('#m_kategori').val(kategori_val);
             $('#m_id').val(id);
         });
+
+        function createCookie(identifikasi, nilai, hari) {
+            var expires;
+            if (hari) {
+                var date = new Date();
+                date.setTime(date.getTime() + (hari * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toGMTString();
+            }
+            else {
+                expires = "";
+            }
+            document.cookie = escape(identifikasi) + "=" + escape(nilai) + hari + "; path=/";
+        }
 
         $('.edit-category').on('click', function(){
             var id=$(this).val();
@@ -533,6 +547,7 @@
             $('.del').on('click', function () {
                 id = $(this).data('id');
                 gambar = $(this).data('gambar');
+                ident = $(this).data('ident');
                 Swal.fire({
                     title: "Anda yakin ?",
                     text: "Apa anda yakin ingin menghapus data ini ?",
@@ -544,7 +559,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete.isConfirmed) {
-                        window.location.href = '../../controller/route.php?aksi=delete_event&id='+id+'&gambar='+gambar;
+                        window.location.href = '../../controller/route.php?aksi=delete_event&id='+id+'&gambar='+gambar+'&ident='+ident;
                     }
                 });
             })

@@ -6,6 +6,8 @@ include '../koneksi.php';
 require_once '../model/login.php';
 // Administrasi
 require_once '../model/user.php';
+// Kategori
+require_once '../model/kategori.php';
 // Event
 require_once '../model/event.php';
 // Campaign
@@ -109,6 +111,42 @@ switch($data['aksi']){
         }
     break;
 
+    // Kategori
+    case 'add_kategori':
+        $kategori = $_POST['kategori'];
+        $query = add_kategori($kategori);
+        if($query == 'true'){
+            header("Location: ../view/admin/event.php?sukses=1");
+        }else if($query == 'false'){
+            header("Location: ../view/admin/event.php?gagal=1");
+        }else{
+            echo "Error";
+        }
+    break;
+    case 'update_kategori':
+        $kategori = $_POST['kategori'];
+        $id = $_POST['id'];
+        $query = update_kategori($id, $kategori);
+        if($query == 'true'){
+            header("Location: ../view/admin/event.php?sukses=1");
+        }else if($query == 'false'){
+            header("Location: ../view/admin/event.php?gagal=1");
+        }else{
+            echo "Error";
+        }
+    break;
+    case 'delete_kategori':
+        $id = $_POST['id'];
+        $query = delete_kategori($id);
+        if($query == 'true'){
+            header("Location: ../view/admin/event.php?sukses=1");
+        }else if($query == 'false'){
+            header("Location: ../view/admin/event.php?gagal=1");
+        }else{
+            echo "Error";
+        }
+    break;
+
     // Event
     case 'add_event':
         $nama_event = $_POST['floatingNama'];
@@ -117,7 +155,8 @@ switch($data['aksi']){
         $tanggal = $_POST['floatingTanggal'];
         $deskripsi = $_POST['m_deskripsi'];
         $kategori = $_POST['floatingKategori'];
-        // Upload gambar
+        $ident = uniqid("E");
+        // Upload gambar cover
         if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
             foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
                 $file_name = $key.$_FILES['files']['name'][$key];
@@ -132,7 +171,27 @@ switch($data['aksi']){
                 }
             }
         }
-        $query = add_event($nama_event, $tempat, $tanggal_post, $tanggal, $deskripsi, $gambar, $kategori);
+        // Masukkan event
+        $query = add_event($nama_event, $ident, $tempat, $tanggal_post, $tanggal, $deskripsi, $gambar, $kategori);
+        // Upload gambar carousel
+        if(isset($_FILES["carousels"]) && !empty($_FILES["carousels"]["name"])){
+            $count = 0;
+            foreach($_FILES['carousels']['tmp_name'] as $key2 => $tmp_name2 ){
+                $file_name2 = $key.$_FILES['carousels']['name'][$key2];
+                $file_size2 =$_FILES['carousels']['size'][$key2];
+                $file_tmp2 =$_FILES['carousels']['tmp_name'][$key2];
+                $file_type2=$_FILES['carousels']['type'][$key2];
+                $original_filename2 = $_FILES['carousels']['name'][$key2];
+                $ext2 = strtolower(pathinfo($_FILES["carousels"]["name"][$key2], PATHINFO_EXTENSION));
+                if(in_array( $ext2, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
+                    $gambar2 = uniqid() . '.' . $ext2;
+                    move_uploaded_file($file_tmp2,'../assets/upload_images/event/carousel/'.$gambar2);
+                }
+                $count = $count + 1;
+                // Masukkan gambar carousel
+                $query2 = add_carousel($gambar2, $ident, $count);
+            }
+        }
         if($query == 'true'){
             header("Location: ../view/admin/event.php?sukses=1");
         }else if($query == 'false'){
@@ -195,11 +254,20 @@ switch($data['aksi']){
     case 'delete_event':
         $id = $_GET['id'];
         $gambar_lama = $_GET['gambar'];
+        $ident = $_GET['ident'];
         $filename = '../assets/upload_images/event/'.$gambar_lama;
         if(file_exists($filename)){
             unlink($filename);
         }
-        $query = delete_event($id);
+        // Hapus carousel *terpaksa agak menyimpang dari MVC
+        $cek_file = mysqli_query($koneksi, "SELECT * FROM image WHERE id_event = '$ident'");
+        while($isi_carousel = mysqli_fetch_assoc($cek_file)){
+            $filename_carousel = '../assets/upload_images/event/carousel/'.$isi_carousel['image'];
+            if(file_exists($filename_carousel)){
+                unlink($filename_carousel);
+            }
+        }
+        $query = delete_event($id, $ident);
         if($query == 'true'){
             header("Location: ../view/admin/event.php?sukses=1");
         }else if($query == 'false'){

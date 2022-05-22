@@ -92,7 +92,7 @@
                                 ?>
                                 <?php while($event_assoc = $event_res->fetch_assoc()) { ?>
                                     <div class="event-card">
-                                        <img src="../assets/upload_images/event/<?= $event_assoc['gambar'];?>" alt="<?= $event_assoc['gambar'];?>">
+                                        <img src="../assets/upload_images/event/<?= $event_assoc['gambar_cover'];?>" alt="<?= $event_assoc['gambar_cover'];?>">
                                         <a href="detailEvent.php?id=<?= $event_assoc['id'];?>">
                                             <div class="event-card-text">
                                                 <h3><?php 
@@ -134,7 +134,7 @@
                         <div class="col-md-12">
                             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                                 <?php 
-                                    $campaign = $koneksi->prepare("SELECT * FROM campaign ORDER BY id ASC LIMIT 3");
+                                    $campaign = $koneksi->prepare("SELECT * FROM campaign ORDER BY tanggal_post ASC LIMIT 3");
                                     $campaign->execute();
                                     $campaign_res = $campaign->get_result();
                                 ?>

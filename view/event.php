@@ -6,13 +6,13 @@
         event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
         kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
         FROM event INNER JOIN kategori ON event.kategori = kategori.id
-        WHERE (nama_event LIKE '%$cari%') ORDER BY tanggal DESC";
+        WHERE (nama_event LIKE '%$cari%') ORDER BY tanggal ASC";
     }else{
-        $query = "SELECT event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, kategori.kategori AS nama_kategori, event.kategori AS id_kategori FROM event INNER JOIN kategori ON event.kategori = kategori.id ORDER BY tanggal DESC";
+        $query = "SELECT event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar_cover, kategori.kategori AS nama_kategori, event.kategori AS id_kategori FROM event INNER JOIN kategori ON event.kategori = kategori.id ORDER BY tanggal ASC";
     }
     $exec = mysqli_query($koneksi, $query);
 
-    $jumlahDataHalaman = 2;
+    $jumlahDataHalaman = 4;
     $totalData = mysqli_num_rows($exec);
     $jumlahHalaman = ceil($totalData/$jumlahDataHalaman);
 
@@ -81,7 +81,7 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="eventList-image">
-                                            <img src="../assets/upload_images/event/<?=$event_fetch['gambar'];?>" alt="<?=$event_fetch['gambar'];?>" class="w-100">
+                                            <img src="../assets/upload_images/event/<?=$event_fetch['gambar_cover'];?>" alt="<?=$event_fetch['gambar_cover'];?>" class="w-100">
                                             <div class="eventList-kategori">
                                                 <span><?=$event_fetch['nama_kategori'];?></span>
                                             </div>
