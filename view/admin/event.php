@@ -311,6 +311,7 @@
                             <input type="hidden" id="m_gambar_lama<?= $no += 1 ?>" name="m_gambar_lama<?= $no += 1 ?>">
                         </div>
                     <?php } ?>
+                    <div id="target"></div>
                     <!-- Sampe Sni -->
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Cover : </label>
@@ -501,6 +502,30 @@
             var gambar_l=$('#gambar'+id).text();
             var kategori_val=$('#id_kategori'+id).text();
             var ident = $('#ident'+id).text();
+
+            $.ajax({
+                type: "GET",
+                url: `getimage.php?id=${ident}`,
+                success: function(data){
+                    let dataHasil = data.substring(1, data.length - 2).split(",");
+                    dataHasil = dataHasil.map((h) => {
+                        return h.substring(1, h.length);
+                    })
+                    console.log(data);
+                    console.log(dataHasil);
+                    let counter = 1;
+                    let tumbal = "";
+                    dataHasil.forEach((el) => {
+                        tumbal += `<div class="mb-3">
+                                        <label for="floatingGambar" class="form-label">Gambar Carousel ${counter} Lama : </label>
+                                        <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/${el}" target="_blank" id="edit_gambar_l">Preview</a>
+                                        <input type="hidden" id="m_gambar_lama${counter} name="m_gambar_lama${counter}">
+                                    </div>`;
+                        counter++;
+                    })
+                    $("#target").html(tumbal)
+                }
+            });
             
             tinymce.get("ubah_desc").setContent(deskripsi);
             const edit_pic = document.getElementById('edit_gambar_l');
