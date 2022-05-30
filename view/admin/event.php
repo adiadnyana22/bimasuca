@@ -296,21 +296,6 @@
                         <a class="btn btn-primary" href = "../../assets/upload_images/event/" target="_blank" id="edit_gambar_l">Preview</a>
                         <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
                     </div>
-                    <!-- Loop untuk setiap gambar carousel yang ada -->
-                    <?php 
-                        $ident = $_COOKIE["ident"];
-                        $query_ident = $koneksi->prepare("SELECT * FROM image WHERE id_event = ?");
-                        $query_ident->bind_param('s', $ident);
-                        $query_ident->execute();
-                        $query_ident_get = $query_ident->get_result();
-                    ?>
-                    <?php $no = 1; while($query_ident_fetch = $query_ident_get->fetch_assoc()) { ?>
-                        <div class="mb-3">
-                            <label for="floatingGambar" class="form-label">Gambar Carousel <?= $no += 1 ?> Lama : </label>
-                            <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/<?php echo $query_ident_fetch['image']; ?>" target="_blank" id="edit_gambar_l">Preview</a>
-                            <input type="hidden" id="m_gambar_lama<?= $no += 1 ?>" name="m_gambar_lama<?= $no += 1 ?>">
-                        </div>
-                    <?php } ?>
                     <div id="target"></div>
                     <!-- Sampe Sni -->
                     <div class="mb-3">
