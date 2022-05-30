@@ -503,7 +503,6 @@
             var ident = $('#ident'+id).text();
             
             tinymce.get("ubah_desc").setContent(deskripsi);
-            createCookie("ident", ident, "10");
             const edit_pic = document.getElementById('edit_gambar_l');
             const edit_tgl = document.getElementById('m_tanggal');
             
@@ -516,19 +515,6 @@
             $('#m_kategori').val(kategori_val);
             $('#m_id').val(id);
         });
-
-        function createCookie(identifikasi, nilai, hari) {
-            var expires;
-            if (hari) {
-                var date = new Date();
-                date.setTime(date.getTime() + (hari * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toGMTString();
-            }
-            else {
-                expires = "";
-            }
-            document.cookie = escape(identifikasi) + "=" + escape(nilai) + hari + "; path=/";
-        }
 
         $('.edit-category').on('click', function(){
             var id=$(this).val();
