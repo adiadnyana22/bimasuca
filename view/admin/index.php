@@ -50,9 +50,9 @@
                     <h2><?= $suggestion_jumlah['jumlah_suggestion'];?></h2>
                 </div>
             </div>
-            <div class="col-12 mt-5">
+            <!-- <div class="col-12 mt-5">
                 <canvas id="myChart" width="100%" height="50"></canvas>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Datatables -->
