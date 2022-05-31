@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Bulan Mei 2022 pada 18.27
+-- Waktu pembuatan: 31 Bulan Mei 2022 pada 06.56
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.5
 
@@ -91,7 +91,7 @@ INSERT INTO `event` (`id`, `ident`, `nama_event`, `tempat`, `tanggal_post`, `tan
 (4, 'abf867', 'Pembuatan Sumur Resapan', 'Kantor Kecamatan Pakis', '2022-05-05', '2022-05-17', 'Giat pembuatan sumur resapan bagi kantor kecamatan Pakis, Malang', 'event4.jpg', 3),
 (5, 'zgh11', 'Penghijauan Area Candi Singosari', 'Candi Singosari', '2022-05-08', '2022-05-31', 'Kegiatan penghijauan area Candi Singosari', '6277574a4a7d1.png', 1),
 (6, '145abf', 'Penghijauan Area Candi Brahu', 'Candi Brahu', '2022-05-08', '2022-05-31', 'Kegiatan penghijauan area Candi Brahu', '6277574a4a7d1.png', 1),
-(9, 'E6294dd3bda000', 'Pembuatan Pupuk Kompos Terpadu', 'Binus Malang', '2022-05-30', '2022-05-13', '<p>Testing</p>', '6294dd3bda00f.png', 2);
+(10, 'E629563648afcf', 'Testing upload carousel 1', 'Sunib Ngalam', '2022-05-31', '2022-05-28', '<p>Hadir semua ya</p>', '629563648afdc.png', 1);
 
 -- --------------------------------------------------------
 
@@ -118,9 +118,9 @@ INSERT INTO `image` (`id`, `image`, `id_event`, `urutan`) VALUES
 (5, '6277574a4a7d1.png', 'zgh11', '1'),
 (7, 'event2.jpg', '6bfa8', '2'),
 (8, 'event3.jpg', '6bfa8', '3'),
-(15, '6294dd3bdd6e7.jpg', 'E6294dd3bda000', '1'),
-(16, '6294dd3bdf1da.jpg', 'E6294dd3bda000', '2'),
-(17, '6294dd3be11dc.jpeg', 'E6294dd3bda000', '3');
+(18, '629574393caa7.jpg', 'E629563648afcf', '1'),
+(19, '62957439435b9.png', 'E629563648afcf', '2'),
+(20, '629573ba27474.png', 'E629563648afcf', '3');
 
 -- --------------------------------------------------------
 
@@ -228,13 +228,13 @@ ALTER TABLE `campaign`
 -- AUTO_INCREMENT untuk tabel `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`

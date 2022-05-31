@@ -202,48 +202,229 @@ switch($data['aksi']){
     break;
     case 'update_event':
         $id = $_POST['m_id'];
+        $ident = $_POST['m_ident'];
         $nama_event = $_POST['m_nama_edit'];
         $tempat = $_POST['m_tempat_edit'];
         $tanggal = $_POST['m_tanggal'];
         $deskripsi = $_POST['ubah_desc'];
         $kategori = $_POST['m_kategori'];
         $gambar_lama = $_POST['m_gambar_lama'];
+        $gambar_lama1 = $_POST['carousel_lama1'];
+        $gambar_lama2 = $_POST['carousel_lama2'];
+        $gambar_lama3 = $_POST['carousel_lama3'];
+    
+        // Upload gambar cover
+        if(isset($_FILES["cover"]) && !empty($_FILES["cover"]["name"])){
+            $data1 = $_FILES;
+            $file_name = $data1['cover']['name'];
+            $file_tmp = $data1['cover']['tmp_name'];
+            $file_size = $data1['cover']['size'];
+            $ekstensi_cover = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+            $ext = explode('.', $file_name);
+            $ekstensi_cover_real = strtoLower(end($ext));
+            if(!in_array($ekstensi_cover_real, $ekstensi_cover)) {
+                $gambar = uniqid() . '.' . $ext;
+                if(is_null($gambar)){
+                     $gambar = NULL;
+                }else{
+                    $filename = '../assets/upload_images/event/'.$gambar_lama;
+                    if(file_exists($filename)){
+                        unlink($filename);
+                    }
+                    move_uploaded_file($file_tmp,'../assets/upload_images/event/'.$gambar);
+                }
+            }
+            
 
-        // Upload gambar
-        if(isset($_FILES["files"]) && !empty($_FILES["files"]["name"])){
-            foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-                $file_name = $key.$_FILES['files']['name'][$key];
-                $file_size =$_FILES['files']['size'][$key];
-                $file_tmp =$_FILES['files']['tmp_name'][$key];
-                $file_type=$_FILES['files']['type'][$key];
-                $original_filename = $_FILES['files']['name'][$key];
-                $ext = strtolower(pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION));
-                if(in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
-                    $gambar = uniqid() . '.' . $ext;
-                    if(is_null($gambar)){
-                        $gambar = NULL;
+            // Gambar 1
+            if(isset($_FILES["carousels1"]) && !empty($_FILES["carousels1"]["name"])){
+                $data1 = $_FILES;
+                $nama_gambar1 = $data1['carousels1']['name'];
+                $tmp_name1 = $data1['carousels1']['tmp_name'];
+                $file_size1 = $data1['carousels1']['size'];
+                $ekstensi_gambar1 = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+                $ekstensi_gambar_upload1 = explode('.', $nama_gambar1);
+                $ekstensi1 = strtoLower(end($ekstensi_gambar_upload1));
+                if(!in_array($ekstensi1, $ekstensi_gambar1)){
+                    header("Location: ../view/admin/event.php?gagal=1");
+                }else{
+                    $gambarc1 = uniqid() . '.' . $ekstensi1;
+                    if(is_null($gambarc1)){
+                        $gambarc1 = NULL;
                     }else{
-                        $filename = '../assets/upload_images/event/'.$gambar_lama;
-                        if(file_exists($filename)){
-                            unlink($filename);
+                        $filename1 = '../assets/upload_images/event/carousel/'.$gambar_lama1;
+                        if(file_exists($filename1)){
+                            unlink($filename1);
                         }
-                        move_uploaded_file($file_tmp,'../assets/upload_images/event/'.$gambar);
+                        move_uploaded_file($tmp_name1,'../assets/upload_images/event/carousel/'.$gambarc1);
+                        $urutan1 = '1';
+                        $carousel1 = $koneksi->prepare("UPDATE image SET image = ? WHERE id_event = ? AND urutan = ?");
+                        $carousel1->bind_param('sss', $gambarc1, $ident, $urutan1);
+                        $carousel1->execute();
                     }
                 }
             }
+
+            // Gambar 2
+            if(isset($_FILES["carousels2"]) && !empty($_FILES["carousels2"]["name"])){
+                $data2 = $_FILES;
+                $nama_gambar2 = $data2['carousels2']['name'];
+                $tmp_name2 = $data2['carousels2']['tmp_name'];
+                $file_size2 = $data2['carousels2']['size'];
+                $ekstensi_gambar2 = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+                $ekstensi_gambar_upload2 = explode('.', $nama_gambar2);
+                $ekstensi2 = strtoLower(end($ekstensi_gambar_upload2));
+                if(!in_array($ekstensi2, $ekstensi_gambar2)){
+                    header("Location: ../view/admin/event.php?gagal=1");
+                }else{
+                    $gambarc2 = uniqid() . '.' . $ekstensi2;
+                    if(is_null($gambarc2)){
+                        $gambarc2 = NULL;
+                    }else{
+                        $filename2 = '../assets/upload_images/event/carousel/'.$gambar_lama2;
+                        if(file_exists($filename2)){
+                            unlink($filename2);
+                        }
+                        move_uploaded_file($tmp_name2,'../assets/upload_images/event/carousel/'.$gambarc2);
+                        $urutan2 = '2';
+                        $carousel2 = $koneksi->prepare("UPDATE image SET image = ? WHERE id_event = ? AND urutan = ?");
+                        $carousel2->bind_param('sss', $gambarc2, $ident, $urutan2);
+                        $carousel2->execute();
+                    }
+                }
+            }
+
+            // Gambar 3
+            if(isset($_FILES["carousels3"]) && !empty($_FILES["carousels3"]["name"])){
+                $data3 = $_FILES;
+                $nama_gambar3 = $data3['carousels3']['name'];
+                $tmp_name3 = $data3['carousels3']['tmp_name'];
+                $file_size3 = $data3['carousels3']['size'];
+                $ekstensi_gambar3 = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+                $ekstensi_gambar_upload3 = explode('.', $nama_gambar3);
+                $ekstensi3 = strtoLower(end($ekstensi_gambar_upload3));
+                if(!in_array($ekstensi3, $ekstensi_gambar3)){
+                    header("Location: ../view/admin/event.php?gagal=1");
+                }else{
+                    $gambarc3 = uniqid() . '.' . $ekstensi3;
+                    if(is_null($gambarc3)){
+                        $gambarc3 = NULL;
+                    }else{
+                        $filename3 = '../assets/upload_images/event/carousel/'.$gambar_lama3;
+                        if(file_exists($filename3)){
+                            unlink($filename3);
+                        }
+                        move_uploaded_file($tmp_name3,'../assets/upload_images/event/carousel/'.$gambarc3);
+                        $urutan1 = '3';
+                        $carousel3 = $koneksi->prepare("UPDATE image SET image = ? WHERE id_event = ? AND urutan = ?");
+                        $carousel3->bind_param('sss', $gambarc3, $ident, $urutan3);
+                        $carousel3->execute();
+                    }
+                }
+            }
+
             $query = update_event($id, $nama_event, $tempat, $tanggal, $deskripsi, $kategori, $gambar);
             if($query == 'true'){
                 header("Location: ../view/admin/event.php?sukses=1");
+                var_dump($gambar);
             }else if($query == 'false'){
                 header("Location: ../view/admin/event.php?gagal=1");
             }else{
                 echo "Error";
             }
+            // Tidak edit cover
         }else{
+            // Gambar 1
+            if(isset($_FILES["carousels1"]) && !empty($_FILES["carousels1"]["name"])){
+                $data1 = $_FILES;
+                $nama_gambar1 = $data1['carousels1']['name'];
+                $tmp_name1 = $data1['carousels1']['tmp_name'];
+                $file_size1 = $data1['carousels1']['size'];
+                $ekstensi_gambar1 = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+                $ekstensi_gambar_upload1 = explode('.', $nama_gambar1);
+                $ekstensi1 = strtoLower(end($ekstensi_gambar_upload1));
+                if(!in_array($ekstensi1, $ekstensi_gambar1)){
+                    header("Location: ../view/admin/event.php?gagal=1");
+                }else{
+                    $gambarc1 = uniqid() . '.' . $ekstensi1;
+                    if(is_null($gambarc1)){
+                        $gambarc1 = NULL;
+                    }else{
+                        $filename1 = '../assets/upload_images/event/carousel/'.$gambar_lama1;
+                        if(file_exists($filename1)){
+                            unlink($filename1);
+                        }
+                        move_uploaded_file($tmp_name1,'../assets/upload_images/event/carousel/'.$gambarc1);
+                        $urutan1 = '1';
+                        $carousel1 = $koneksi->prepare("UPDATE image SET image = ? WHERE id_event = ? AND urutan = ?");
+                        $carousel1->bind_param('sss', $gambarc1, $ident, $urutan1);
+                        $carousel1->execute();
+                    }
+                }
+            }
+
+            // Gambar 2
+            if(isset($_FILES["carousels2"]) && !empty($_FILES["carousels2"]["name"])){
+                $data2 = $_FILES;
+                $nama_gambar2 = $data2['carousels2']['name'];
+                $tmp_name2 = $data2['carousels2']['tmp_name'];
+                $file_size2 = $data2['carousels2']['size'];
+                $ekstensi_gambar2 = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+                $ekstensi_gambar_upload2 = explode('.', $nama_gambar2);
+                $ekstensi2 = strtoLower(end($ekstensi_gambar_upload2));
+                if(!in_array($ekstensi2, $ekstensi_gambar2)){
+                    header("Location: ../view/admin/event.php?gagal=1");
+                }else{
+                    $gambarc2 = uniqid() . '.' . $ekstensi2;
+                    if(is_null($gambarc2)){
+                        $gambarc2 = NULL;
+                    }else{
+                        $filename2 = '../assets/upload_images/event/carousel/'.$gambar_lama2;
+                        if(file_exists($filename2)){
+                            unlink($filename2);
+                        }
+                        move_uploaded_file($tmp_name2,'../assets/upload_images/event/carousel/'.$gambarc2);
+                        $urutan2 = '2';
+                        $carousel2 = $koneksi->prepare("UPDATE image SET image = ? WHERE id_event = ? AND urutan = ?");
+                        $carousel2->bind_param('sss', $gambarc2, $ident, $urutan2);
+                        $carousel2->execute();
+                    }
+                }
+            }
+
+            // Gambar 3
+            if(isset($_FILES["carousels3"]) && !empty($_FILES["carousels3"]["name"])){
+                $data3 = $_FILES;
+                $nama_gambar3 = $data3['carousels3']['name'];
+                $tmp_name3 = $data3['carousels3']['tmp_name'];
+                $file_size3 = $data3['carousels3']['size'];
+                $ekstensi_gambar3 = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+                $ekstensi_gambar_upload3 = explode('.', $nama_gambar3);
+                $ekstensi3 = strtoLower(end($ekstensi_gambar_upload3));
+                if(!in_array($ekstensi3, $ekstensi_gambar3)){
+                    header("Location: ../view/admin/event.php?gagal=1");
+                }else{
+                    $gambarc3 = uniqid() . '.' . $ekstensi3;
+                    if(is_null($gambarc3)){
+                        $gambarc3 = NULL;
+                    }else{
+                        $filename3 = '../assets/upload_images/event/carousel/'.$gambar_lama3;
+                        if(file_exists($filename3)){
+                            unlink($filename3);
+                        }
+                        move_uploaded_file($tmp_name3,'../assets/upload_images/event/carousel/'.$gambarc3);
+                        $urutan3 = '3';
+                        $carousel3 = $koneksi->prepare("UPDATE image SET image = ? WHERE id_event = ? AND urutan = ?");
+                        $carousel3->bind_param('sss', $gambarc3, $ident, $urutan3);
+                        $result = $carousel3->execute();
+                    }
+                }
+            }
             $gambar = NULL;
             $query = update_event($id, $nama_event, $tempat, $tanggal, $deskripsi, $kategori, $gambar);
             if($query == 'true'){
-                header("Location: ../view/admin/event.php?sukses=1");
+                // header("Location: ../view/admin/event.php?sukses=1");
+                var_dump($gambar);
             }else if($query == 'false'){
                 header("Location: ../view/admin/event.php?gagal=1");
             }else{

@@ -300,22 +300,22 @@
                     <!-- Sampe Sni -->
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Cover : </label>
-                        <input type="file" class="form-control edit-image-cover" id="files[]" name="files[]" accept="image/*">
+                        <input type="file" class="form-control edit-image-cover" id="cover" name="cover" accept="image/*">
                         <div class="text-danger" id="edit-feedback-cover" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 1 (Opsional)</label>
-                        <input type="file" class="form-control edit-image1" id="carousels[]" name="carousels[]" accept="image/*">
+                        <input type="file" class="form-control edit-image1" id="carousels1" name="carousels1" accept="image/*">
                         <div class="text-danger" id="edit-feedback1" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 2 (Opsional)</label>
-                        <input type="file" class="form-control edit-image2" id="carousels[]" name="carousels[]" accept="image/*">
+                        <input type="file" class="form-control edit-image2" id="carousels2" name="carousels2" accept="image/*">
                         <div class="text-danger" id="edit-feedback2" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Carousel 3 (Opsional)</label>
-                        <input type="file" class="form-control edit-image3" id="carousels[]" name="carousels[]" accept="image/*">
+                        <input type="file" class="form-control edit-image3" id="carousels3" name="carousels3" accept="image/*">
                         <div class="text-danger" id="edit-feedback3" style="display: none">Ukuran File Terlalu Besar (Ukuran file maksimal 2mb)</div>
                     </div>
                     <div class="mb-3">
@@ -332,6 +332,7 @@
                         </select>
                     </div>
                     <input type="hidden" id="m_id" name="m_id">
+                    <input type="hidden" id="m_ident" name="m_ident">
                     <hr class="mt-3">
                     <div class="flex-right my-1">
                         <button type="submit" class="btn btn-primary" id="edit-btn">Edit Event</button>
@@ -504,7 +505,7 @@
                         tumbal += `<div class="mb-3">
                                         <label for="floatingGambar" class="form-label">Gambar Carousel ${counter} Lama : </label>
                                         <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/${el}" target="_blank" id="edit_gambar_l">Preview</a>
-                                        <input type="hidden" id="m_gambar_lama${counter} name="m_gambar_lama${counter}">
+                                        <input type="hidden" id="carousel_lama${counter}" name="carousel_lama${counter}" value="${el}">
                                     </div>`;
                         counter++;
                     })
@@ -524,6 +525,7 @@
             edit_pic.href='../../assets/upload_images/event/'+gambar_l;
             $('#m_kategori').val(kategori_val);
             $('#m_id').val(id);
+            $('#m_ident').val(ident);
         });
 
         $('.edit-category').on('click', function(){
