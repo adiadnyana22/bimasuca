@@ -3,7 +3,7 @@
     if(isset($_GET['cari'])){
         $cari = $_GET['cari'];
         $query = "SELECT 
-        event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
+        event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar_cover, 
         kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
         FROM event INNER JOIN kategori ON event.kategori = kategori.id
         WHERE (nama_event LIKE '%$cari%') ORDER BY tanggal ASC";

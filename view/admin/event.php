@@ -73,7 +73,7 @@
                     <td>
                         <button type="button" class="btn btn-warning edit" value="<?php echo $event_fetch['id']; ?>"><span class="glyphicon glyphicon-edit"></span>Edit</button>
                         <a class="btn btn-danger del" data-gambar="<?=$event_fetch['gambar_cover'];?>" data-id="<?=$event_fetch['id'];?>" data-ident="<?=$event_fetch['ident'];?>">Hapus</a>
-                        <a href="../detailEvent.php?id=<?=$event_fetch['id'];?>" class="btn btn-primary" target="_blank">Detail</a>
+                        <a href="../detailEvent?id=<?=$event_fetch['id'];?>" class="btn btn-primary" target="_blank">Detail</a>
                     </td>
                     <span hidden id="gambar<?=$event_fetch['id'];?>"><?=$event_fetch['gambar_cover'];?></span>
                     <span hidden id="id_kategori<?=$event_fetch['id'];?>"><?=$event_fetch['id_kategori'];?></span>
@@ -150,7 +150,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="../../controller/route.php?aksi=add_kategori" method="POST">
+                    <form action="../controller/route.php?aksi=add_kategori" method="POST">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingKategori" name="floatingKategori" placeholder="Menanam Pohon Bersama" maxlength="30">
                             <label for="floatingKategori">Nama Kategori</label>
@@ -175,7 +175,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="../../controller/route.php?aksi=edit_kategori" method="POST">
+                    <form action="../controller/route.php?aksi=edit_kategori" method="POST">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingKategoriEdit" name="floatingKategori" placeholder="Menanam Pohon Bersama" maxlength="30">
                             <label for="floatingKategoriEdit">Nama Kategori</label>
@@ -201,7 +201,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/route.php?aksi=add_event" method="POST" enctype="multipart/form-data">
+                <form action="../controller/route.php?aksi=add_event" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingNama" name="floatingNama" placeholder="Menanam Pohon Bersama" maxlength="30">
                         <label for="floatingNama">Nama Event</label>
@@ -274,7 +274,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/route.php?aksi=update_event" method="POST" enctype="multipart/form-data">
+                <form action="../controller/route.php?aksi=update_event" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="m_nama_edit" name="m_nama_edit" placeholder="Menanam Pohon Bersama" maxlength="30">
                         <label for="floatingNama">Nama Event</label>
@@ -293,7 +293,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="floatingGambar" class="form-label">Gambar Cover Lama : </label>
-                        <a class="btn btn-primary" href = "../../assets/upload_images/event/" target="_blank" id="edit_gambar_l">Preview</a>
+                        <a class="btn btn-primary" href = "../assets/upload_images/event/" target="_blank" id="edit_gambar_l">Preview</a>
                         <input type="hidden" id="m_gambar_lama" name="m_gambar_lama">
                     </div>
                     <div id="target"></div>
@@ -443,13 +443,13 @@
         $(document).ready(function() {
             $('#example').DataTable({
                 "language": {
-                    "url": "../../assets/plugin/datatable/indonesia.json"
+                    "url": "../assets/plugin/datatable/indonesia.json"
                 }
             });
 
             $('#example2').DataTable({
                 "language": {
-                    "url": "../../assets/plugin/datatable/indonesia.json"
+                    "url": "../assets/plugin/datatable/indonesia.json"
                 }
             });
         } );
@@ -504,7 +504,7 @@
                     dataHasil.forEach((el) => {
                         tumbal += `<div class="mb-3">
                                         <label for="floatingGambar" class="form-label">Gambar Carousel ${counter} Lama : </label>
-                                        <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/${el}" target="_blank" id="edit_gambar_l">Preview</a>
+                                        <a class="btn btn-primary" href = "../assets/upload_images/event/carousel/${el}" target="_blank" id="edit_gambar_l">Preview</a>
                                         <input type="hidden" id="carousel_lama${counter}" name="carousel_lama${counter}" value="${el}">
                                     </div>`;
                         counter++;
@@ -522,7 +522,7 @@
             $('#m_tempat_edit').val(tempat);
             $('#m_tanggal').val(tanggal);
             $('#m_gambar_lama').val(gambar_l);
-            edit_pic.href='../../assets/upload_images/event/'+gambar_l;
+            edit_pic.href='../assets/upload_images/event/'+gambar_l;
             $('#m_kategori').val(kategori_val);
             $('#m_id').val(id);
             $('#m_ident').val(ident);
@@ -557,7 +557,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete.isConfirmed) {
-                        window.location.href = '../../controller/route.php?aksi=delete_event&id='+id+'&gambar='+gambar+'&ident='+ident;
+                        window.location.href = '../controller/route.php?aksi=delete_event&id='+id+'&gambar='+gambar+'&ident='+ident;
                     }
                 });
             })

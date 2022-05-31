@@ -231,7 +231,7 @@ switch($data['aksi']){
                     if(file_exists($filename)){
                         unlink($filename);
                     }
-                    move_uploaded_file($file_tmp,'../assets/upload_images/event/'.$gambar);
+                    move_uploaded_file($file_tmp,'assets/upload_images/event/'.$gambar);
                 }
             }
             
@@ -448,9 +448,9 @@ switch($data['aksi']){
         }
         $query = delete_event($id, $ident);
         if($query == 'true'){
-            header("Location: ../view/admin/event.php?sukses=1");
+            header("Location: ../admin/event?sukses=1");
         }else if($query == 'false'){
-            header("Location: ../view/admin/event.php?gagal=1");
+            header("Location: ../admin/event?gagal=1");
         }else{
             echo "Error";
         }
