@@ -1,18 +1,18 @@
 <?php
     include '../koneksi.php';
     if(isset($_GET['cari'])){
-        $cari = mysqli_real_escape_string($koneksi, htmlspecialchars($_GET['cari'], ENT_QUOTES));
+        $cari = $_GET['cari'];
         $query = "SELECT 
         event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
         kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
         FROM event INNER JOIN kategori ON event.kategori = kategori.id
-        WHERE (nama_event LIKE '%$cari%') ORDER BY tanggal DESC";
+        WHERE (nama_event LIKE '%$cari%') ORDER BY tanggal ASC";
     }else{
-        $query = "SELECT event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, kategori.kategori AS nama_kategori, event.kategori AS id_kategori FROM event INNER JOIN kategori ON event.kategori = kategori.id ORDER BY tanggal DESC";
+        $query = "SELECT event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar_cover, kategori.kategori AS nama_kategori, event.kategori AS id_kategori FROM event INNER JOIN kategori ON event.kategori = kategori.id ORDER BY tanggal ASC";
     }
     $exec = mysqli_query($koneksi, $query);
 
-    $jumlahDataHalaman = 2;
+    $jumlahDataHalaman = 4;
     $totalData = mysqli_num_rows($exec);
     $jumlahHalaman = ceil($totalData/$jumlahDataHalaman);
 
@@ -29,7 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event - Binus Malang Sustainable Campus</title>
+    <title>Event - Bimasuca</title>
     <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -81,7 +81,7 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="eventList-image">
-                                            <img src="assets/upload_images/event/<?=$event_fetch['gambar'];?>" alt="<?=$event_fetch['gambar'];?>" class="w-100">
+                                            <img src="assets/upload_images/event/<?=$event_fetch['gambar_cover'];?>" alt="<?=$event_fetch['gambar_cover'];?>" class="w-100">
                                             <div class="eventList-kategori">
                                                 <span><?=$event_fetch['nama_kategori'];?></span>
                                             </div>

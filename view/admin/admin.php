@@ -92,7 +92,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../controller/route.php?aksi=add_user" method="POST">
+                <form action="../../controller/route.php?aksi=add_user" method="POST">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingNama" name="floatingNama" placeholder="Hanustavira Guru">
                         <label for="floatingNama">Nama</label>
@@ -135,7 +135,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../controller/route.php?aksi=update_user" method="POST">
+                <form action="../../controller/route.php?aksi=update_user" method="POST">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="m_nama" name="m_nama" placeholder="Hanustavira Guru">
                         <label for="floatingNama">Nama</label>
@@ -173,7 +173,7 @@
         $(document).ready(function() {
             $('#example').DataTable({
                 "language": {
-                    "url": "../assets/plugin/datatable/indonesia.json"
+                    "url": "../../assets/plugin/datatable/indonesia.json"
                 }
             });
         } );
@@ -213,7 +213,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete.isConfirmed) {
-                        window.location.href = '../controller/route.php?aksi=delete_user&id='+id;
+                        window.location.href = '../../controller/route.php?aksi=delete_user&id='+id;
                     }
                 });
             })

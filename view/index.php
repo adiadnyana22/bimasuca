@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimasuca - Binus Malang Sustainable Campus</title>
+    <title>Bimasuca - Bimasuca</title>
     <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -82,7 +82,7 @@
                         <div class="col-lg-6">
                             <div class="event-title">
                                 <h2>Event</h2>
-                                <a href="event">Selengkapnya</a>
+                                <a href="#">Selengkapnya</a>
                             </div>
                             <div class="event-list">
                                 <?php
@@ -92,8 +92,8 @@
                                 ?>
                                 <?php while($event_assoc = $event_res->fetch_assoc()) { ?>
                                     <div class="event-card">
-                                        <img src="assets/upload_images/event/<?= $event_assoc['gambar'];?>" alt="<?= $event_assoc['gambar'];?>">
-                                        <a href="detailEvent?id=<?= $event_assoc['id'];?>">
+                                        <img src="assets/upload_images/event/<?= $event_assoc['gambar_cover'];?>" alt="<?= $event_assoc['gambar_cover'];?>">
+                                        <a href="detailEvent.php?id=<?= $event_assoc['id'];?>">
                                             <div class="event-card-text">
                                                 <h3><?php 
                                                 // if(strlen($event_assoc['nama_event']) > 12){
@@ -134,7 +134,7 @@
                         <div class="col-md-12">
                             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                                 <?php 
-                                    $campaign = $koneksi->prepare("SELECT * FROM campaign ORDER BY id ASC LIMIT 3");
+                                    $campaign = $koneksi->prepare("SELECT * FROM campaign ORDER BY tanggal_post ASC LIMIT 3");
                                     $campaign->execute();
                                     $campaign_res = $campaign->get_result();
                                 ?>
@@ -148,8 +148,9 @@
                                     <?php } ?>
                                 </ol>
                                 <div class="carousel-inner">
+                                    <?php $cnt = 1; ?>
                                     <?php while($campaign_assoc = $campaign_res->fetch_assoc()) { ?>
-                                        <?php if($campaign_assoc['id'] == 1) { ?>
+                                        <?php if($cnt == 1) { ?>
                                             <div class="carousel-item active">
                                                 <img src="assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
                                                 <div class="backdrop"></div>
@@ -158,7 +159,7 @@
                                                     <p><?= $campaign_assoc['deskripsi'];?></p>
                                                 </div>
                                             </div>
-                                        <?php } else { ?>
+                                        <?php $cnt += 1; } else { ?>
                                             <div class="carousel-item">
                                                 <img src="assets/upload_images/campaign/<?= $campaign_assoc['gambar'];?>" class="d-block w-100" alt="<?= $campaign_assoc['gambar'];?>">
                                                 <div class="backdrop"></div>
@@ -194,7 +195,7 @@
                                     <p style="text-align: justify;">
                                         Kalkulator untuk menghitung seberapa besar emisi yang anda keluarkan setiap harinya dan konversinya dalam bahan energi
                                     </p>
-                                    <a href="kalkulator-emisi"><button>Buka Kalkulator</button></a>
+                                    <a href="kalkulator.php"><button>Buka Kalkulator</button></a>
                                 </div>
                             </div>
                             <div class="col-xl-4 offset-xl-1 col-md-4">
@@ -216,7 +217,7 @@
                                     <p style="text-align: justify;">
                                         Green Maze adalah game yang dibuat sebagai edukasi kesadaran akan kebersihan dengan cara yang lebih menarik
                                     </p>
-                                    <a href="game"><button>Mainkan Game</button></a>
+                                    <a href="game.php"><button>Mainkan Game</button></a>
                                 </div>
                             </div>
                         </div>

@@ -843,6 +843,20 @@ footer hr {
     margin: 1rem 0 3rem;
 }
 
+/* Event Image Carousel */
+.bg-eventImageCarousel {
+    margin: 1rem 0 5rem;
+}
+
+.bg-eventImageCarousel .main-carousel .carousel-cell {
+    margin-left: 1rem;
+}
+
+.bg-eventImageCarousel .main-carousel .carousel-cell img {
+    display: block;
+    height: 250px;
+}
+
 /*  */
 /* About */
 /*  */

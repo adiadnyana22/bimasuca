@@ -2,7 +2,7 @@
     include '../koneksi.php';
     $id = $_GET['id'];
     $query = $koneksi->prepare("SELECT 
-    event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar, 
+    ident, event.id, nama_event, tempat, tanggal_post, tanggal, deskripsi, gambar_cover, 
     kategori.kategori AS nama_kategori, event.kategori AS id_kategori 
     FROM event INNER JOIN kategori ON event.kategori = kategori.id
     WHERE event.id = ?");
@@ -10,6 +10,7 @@
     $query->execute();
     $query_res = $query->get_result();
     $query_fetch = $query_res->fetch_assoc();
+    $ident = $query_fetch['ident'];
 
     // Tanggal Post
     $date = $query_fetch['tanggal_post'];
@@ -31,7 +32,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $query_fetch['nama_event']; ?> - Binus Malang Sustainable Campus</title>
+    <title><?= $query_fetch['nama_event']; ?> - Bimasuca</title>
     <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -45,6 +46,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Flickity Carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -57,7 +61,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <img src="assets/upload_images/event/<?= $query_fetch['gambar']; ?>" alt="" class="w-100">
+                            <img src="assets/upload_images/event/<?= $query_fetch['gambar_cover']; ?>" alt="" class="w-100">
                         </div>
                         <div class="offset-lg-1 col-lg-6">
                             <div class="flex-center">
@@ -101,6 +105,26 @@
                     </div>
                 </div>
             </section>
+            <!-- Pengecekan apakah ada gambar carousel untuk detail event ini -->
+            <?php
+                $carousel = mysqli_query($koneksi, "SELECT * FROM image WHERE id_event = '$ident' ORDER BY urutan");
+            ?>
+            <?php if(mysqli_num_rows($carousel) > 0) { ?>
+                <section class="bg-eventImageCarousel">
+                    <div class="container">
+                        <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellAlign": "center", "imagesLoaded": true, "percentPosition": false }'>
+                            <!-- Foreach (Looping) -->
+                            <?php while($carousel_fetch = mysqli_fetch_assoc($carousel)) { ?>
+                                <div class="carousel-cell">
+                                    <img src="assets/upload_images/event/carousel/<?= $carousel_fetch['image']; ?>" alt="<?= $carousel_fetch['image']; ?>">
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </section>
+            <?php } else { ?>
+                    
+            <?php } ?>
             <section class="bg-eventDetailDesc">
                 <div class="container">
                     <?= $query_fetch['deskripsi']; ?>

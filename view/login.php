@@ -5,10 +5,9 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
         <meta name="apple-mobile-web-app-title" content="Bimasuca"/>
         <meta name="theme-color" content="#ffffff"/>
-        <link rel="icon" href="assets/images/LogoIcon.png">
-        <link rel="apple-touch-icon" href="assets/images/LogoIcon.png"/>
+        <link rel="apple-touch-icon" href="/prk//prk/assets/logo-binus.png"/>
         <link rel="manifest" href="/prk/manifest.json"/>
-        <link rel="shortcut icon" href="assets/images/LogoIcon.png"/>
+        <link rel="shortcut icon" href="/prk/static/favicon.ico"/>
         <meta charSet="UTF-8"/><meta name="author" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <meta charSet="utf-8"/>

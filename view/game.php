@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game - Binus Malang Sustainable Campus</title>
+    <title>Game - Bimasuca</title>
     <link rel="icon" href="assets/images/LogoIcon.png">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -29,8 +29,7 @@
             <div class="container">
                 <h1>Green Maze</h1>
                 <span>Coming Soon</span>
-                <!-- <img src="assets/images/Game.gif" alt="" class="w-100"> -->
-                <a href="https://gifyu.com/image/SsUXA" target="_blank"><img src="https://s8.gifyu.com/images/Game.gif" alt="Game.gif" border="0"  class="w-100"/></a>
+                <img src="assets/images/Game.gif" alt="" class="w-100">
             </div>
         </section>
         <!-- Footer -->

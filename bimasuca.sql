@@ -1,21 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Bulan Mei 2022 pada 11.36
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.1.2
+-- Waktu pembuatan: 31 Bulan Mei 2022 pada 06.56
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `bimasuca`
@@ -76,12 +70,13 @@ INSERT INTO `campaign` (`id`, `nama_campaign`, `tanggal_post`, `deskripsi`, `gam
 
 CREATE TABLE `event` (
   `id` int(100) NOT NULL,
+  `ident` varchar(300) DEFAULT NULL,
   `nama_event` varchar(300) DEFAULT NULL,
   `tempat` varchar(300) DEFAULT NULL,
   `tanggal_post` date DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `deskripsi` varchar(300) DEFAULT NULL,
-  `gambar` varchar(300) DEFAULT NULL,
+  `gambar_cover` varchar(300) DEFAULT NULL,
   `kategori` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -89,12 +84,43 @@ CREATE TABLE `event` (
 -- Dumping data untuk tabel `event`
 --
 
-INSERT INTO `event` (`id`, `nama_event`, `tempat`, `tanggal_post`, `tanggal`, `deskripsi`, `gambar`, `kategori`) VALUES
-(1, 'Pameran Karya Barang Daur Ulang', 'Lobby Binus@Malang', '2022-05-05', '2022-05-12', 'Ikuti pameran dan bazaar barang daur ulang yang tentunya sangat bermanfaat bagi masyarakat', 'event1.jpeg', 2),
-(2, 'Penukaran Sampah', 'Parkir Binus@Malang', '2022-05-05', '2022-05-06', 'Giat penukaran sampah menjadi uang', 'event2.jpg', 2),
-(3, 'Pembuatan Pupuk Kompos', 'BBIB Singosari', '2022-05-05', '2022-05-13', 'Ikuti giat pembuatan sumur resapan di Balai Besar Inseminasi Buatan, Singosari, Malang', 'event3.jpg', 3),
-(4, 'Pembuatan Sumur Resapan', 'Kantor Kecamatan Pakis', '2022-05-05', '2022-05-17', 'Giat pembuatan sumur resapan bagi kantor kecamatan Pakis, Malang', 'event4.jpg', 3),
-(5, 'Penghijauan Area Candi Singosari', 'Candi Singosari', '2022-05-08', '2022-05-31', 'Kegiatan penghijauan area Candi Singosari', '6277574a4a7d1.png', 1);
+INSERT INTO `event` (`id`, `ident`, `nama_event`, `tempat`, `tanggal_post`, `tanggal`, `deskripsi`, `gambar_cover`, `kategori`) VALUES
+(1, '6bfa8', 'Pameran Karya Barang Daur Ulang', 'Lobby Binus@Malang', '2022-05-05', '2022-05-12', 'Ikuti pameran dan bazaar barang daur ulang yang tentunya sangat bermanfaat bagi masyarakat', 'event1.jpeg', 2),
+(2, '87afg', 'Penukaran Sampah', 'Parkir Binus@Malang', '2022-05-05', '2022-05-06', 'Giat penukaran sampah menjadi uang', 'event2.jpg', 2),
+(3, 'io901g', 'Pembuatan Pupuk Kompos', 'BBIB Singosari', '2022-05-05', '2022-05-13', 'Ikuti giat pembuatan sumur resapan di Balai Besar Inseminasi Buatan, Singosari, Malang', 'event3.jpg', 3),
+(4, 'abf867', 'Pembuatan Sumur Resapan', 'Kantor Kecamatan Pakis', '2022-05-05', '2022-05-17', 'Giat pembuatan sumur resapan bagi kantor kecamatan Pakis, Malang', 'event4.jpg', 3),
+(5, 'zgh11', 'Penghijauan Area Candi Singosari', 'Candi Singosari', '2022-05-08', '2022-05-31', 'Kegiatan penghijauan area Candi Singosari', '6277574a4a7d1.png', 1),
+(6, '145abf', 'Penghijauan Area Candi Brahu', 'Candi Brahu', '2022-05-08', '2022-05-31', 'Kegiatan penghijauan area Candi Brahu', '6277574a4a7d1.png', 1),
+(10, 'E629563648afcf', 'Testing upload carousel 1', 'Sunib Ngalam', '2022-05-31', '2022-05-28', '<p>Hadir semua ya</p>', '629563648afdc.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `image`
+--
+
+CREATE TABLE `image` (
+  `id` int(100) NOT NULL,
+  `image` varchar(300) DEFAULT NULL,
+  `id_event` varchar(300) DEFAULT NULL,
+  `urutan` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `image`
+--
+
+INSERT INTO `image` (`id`, `image`, `id_event`, `urutan`) VALUES
+(1, 'event1.jpeg', '6bfa8', '1'),
+(2, 'event2.jpg', '87afg', '1'),
+(3, 'event3.jpg', 'io901g', '1'),
+(4, 'event4.jpg', 'abf867', '1'),
+(5, '6277574a4a7d1.png', 'zgh11', '1'),
+(7, 'event2.jpg', '6bfa8', '2'),
+(8, 'event3.jpg', '6bfa8', '3'),
+(18, '629574393caa7.jpg', 'E629563648afcf', '1'),
+(19, '62957439435b9.png', 'E629563648afcf', '2'),
+(20, '629573ba27474.png', 'E629563648afcf', '3');
 
 -- --------------------------------------------------------
 
@@ -160,7 +186,15 @@ ALTER TABLE `campaign`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ident` (`ident`),
   ADD KEY `kategori` (`kategori`);
+
+--
+-- Indeks untuk tabel `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_event` (`id_event`);
 
 --
 -- Indeks untuk tabel `kategori`
@@ -182,7 +216,7 @@ ALTER TABLE `suggestion`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `campaign`
@@ -194,7 +228,13 @@ ALTER TABLE `campaign`
 -- AUTO_INCREMENT untuk tabel `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `image`
+--
+ALTER TABLE `image`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
@@ -217,8 +257,10 @@ ALTER TABLE `suggestion`
 --
 ALTER TABLE `event`
   ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`kategori`) REFERENCES `kategori` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Ketidakleluasaan untuk tabel `image`
+--
+ALTER TABLE `image`
+  ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `event` (`ident`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
