@@ -63,7 +63,7 @@
             }
         }else{
             $r_gambar = mysqli_real_escape_string($koneksi, $gambar);
-            $query = $koneksi->prepare("UPDATE event SET nama_event=?, tempat=?, tanggal=?, deskripsi=?, kategori=?, gambar=? WHERE id=?");
+            $query = $koneksi->prepare("UPDATE event SET nama_event=?, tempat=?, tanggal=?, deskripsi=?, kategori=?, gambar_cover=? WHERE id=?");
             $query->bind_param('sssssss', $r_nama_event, $r_tempat, $r_tanggal, $r_deskripsi, $r_kategori, $r_gambar, $r_id);
             if($query->execute()){
                 $response = 'true';
