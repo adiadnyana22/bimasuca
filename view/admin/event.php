@@ -496,19 +496,21 @@
                     dataHasil = dataHasil.map((h) => {
                         return h.substring(1, h.length);
                     })
-                    console.log(data);
-                    console.log(dataHasil);
-                    let counter = 1;
-                    let tumbal = "";
-                    dataHasil.forEach((el) => {
-                        tumbal += `<div class="mb-3">
-                                        <label for="floatingGambar" class="form-label">Gambar Carousel ${counter} Lama : </label>
-                                        <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/${el}" target="_blank" id="edit_gambar_l">Preview</a>
-                                        <input type="hidden" id="m_gambar_lama${counter} name="m_gambar_lama${counter}">
-                                    </div>`;
-                        counter++;
-                    })
-                    $("#target").html(tumbal)
+                    if(data !== "[]"){
+                        console.log(data);
+                        console.log(dataHasil);
+                        let counter = 1;
+                        let tumbal = "";
+                        dataHasil.forEach((el) => {
+                            tumbal += `<div class="mb-3">
+                                            <label for="floatingGambar" class="form-label">Gambar Carousel ${counter} Lama : </label>
+                                            <a class="btn btn-primary" href = "../../assets/upload_images/event/carousel/${el}" target="_blank" id="edit_gambar_l">Preview</a>
+                                            <input type="hidden" id="m_gambar_lama${counter} name="m_gambar_lama${counter}">
+                                        </div>`;
+                            counter++;
+                        })
+                        $("#target").html(tumbal);
+                    }
                 }
             });
             
