@@ -1,5 +1,6 @@
 * {
     font-family: Poppins;
+    scroll-behavior: smooth;
 }
 
 /* Utils */
@@ -218,9 +219,11 @@ nav > .highlight > a:hover {
     font-weight: bold;
 }
 
-.banner-text > div > span {
+.banner-text > div > span > a {
     display: block;
     font-size: 1.25em;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Intro */
@@ -612,6 +615,7 @@ footer hr {
     margin-top: 2rem;
     text-align: center;
     color: #FFF;
+    background-size: cover;
 }
 
 .bg-hasilEmisi span {

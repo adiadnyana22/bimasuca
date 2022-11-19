@@ -52,14 +52,14 @@
                     <span>Binus Malang Sustainable Campus</span>
                     <h1>BIMASUCA</h1>
                     <div>
-                        <span>Scroll down</span>
-                        <span><i class="fas fa-angle-down"></i></span>
+                        <span><a href="#intro">Scroll down</a></span>
+                        <span><a href="#intro"><i class="fas fa-angle-down"></i></a></span>
                     </div>
                 </div>
             </div>
         </section>
         <div class="background">
-            <section class="bg-intro">
+            <section class="bg-intro" id="intro">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">

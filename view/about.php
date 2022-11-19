@@ -41,18 +41,32 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                                    <img src="../assets/images/visi.png" alt="Visi">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores sequi eligendi ab fugit, ipsum numquam architecto commodi, perferendis, voluptatum optio quaerat incidunt minus deleniti!
-                                    </p>
+                                    <div class="d-flex justify-content-center align-items-center w-100">
+                                        <img src="../assets/images/visi.png" alt="Visi">
+                                        <h1 class="ml-3">Visi</h1>
+                                    </div>
+                                    <ol class="mt-2">
+                                        <li class="mb-2">Edukasi pentingnya literasi lingkungan untuk seluruh civitas akademika dan Masyarakat di area sekitar Kampus Binus @Malang</li>
+                                        <li class="mb-2">Penerapan pemilahan dan pengelolaan sampah yang berkelanjutan dengan bank sampah dan sistem daur ulang (recycle dan upcycle)</li>
+                                        <li class="mb-2">Penguatan branding Kampus Binus @Malang sebagai green campus yang dapat dijadikan contoh dalam pengembangan dan pengelolaan lingkungan yang berkelanjutan</li>
+                                    </ol>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                                    <img src="../assets/images/misi.png" alt="Misi">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores sequi eligendi ab fugit, ipsum numquam architecto commodi, perferendis, voluptatum optio quaerat incidunt minus deleniti!
-                                    </p>
+                                    <div class="d-flex justify-content-center align-items-center w-100">
+                                        <img src="../assets/images/misi.png" alt="Misi">
+                                        <h1 class="ml-3">Misi</h1>
+                                    </div>
+                                    <ol class="mt-2">
+                                        <li class="mb-2">Pengelolaan sampah organik dan anorganik secara mandiri di kampus dengan pembuatan biopori, komposter, dan pencacahan sampah plastik</li>
+                                        <li class="mb-2">Pembuatan konten green campaign di media sosial baik dalam bentuk post, story, sesi IG Live, webinar, dan lomba</li>
+                                        <li class="mb-2">Pemilihan Green Ambassador dari berbagai universitas di Malang dan Jawa Timur yang akan diberi pelatihan serta pendampingan dari Tim BIMASUCA</li>
+                                        <li class="mb-2">Pembuatan furniture dan karya seni dari sampah-sampah plastik yang didaur ulang untuk digunakan di area Kampus Binus @Malang</li>
+                                        <li class="mb-2">Pembuatan website berisi informasi mengenai kegiatan BIMASUCA dan kampanye ramah lingkungan</li>
+                                        <li class="mb-2">Kegiatan pengabdian pada masyarakat yaitu memberdayakan bank sampah yang ada di Desa Banjararum, area sekitar Kampus Binus @Malang</li>
+                                        <li class="mb-2">Kegiatan pameran dan workshop bertema lingkungan di Kampus Binus @Malang dengan peserta seluruh civitas academica</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +76,7 @@
                     <div class="container">
                         <h2>Latar Belakang</h2>
                         <p>
-                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
+                            Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia. Bimasuca kami bangun untuk memberikan edukasi kepada masyarakat tentang pentingnya menjaga lingkungan demi kelangsungan hidup manusia
                         </p>
                     </div>
                 </div>

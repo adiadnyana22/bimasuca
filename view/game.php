@@ -27,9 +27,9 @@
         ?>
         <section class="bg-game">
             <div class="container">
-                <h1>Green Maze</h1>
-                <span>Coming Soon</span>
-                <img src="../assets/images/Game.gif" alt="" class="w-100">
+                <h1>Green Game</h1>
+                <span>Vibrant Recycling</span>
+                <iframe src="https://vibrantrecycling.ciangames.com/" frameborder="0" width="100%" height="500px"></iframe>
             </div>
         </section>
         <!-- Footer -->
